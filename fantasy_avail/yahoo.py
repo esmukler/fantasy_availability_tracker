@@ -130,6 +130,10 @@ def hits_for_json(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return [{k: v for k, v in h.items() if k != FANTASY_AVAIL_SOURCE_KEY} for h in hits]
 
 
+def yahoo_gamelog_url(player_id: int | str) -> str:
+    return f"https://sports.yahoo.com/mlb/players/{int(player_id)}/gamelog/"
+
+
 def yahoo_display_name(details: Dict[str, Any]) -> str:
     name = details.get("name")
     if isinstance(name, dict):

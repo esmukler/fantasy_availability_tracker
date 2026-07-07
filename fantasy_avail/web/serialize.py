@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 
 from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
 from fantasy_avail.stat_highlights import stat_highlights_for
+from fantasy_avail.yahoo import yahoo_gamelog_url
 
 
 def _format_cached_at(ts: float) -> str:
@@ -54,6 +55,16 @@ def _game_time_for_tile(game_time_pt: str) -> str:
     return game_time_pt
 
 
+def _yahoo_gamelog_url_from_row(row: ProbablePitcherRow) -> Optional[str]:
+    agents = row.yahoo_free_agents
+    if not agents:
+        return None
+    player_id = agents[0].get("player_id")
+    if player_id is None:
+        return None
+    return yahoo_gamelog_url(player_id)
+
+
 def pitcher_row_to_web(row: ProbablePitcherRow) -> Dict[str, Any]:
     return {
         "name": row.mlb_name,
@@ -65,6 +76,7 @@ def pitcher_row_to_web(row: ProbablePitcherRow) -> Dict[str, Any]:
         "availability": row.availability,
         "stats": _stats_payload(row.mlb_season_stats),
         "opposing_pitcher_name": row.opposing_pitcher_name,
+        "yahoo_gamelog_url": _yahoo_gamelog_url_from_row(row),
     }
 
 

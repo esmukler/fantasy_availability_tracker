@@ -200,7 +200,16 @@
 
         const name = document.createElement("h3");
         name.className = "pitcher-name";
-        name.textContent = p.name;
+        if (p.yahoo_gamelog_url) {
+          const link = document.createElement("a");
+          link.href = p.yahoo_gamelog_url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = p.name;
+          name.appendChild(link);
+        } else {
+          name.textContent = p.name;
+        }
 
         const badge = document.createElement("span");
         badge.className = `badge badge-${p.availability || "free_agent"}`;
