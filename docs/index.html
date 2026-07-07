@@ -147,7 +147,7 @@
       return value === "away" ? "Away" : "Home";
     }
 
-    function renderPitchers(data) {
+    function renderPitchers(data, { refreshNotice = null } = {}) {
       dateRangeEl.textContent = data.date_range
         ? `Next ${data.days} days: ${data.date_range}`
         : "";
@@ -156,14 +156,18 @@
       const schedule = " · Auto-refresh every 6 hours";
       metaEl.textContent = updated ? `${updated}${schedule}` : `No data loaded yet${schedule}`;
 
+      contentEl.innerHTML = "";
+      if (refreshNotice) {
+        const notice = document.createElement("div");
+        notice.className = "warnings";
+        notice.textContent = refreshNotice;
+        contentEl.appendChild(notice);
+      }
       if (data.warnings && data.warnings.length) {
         const warn = document.createElement("div");
         warn.className = "warnings";
         warn.textContent = data.warnings.join(" ");
-        contentEl.innerHTML = "";
         contentEl.appendChild(warn);
-      } else {
-        contentEl.innerHTML = "";
       }
 
       const pitchers = data.pitchers || [];
@@ -255,10 +259,22 @@
       return data;
     }
 
+    function refreshDispatchNotice(result) {
+      if (result.ok) return null;
+      if (result.reason === "no_token") {
+        return "Live refresh unavailable (no dispatch token on this site). Showing last cached data.";
+      }
+      if (result.status === 401) {
+        return "Live refresh unavailable (dispatch token rejected by GitHub). If you just updated PAGES_REFRESH_TOKEN, run the Refresh pitcher data workflow once so it republishes docs/js/config.js. The token also needs Actions: Read and write on this repo.";
+      }
+      const detail = result.detail || (result.status ? `HTTP ${result.status}` : "unknown error");
+      return `Live refresh unavailable (${detail}). Showing last cached data.`;
+    }
+
     async function dispatchRefreshWorkflow() {
       const token = ghConfig.dispatchToken;
       if (!token || !ghConfig.repo || !ghConfig.workflowFile) {
-        return false;
+        return { ok: false, reason: "no_token" };
       }
       const resp = await fetch(
         `https://api.github.com/repos/${ghConfig.repo}/actions/workflows/${ghConfig.workflowFile}/dispatches`,
@@ -273,9 +289,16 @@
         }
       );
       if (!resp.ok) {
-        throw new Error("Could not start refresh workflow.");
+        let detail = "";
+        try {
+          const body = await resp.json();
+          detail = body.message || "";
+        } catch (_) {
+          /* ignore */
+        }
+        return { ok: false, reason: "dispatch_failed", status: resp.status, detail };
       }
-      return true;
+      return { ok: true };
     }
 
     function sleep(ms) {
@@ -310,16 +333,18 @@
 
       try {
         let data = await fetchPitchers(refresh);
+        let refreshNotice = null;
         if (refresh) {
           const previousCachedAt = data.cached_at;
-          const dispatched = await dispatchRefreshWorkflow();
-          if (dispatched) {
+          const dispatch = await dispatchRefreshWorkflow();
+          if (dispatch.ok) {
             data = await pollForUpdatedData(previousCachedAt);
           } else {
+            refreshNotice = refreshDispatchNotice(dispatch);
             data = await fetchPitchers(true);
           }
         }
-        renderPitchers(data);
+        renderPitchers(data, { refreshNotice });
       } catch (err) {
         contentEl.innerHTML = `<p class="error">${err.message}</p>`;
       } finally {
