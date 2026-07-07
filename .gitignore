@@ -1,0 +1,10 @@
+.team_ops_last_run
+.cursor/
+oauth2.json
+fantasypros_cookie.txt
+fantasyprops_cookie.txt
+.yahoo_tokens/
+.cache/
+.venv/
+__pycache__/
+*.pyc
