@@ -118,6 +118,25 @@ class WebSerializeTests(unittest.TestCase):
         self.assertEqual(web["game_time_pt"], "TBD")
         self.assertIsNone(web["stats"])
         self.assertIsNone(web["opposing_pitcher_name"])
+        self.assertIsNone(web["yahoo_gamelog_url"])
+
+    def test_pitcher_row_to_web_yahoo_gamelog_url(self) -> None:
+        row = ProbablePitcherRow(
+            date="2026-07-08",
+            game_pk=1,
+            fp_slug="chris-sale",
+            matchup={"away": "ATL", "home": "NYM"},
+            side="home",
+            mlb_name="Chris Sale",
+            mlbam_id=123,
+            is_available=True,
+            yahoo_free_agents=[{"player_id": 65383, "name": "Chris Sale"}],
+        )
+        web = pitcher_row_to_web(row)
+        self.assertEqual(
+            web["yahoo_gamelog_url"],
+            "https://sports.yahoo.com/mlb/players/65383/gamelog/",
+        )
 
 
 if __name__ == "__main__":
