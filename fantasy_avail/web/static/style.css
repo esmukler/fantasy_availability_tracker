@@ -190,6 +190,20 @@ main {
   color: var(--error);
 }
 
+.matchup .stat-good {
+  font-weight: 700;
+  color: var(--badge-fa-text);
+}
+
+.matchup .stat-warn {
+  color: #9a6700;
+}
+
+.matchup .stat-bad {
+  font-weight: 700;
+  color: var(--error);
+}
+
 @media (min-width: 480px) {
   h1 {
     font-size: 1.4rem;

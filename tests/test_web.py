@@ -6,7 +6,12 @@ from pathlib import Path
 
 from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
 from fantasy_avail.web.cache import DiskCache
-from fantasy_avail.web.serialize import ensure_stats_highlights, pitcher_row_to_web, result_to_web_payload
+from fantasy_avail.web.serialize import (
+    ensure_stats_highlights,
+    ensure_web_payload_enrichments,
+    pitcher_row_to_web,
+    result_to_web_payload,
+)
 
 
 class DiskCacheTests(unittest.TestCase):

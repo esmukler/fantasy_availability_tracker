@@ -32,4 +32,5 @@ jobs:
           python tests/test_probable_pitchers.py
           python tests/test_mlb_schedule.py
           python tests/test_stat_highlights.py
+          python tests/test_opponent_ops_highlights.py
           python tests/test_yahoo_ownership.py

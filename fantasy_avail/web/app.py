@@ -9,7 +9,7 @@ from flask import Flask, jsonify, render_template, request
 from fantasy_avail.config import load_config
 from fantasy_avail.services.probable_pitchers import get_available_probable_pitchers
 from fantasy_avail.web.cache import DiskCache
-from fantasy_avail.web.serialize import _format_cached_at, ensure_stats_highlights, result_to_web_payload
+from fantasy_avail.web.serialize import _format_cached_at, ensure_web_payload_enrichments, result_to_web_payload
 
 DAYS = 5
 _fetch_lock = threading.Lock()
@@ -21,7 +21,6 @@ def _fetch_fresh_payload(cache: DiskCache) -> Dict[str, Any]:
     result = get_available_probable_pitchers(
         days=DAYS,
         include_waivers=True,
-        skip_team_ops_update=True,
     )
     fetched_at = cache.write(result_to_web_payload(result, cached=False))
     return result_to_web_payload(result, cached=False, cached_at=fetched_at)
@@ -35,7 +34,7 @@ def _payload_from_disk(cache: DiskCache) -> Optional[Dict[str, Any]]:
     payload["cached"] = True
     if "cached_at" not in payload:
         payload["cached_at"] = _format_cached_at(cached.fetched_at)
-    ensure_stats_highlights(payload)
+    ensure_web_payload_enrichments(payload)
     return payload
 
 
