@@ -1,12 +1,482 @@
 {
   "league_id": 43384,
-  "start_date": "",
+  "start_date": "2026-07-08",
   "days": 5,
-  "date_range": "",
-  "cached": true,
-  "pitchers": [],
-  "warnings": [
-    "No data yet. Run the Refresh Data workflow in GitHub Actions to populate this file."
+  "date_range": "Jul 8\u201312",
+  "cached": false,
+  "pitchers": [
+    {
+      "name": "Alan Rangel",
+      "date": "2026-07-08",
+      "pitcher_team": "PHI",
+      "opponent_team": "CIN",
+      "home_away": "away",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "na_free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "3.38",
+        "whip": "1.31",
+        "innings_pitched": "16.0",
+        "strikeouts": 17,
+        "highlights": {
+          "era": "good",
+          "whip": null,
+          "k_ip": "good"
+        }
+      },
+      "opposing_pitcher_name": "Chase Burns"
+    },
+    {
+      "name": "Stephen Kolek",
+      "date": "2026-07-08",
+      "pitcher_team": "KC",
+      "opponent_team": "NYM",
+      "home_away": "away",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "na_free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 3,
+        "era": "4.50",
+        "whip": "1.24",
+        "innings_pitched": "54.0",
+        "strikeouts": 34,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Christian Scott"
+    },
+    {
+      "name": "Jose Cabrera",
+      "date": "2026-07-08",
+      "pitcher_team": "AZ",
+      "opponent_team": "SD",
+      "home_away": "away",
+      "game_time_pt": "7:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "4.73",
+        "whip": "1.58",
+        "innings_pitched": "13.1",
+        "strikeouts": 10,
+        "highlights": {
+          "era": null,
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": null
+    },
+    {
+      "name": "Ryan Gusto",
+      "date": "2026-07-08",
+      "pitcher_team": "MIA",
+      "opponent_team": "SEA",
+      "home_away": "home",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "na_free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "5.55",
+        "whip": "1.60",
+        "innings_pitched": "24.1",
+        "strikeouts": 22,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "George Kirby"
+    },
+    {
+      "name": "Mike Paredes",
+      "date": "2026-07-09",
+      "pitcher_team": "MIN",
+      "opponent_team": "CLE",
+      "home_away": "home",
+      "game_time_pt": "10:40 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "4.60",
+        "whip": "1.30",
+        "innings_pitched": "29.1",
+        "strikeouts": 15,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Gavin Williams"
+    },
+    {
+      "name": "Tomoyuki Sugano",
+      "date": "2026-07-09",
+      "pitcher_team": "COL",
+      "opponent_team": "SF",
+      "home_away": "away",
+      "game_time_pt": "6:45 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 8,
+        "losses": 4,
+        "era": "4.80",
+        "whip": "1.32",
+        "innings_pitched": "84.1",
+        "strikeouts": 48,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Robbie Ray"
+    },
+    {
+      "name": "David Peterson",
+      "date": "2026-07-09",
+      "pitcher_team": "CHC",
+      "opponent_team": "BAL",
+      "home_away": "away",
+      "game_time_pt": "3:35 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 7,
+        "era": "6.75",
+        "whip": "1.67",
+        "innings_pitched": "77.1",
+        "strikeouts": 68,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Trevor Rogers"
+    },
+    {
+      "name": "Patrick Sandoval",
+      "date": "2026-07-09",
+      "pitcher_team": "BOS",
+      "opponent_team": "CWS",
+      "home_away": "away",
+      "game_time_pt": "11:10 AM PT",
+      "availability": "free_agent",
+      "stats": null,
+      "opposing_pitcher_name": "Anthony Kay"
+    },
+    {
+      "name": "Cal Quantrill",
+      "date": "2026-07-10",
+      "pitcher_team": "TEX",
+      "opponent_team": "HOU",
+      "home_away": "home",
+      "game_time_pt": "5:05 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 1,
+        "era": "3.35",
+        "whip": "1.17",
+        "innings_pitched": "40.1",
+        "strikeouts": 27,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Hunter Brown"
+    },
+    {
+      "name": "Jp Sears",
+      "date": "2026-07-10",
+      "pitcher_team": "SD",
+      "opponent_team": "TOR",
+      "home_away": "home",
+      "game_time_pt": "6:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 1,
+        "era": "4.70",
+        "whip": "1.37",
+        "innings_pitched": "15.1",
+        "strikeouts": 14,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Shane Bieber"
+    },
+    {
+      "name": "Zack Littell",
+      "date": "2026-07-10",
+      "pitcher_team": "WSH",
+      "opponent_team": "NYY",
+      "home_away": "home",
+      "game_time_pt": "3:45 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 7,
+        "losses": 6,
+        "era": "5.02",
+        "whip": "1.31",
+        "innings_pitched": "86.0",
+        "strikeouts": 52,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Ryan Weathers"
+    },
+    {
+      "name": "Matthew Liberatore",
+      "date": "2026-07-10",
+      "pitcher_team": "STL",
+      "opponent_team": "ATL",
+      "home_away": "home",
+      "game_time_pt": "5:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 6,
+        "era": "5.34",
+        "whip": "1.53",
+        "innings_pitched": "87.2",
+        "strikeouts": 82,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Chris Sale"
+    },
+    {
+      "name": "Tyler Mahle",
+      "date": "2026-07-10",
+      "pitcher_team": "SF",
+      "opponent_team": "COL",
+      "home_away": "home",
+      "game_time_pt": "7:15 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 1,
+        "losses": 8,
+        "era": "5.70",
+        "whip": "1.49",
+        "innings_pitched": "71.0",
+        "strikeouts": 69,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Tanner Gordon"
+    },
+    {
+      "name": "Tanner Gordon",
+      "date": "2026-07-10",
+      "pitcher_team": "COL",
+      "opponent_team": "SF",
+      "home_away": "away",
+      "game_time_pt": "7:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "6.95",
+        "whip": "1.59",
+        "innings_pitched": "45.1",
+        "strikeouts": 46,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_ip": "good"
+        }
+      },
+      "opposing_pitcher_name": "Tyler Mahle"
+    },
+    {
+      "name": "Grayson Rodriguez",
+      "date": "2026-07-10",
+      "pitcher_team": "LAA",
+      "opponent_team": "MIN",
+      "home_away": "away",
+      "game_time_pt": "5:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 2,
+        "era": "8.06",
+        "whip": "1.83",
+        "innings_pitched": "25.2",
+        "strikeouts": 24,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Zebby Matthews"
+    },
+    {
+      "name": "Walker Buehler",
+      "date": "2026-07-11",
+      "pitcher_team": "SD",
+      "opponent_team": "TOR",
+      "home_away": "home",
+      "game_time_pt": "5:40 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 5,
+        "losses": 5,
+        "era": "5.07",
+        "whip": "1.39",
+        "innings_pitched": "87.0",
+        "strikeouts": 80,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Trey Yesavage"
+    },
+    {
+      "name": "Kyle Freeland",
+      "date": "2026-07-11",
+      "pitcher_team": "COL",
+      "opponent_team": "SF",
+      "home_away": "away",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 7,
+        "era": "7.46",
+        "whip": "1.61",
+        "innings_pitched": "82.0",
+        "strikeouts": 70,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Landen Roupp"
+    },
+    {
+      "name": "Brad Lord",
+      "date": "2026-07-12",
+      "pitcher_team": "WSH",
+      "opponent_team": "NYY",
+      "home_away": "home",
+      "game_time_pt": "10:35 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 5,
+        "losses": 2,
+        "era": "3.88",
+        "whip": "1.22",
+        "innings_pitched": "58.0",
+        "strikeouts": 52,
+        "highlights": {
+          "era": "good",
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Will Warren"
+    },
+    {
+      "name": "Randy Vasquez",
+      "date": "2026-07-12",
+      "pitcher_team": "SD",
+      "opponent_team": "TOR",
+      "home_away": "home",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 6,
+        "losses": 6,
+        "era": "4.71",
+        "whip": "1.50",
+        "innings_pitched": "84.0",
+        "strikeouts": 60,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Kevin Gausman"
+    },
+    {
+      "name": "Mike Burrows",
+      "date": "2026-07-12",
+      "pitcher_team": "HOU",
+      "opponent_team": "TEX",
+      "home_away": "away",
+      "game_time_pt": "11:35 AM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 4,
+        "losses": 9,
+        "era": "5.99",
+        "whip": "1.55",
+        "innings_pitched": "94.2",
+        "strikeouts": 75,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Jacob Degrom"
+    },
+    {
+      "name": "Kodai Senga",
+      "date": "2026-07-12",
+      "pitcher_team": "NYM",
+      "opponent_team": "BOS",
+      "home_away": "home",
+      "game_time_pt": "10:40 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 7,
+        "era": "8.66",
+        "whip": "1.70",
+        "innings_pitched": "35.1",
+        "strikeouts": 42,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_ip": "good"
+        }
+      },
+      "opposing_pitcher_name": "Payton Tolle"
+    }
   ],
-  "cached_at": null
+  "warnings": [],
+  "cached_at": "2026-07-07T14:57:00-07:00"
 }
