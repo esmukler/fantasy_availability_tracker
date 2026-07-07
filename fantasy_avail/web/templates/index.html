@@ -53,10 +53,92 @@
       });
     }
 
-    function statsLine(stats) {
-      if (!stats) return "Stats unavailable";
+    function parseInningsPitched(value) {
+      if (value == null || value === "—") return null;
+      const text = String(value).trim();
+      if (!text || text === "—") return null;
+      if (text.includes(".")) {
+        const [whole, frac] = text.split(".", 2);
+        if (frac.length === 1 && "012".includes(frac)) {
+          return parseInt(whole, 10) + parseInt(frac, 10) / 3;
+        }
+      }
+      const n = parseFloat(text);
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function parseStatFloat(value) {
+      if (value == null || value === "—") return null;
+      const n = parseFloat(String(value).trim());
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function eraHighlight(era) {
+      const v = parseStatFloat(era);
+      if (v === null) return null;
+      if (v > 6) return "bad";
+      if (v > 5) return "warn";
+      if (v < 4) return "good";
+      return null;
+    }
+
+    function whipHighlight(whip) {
+      const v = parseStatFloat(whip);
+      if (v === null) return null;
+      if (v > 1.7) return "bad";
+      if (v > 1.5) return "warn";
+      if (v < 1.2) return "good";
+      return null;
+    }
+
+    function kIpHighlight(strikeouts, inningsPitched) {
+      const ip = parseInningsPitched(inningsPitched);
+      if (ip === null) return null;
+      const ks = Number(strikeouts);
+      if (!Number.isFinite(ks)) return null;
+      return ks > ip ? "good" : null;
+    }
+
+    function statHighlights(stats) {
+      return {
+        era: eraHighlight(stats.era),
+        whip: whipHighlight(stats.whip),
+        k_ip: kIpHighlight(stats.strikeouts, stats.innings_pitched),
+      };
+    }
+
+    function statHighlightClass(level) {
+      return level ? `stat-${level}` : "";
+    }
+
+    function appendStatPart(parent, text, level) {
+      const cls = statHighlightClass(level);
+      if (cls) {
+        const span = document.createElement("span");
+        span.className = cls;
+        span.textContent = text;
+        parent.appendChild(span);
+      } else {
+        parent.appendChild(document.createTextNode(text));
+      }
+    }
+
+    function renderStatsLine(stats, parentEl) {
+      parentEl.replaceChildren();
+      if (!stats) {
+        parentEl.textContent = "Stats unavailable";
+        return;
+      }
+      const h = statHighlights(stats);
       const wl = `${stats.wins ?? 0}-${stats.losses ?? 0}`;
-      return `${wl} · ${stats.era ?? "—"} ERA · ${stats.whip ?? "—"} WHIP · ${stats.innings_pitched ?? "—"} IP · ${stats.strikeouts ?? 0} K`;
+      parentEl.appendChild(document.createTextNode(`${wl} · `));
+      appendStatPart(parentEl, `${stats.era ?? "—"} ERA`, h.era);
+      parentEl.appendChild(document.createTextNode(" · "));
+      appendStatPart(parentEl, `${stats.whip ?? "—"} WHIP`, h.whip);
+      parentEl.appendChild(document.createTextNode(" · "));
+      appendStatPart(parentEl, `${stats.innings_pitched ?? "—"} IP`, h.k_ip);
+      parentEl.appendChild(document.createTextNode(" · "));
+      appendStatPart(parentEl, `${stats.strikeouts ?? 0} K`, h.k_ip);
     }
 
     function homeAwayLabel(value) {
@@ -133,7 +215,7 @@
 
         const stats = document.createElement("p");
         stats.className = "stats";
-        stats.textContent = statsLine(p.stats);
+        renderStatsLine(p.stats, stats);
 
         card.appendChild(top);
         card.appendChild(matchup);

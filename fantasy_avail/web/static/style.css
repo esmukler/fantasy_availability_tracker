@@ -176,6 +176,20 @@ main {
   color: var(--muted);
 }
 
+.stats .stat-good {
+  font-weight: 700;
+  color: var(--badge-fa-text);
+}
+
+.stats .stat-warn {
+  color: #9a6700;
+}
+
+.stats .stat-bad {
+  font-weight: 700;
+  color: var(--error);
+}
+
 @media (min-width: 480px) {
   h1 {
     font-size: 1.4rem;

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import datetime as dt
-import sys
 from typing import Any, Dict, List, Optional, Tuple
 
 import requests
@@ -13,22 +12,15 @@ from fantasy_avail.fantasypros import (
     log_fantasypros_cookie_status,
 )
 from fantasy_avail.mlb_api import (
-    default_team_ops_csv_path,
     enrich_probables_with_schedule,
     fetch_mlb_pitching_season_stats,
     fetch_mlb_schedule,
-    fetch_mlb_teams_context,
     finalize_probable_pitchers,
     format_game_time_pacific,
     maybe_refresh_team_ops_csv,
 )
 from fantasy_avail.models import ProbableStart
 from fantasy_avail.name_utils import normalize_name
-from fantasy_avail.output import (
-    _hits_for_json,
-    _yahoo_availability_from_hits,
-    partition_probables_by_fa,
-)
 from fantasy_avail.overrides import (
     apply_abbr_overrides,
     load_player_name_overrides,
@@ -38,8 +30,28 @@ from fantasy_avail.availability_cache import get_availability_cache
 from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
 from fantasy_avail.yahoo import (
     enrich_targeted_availability_lists_by_names,
+    hits_for_json,
     index_targeted_availability_by_names,
+    yahoo_availability_from_hits,
 )
+
+
+def partition_probables_by_fa(
+    probables: List[ProbableStart],
+    available_by_name: Dict[str, List[Dict[str, Any]]],
+) -> Tuple[List[Tuple[ProbableStart, List[Dict[str, Any]]]], List[ProbableStart]]:
+    matched: List[Tuple[ProbableStart, List[Dict[str, Any]]]] = []
+    unmatched: List[ProbableStart] = []
+    for ps in probables:
+        key = normalize_name(ps.pitcher_name)
+        hits = available_by_name.get(key)
+        if hits:
+            matched.append((ps, hits))
+        else:
+            unmatched.append(ps)
+    matched.sort(key=lambda t: (t[0].date, t[0].away_abbr, t[0].home_abbr, t[0].pitcher_side))
+    unmatched.sort(key=lambda ps: (ps.date, ps.away_abbr, ps.home_abbr, ps.pitcher_side))
+    return matched, unmatched
 
 
 def _game_key(ps: ProbableStart) -> Tuple[dt.date, str, str]:
@@ -78,7 +90,7 @@ def _probable_row(
     stats = None
     if include_stats and ps.pitcher_mlbam_id is not None:
         stats = get_mlb_season_stats(ps.pitcher_mlbam_id)
-    availability = _yahoo_availability_from_hits(hits)
+    availability = yahoo_availability_from_hits(hits)
     return ProbablePitcherRow(
         date=ps.date.isoformat(),
         game_pk=ps.game_pk,
@@ -94,16 +106,26 @@ def _probable_row(
         game_time_pt=format_game_time_pacific(ps.game_datetime),
         availability=availability,
         yahoo_availability=availability,
-        yahoo_free_agents=_hits_for_json(hits),
+        yahoo_free_agents=hits_for_json(hits),
         mlb_season_stats=stats,
         opposing_pitcher_name=opposing_pitcher_name,
     )
 
 
-def _probable_sort_key(ps: ProbableStart) -> tuple:
-    sentinel = dt.datetime.max.replace(tzinfo=dt.timezone.utc)
-    game_dt = ps.game_datetime if ps.game_datetime is not None else sentinel
-    return (ps.date, game_dt, ps.pitcher_name.lower())
+def _era_sort_value(stats: Optional[Dict[str, Any]]) -> float:
+    if not stats:
+        return float("inf")
+    era = stats.get("era")
+    if era is None or era == "—":
+        return float("inf")
+    try:
+        return float(era)
+    except (TypeError, ValueError):
+        return float("inf")
+
+
+def _probable_row_sort_key(row: ProbablePitcherRow) -> tuple:
+    return (row.date, _era_sort_value(row.mlb_season_stats), row.mlb_name.lower())
 
 
 def get_available_probable_pitchers(
@@ -197,7 +219,7 @@ def get_available_probable_pitchers(
         league = cache.get_league(lid)
     except Exception as e:
         raise RuntimeError(
-            f"Yahoo init failed: {e}. Re-run OAuth bootstrap (e.g. get_available_pitchers.py)."
+            f"Yahoo init failed: {e}. Start the web server or an MCP tool to complete OAuth bootstrap."
         ) from e
 
     pitcher_names = list({ps.pitcher_name for ps in probables})
@@ -222,8 +244,7 @@ def get_available_probable_pitchers(
     by_game = _index_probables_by_game(probables)
     available_rows: List[ProbablePitcherRow] = []
     if all_probables:
-        sorted_probables = sorted(probables, key=_probable_sort_key)
-        for ps in sorted_probables:
+        for ps in probables:
             key = normalize_name(ps.pitcher_name)
             hits = available_by_name.get(key) or []
             if hits:
@@ -237,8 +258,7 @@ def get_available_probable_pitchers(
                     )
                 )
     else:
-        sorted_matched = sorted(matched, key=lambda t: _probable_sort_key(t[0]))
-        for ps, hits in sorted_matched:
+        for ps, hits in matched:
             available_rows.append(
                 _probable_row(
                     ps,
@@ -248,6 +268,8 @@ def get_available_probable_pitchers(
                     opposing_pitcher_name=_opposing_pitcher_name(ps, by_game),
                 )
             )
+
+    available_rows.sort(key=_probable_row_sort_key)
 
     unmatched_payload = [
         {
@@ -268,124 +290,3 @@ def get_available_probable_pitchers(
         unmatched=unmatched_payload,
         warnings=warnings,
     )
-
-
-def run_probable_pitchers_cli(args) -> int:
-    """CLI adapter: fetch data and emit via output.emit_results."""
-    from fantasy_avail.mlb_api import fetch_mlb_teams_context
-    from fantasy_avail.output import emit_results
-    from fantasy_avail.overrides import load_opponent_colors_from_team_ops_csv
-
-    cfg = load_config()
-    season_year = args.season if args.season is not None else args.start_date.year
-    mlb_session = requests.Session()
-    mlb_stats_cache: Dict[int, Optional[Dict[str, Any]]] = {}
-    mlbam_resolve_cache: Dict[str, Optional[int]] = {}
-
-    abbr_overrides = load_team_abbr_overrides(args.abbr_overrides)
-    yahoo_by_slug, mlbam_by_slug = load_player_name_overrides(args.player_overrides)
-    fp_cookie = (
-        load_fantasypros_cookie_file(args.fp_cookie_file)
-        if (args.fp_cookie_file or "").strip()
-        else None
-    )
-    log_fantasypros_cookie_status(args.fp_cookie_file or "", fp_cookie)
-
-    if not args.skip_team_ops_update:
-        try:
-            maybe_refresh_team_ops_csv(mlb_session, season=season_year)
-        except requests.RequestException as e:
-            print(f"Team OPS CSV refresh skipped: {e}", file=sys.stderr)
-
-    if args.no_opponent_colors:
-        opponent_color_prefixes: Dict[str, str] = {}
-    else:
-        ops_csv = args.opponent_colors_csv or default_team_ops_csv_path(season_year)
-        _, name_to_abbr = fetch_mlb_teams_context(mlb_session)
-        opponent_color_prefixes = load_opponent_colors_from_team_ops_csv(
-            ops_csv, name_to_abbr
-        )
-
-    def get_mlb_season_stats(mlbam_id: int) -> Optional[Dict[str, Any]]:
-        if mlbam_id not in mlb_stats_cache:
-            try:
-                mlb_stats_cache[mlbam_id] = fetch_mlb_pitching_season_stats(
-                    mlb_session, mlbam_id, season_year
-                )
-            except (requests.RequestException, ValueError, TypeError, KeyError):
-                mlb_stats_cache[mlbam_id] = None
-        return mlb_stats_cache[mlbam_id]
-
-    try:
-        raw = fetch_probable_pitchers(
-            start_date=args.start_date,
-            days=args.days,
-            session=mlb_session,
-            fp_cookie_header=fp_cookie,
-        )
-        probables = [
-            apply_abbr_overrides(ps, abbr_overrides)
-            for ps in finalize_probable_pitchers(
-                mlb_session, raw, yahoo_by_slug, mlbam_by_slug, mlbam_resolve_cache
-            )
-        ]
-    except RuntimeError as e:
-        print(f"Fantasy Pros: {e}", file=sys.stderr)
-        return 2
-    except requests.HTTPError as e:
-        print(f"HTTP error: {e}", file=sys.stderr)
-        return 2
-    except requests.RequestException as e:
-        print(f"Request failed: {e}", file=sys.stderr)
-        return 2
-
-    if len(probables) < 20:
-        if (args.fp_cookie_file or "").strip():
-            cookie_hint = f"try updating the cookie in {args.fp_cookie_file!r}"
-        else:
-            cookie_hint = (
-                "try --fp-cookie-file with a fresh Cookie header "
-                "(see fantasypros_cookie.example)"
-            )
-        print(
-            f"Fantasy Pros: only {len(probables)} probable starter(s) in the selected window; "
-            f"if you expected a fuller grid, {cookie_hint}.",
-            file=sys.stderr,
-        )
-
-    cache = get_availability_cache()
-    try:
-        league = cache.get_league(args.league_id)
-    except Exception as e:
-        print(f"Yahoo init failed: {e}", file=sys.stderr)
-        return 3
-
-    pitcher_names = list({ps.pitcher_name for ps in probables})
-    try:
-        available_by_name = index_targeted_availability_by_names(
-            league,
-            pitcher_names,
-            include_waivers=True,
-        )
-    except Exception as e:
-        print(f"Yahoo availability lookup failed: {e}", file=sys.stderr)
-        return 3
-    matched, unmatched = partition_probables_by_fa(probables, available_by_name)
-    if unmatched:
-        enrich_targeted_availability_lists_by_names(
-            league,
-            [ps.pitcher_name for ps in unmatched],
-            available_by_name,
-            include_waivers=True,
-        )
-        matched, unmatched = partition_probables_by_fa(probables, available_by_name)
-    emit_results(
-        args,
-        probables,
-        matched,
-        unmatched,
-        available_by_name,
-        get_mlb_season_stats,
-        opponent_color_prefixes,
-    )
-    return 0

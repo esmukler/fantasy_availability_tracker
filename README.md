@@ -1,8 +1,17 @@
 # Fantasy availability tracker
 
-Small script that scrapes Fantasy Pros’ default [MLB probable pitchers](https://www.fantasypros.com/mlb/probable-pitchers.php) page (the “next 7 days” grid), filters by `--start-date` and `--days`, and shows which of those starters are **free agents** in your Yahoo Fantasy Baseball league. Season pitching stats (W-L, ERA, WHIP, IP, K, QS) still come from the MLB Stats API using each player’s resolved MLBAM id.
+Yahoo Fantasy Baseball research tool with four feature domains:
 
-## Run it
+1. **Yahoo availability** — check whether players are free agents, on waivers, or unrostered NA prospects
+2. **Probable pitchers** — Fantasy Pros probable starters enriched with MLB stats, filtered to available arms
+3. **Article analysis** — extract editorial main players from news URLs and return only those available in your league
+4. **Team OPS** — cached team offensive stats for matchup context
+
+**Human access:** web UI (`python -m fantasy_avail.web`). **Agent access:** MCP server for Cursor.
+
+---
+
+## Quick start
 
 1. Create a virtualenv and install dependencies:
 
@@ -12,52 +21,63 @@ Small script that scrapes Fantasy Pros’ default [MLB probable pitchers](https:
    pip install -r requirements.txt
    ```
 
-2. Put your Yahoo OAuth app credentials in `oauth2.json` (see Yahoo Developer Network). The first run opens a browser to sign in and caches tokens under `.yahoo_tokens/`.
+2. Put your Yahoo OAuth app credentials in `oauth2.json` (see [Yahoo Developer Network](https://developer.yahoo.com/)). The first Yahoo API call opens a browser to sign in and caches tokens under `.yahoo_tokens/`.
 
-3. **Fantasy Pros (optional):** To get the full probable-pitchers table, copy [`fantasypros_cookie.example`](fantasypros_cookie.example) to `fantasypros_cookie.txt`, then paste your browser’s `cookie` request header (one line, no `Cookie:` prefix). That file is gitignored. Override path with `--fp-cookie-file` or disable with `--fp-cookie-file ''`.
+3. **Fantasy Pros (optional):** Copy [`fantasypros_cookie.example`](fantasypros_cookie.example) to `fantasypros_cookie.txt`, then paste your browser's `cookie` request header (one line, no `Cookie:` prefix). That file is gitignored. Set `FP_COOKIE_FILE` to override the path.
 
-4. Run the main script (replace `--league-id` with your Yahoo league id):
+4. Start the web server (this also completes OAuth bootstrap on first run):
 
    ```bash
-   python get_available_pitchers.py --league-id 43384 --show-unmatched
+   python -m fantasy_avail.web
    ```
 
-Use `python get_available_pitchers.py --help` for all options.
+5. Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-## Analyze article mentions (available players only)
+---
 
-You can also analyze a news/article URL and return a short summary for **only** the players currently available in your Yahoo league (free agents by default, plus waivers unless disabled).
+## Web UI (primary)
+
+A mobile-friendly site shows **available probable starters** for the next 5 days (starting tomorrow), with matchup, Pacific game time, opposing pitcher, and season stats.
+
+### Run the server
 
 ```bash
-python analyze_available_players.py \
-  --url "https://example.com/mlb-notes" \
-  --league-id 43384
+python -m fantasy_avail.web
 ```
 
-Useful flags:
+To view from a phone on the same Wi‑Fi:
 
-- `--json` for machine-readable output
-- `--no-waivers` to only include free agents
-- `--max-snippets 1` to keep output very brief
-- `--debug-unmatched` to print detected names and which did not match available players
+```bash
+WEB_HOST=0.0.0.0 python -m fantasy_avail.web
+```
 
-## Overrides
+Responses are cached on disk for up to 1 hour (`.cache/available_pitchers.json`). Use the **Refresh** button or `GET /api/pitchers?refresh=1` to bypass the cache.
 
-- **`team_abbr_overrides.json`** — optional; maps StatsAPI-style abbreviations for display (same as before).
-- **`player_name_overrides.json`** — optional manual fixes when a pitcher’s name derived from the Fantasy Pros URL slug does not match Yahoo’s free-agent list:
-  - `yahoo_name_by_slug`: keys are FP player slugs (e.g. `chris-sale`), values are the exact name Yahoo shows for that player.
-  - `mlbam_by_slug`: optional numeric MLBAM ids if automatic lookup fails or picks the wrong player.
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `WEB_CACHE_TTL_SECONDS` | `3600` | Disk cache TTL for `/api/pitchers` |
+| `WEB_HOST` | `127.0.0.1` | Bind address |
+| `WEB_PORT` | `8080` | Listen port |
+| `WEB_CACHE_PATH` | `.cache/available_pitchers.json` | Cache file path |
+| `FANTASY_LEAGUE_ID` | `43384` | Yahoo league id |
+| `FANTASY_OAUTH_PATH` | `oauth2.json` | Yahoo OAuth credentials file |
+| `FANTASY_TOKEN_DIR` | `.yahoo_tokens` | Cached Yahoo tokens |
+| `FP_COOKIE_FILE` | `fantasypros_cookie.txt` | Fantasy Pros session cookie |
 
-With `--show-unmatched`, the script prints each slug and a sample JSON line you can paste into `yahoo_name_by_slug`.
+A Fantasy Pros cookie is recommended for a fuller probable-pitchers grid.
 
-## MCP server (Cursor)
+**Coming later:** article analysis, player lookup, and team-ops refresh in the web UI. Those features are available via MCP today.
 
-This repo includes a local MCP server so Cursor can answer league-availability questions via tools instead of shell scripts.
+---
+
+## MCP server (Cursor agents)
+
+A local MCP server lets Cursor answer league-availability questions via tools.
 
 ### Setup
 
-1. Complete the Yahoo OAuth bootstrap above (run `get_available_pitchers.py` once so tokens exist).
-2. Copy [`.cursor/mcp.json.example`](.cursor/mcp.json.example) to your Cursor MCP config (or merge into `.cursor/mcp.json`), replacing the absolute paths with your machine’s repo path.
+1. Complete Yahoo OAuth bootstrap (start the web server or invoke any MCP tool once).
+2. Configure [`.cursor/mcp.json`](.cursor/mcp.json) with your machine's repo path and venv python.
 3. Restart Cursor (or reload MCP servers).
 
 Optional environment variables (also settable in `mcp.json` → `env`):
@@ -92,47 +112,57 @@ python -m fantasy_avail.mcp_server
 
 ### Cursor skills (fallback)
 
-If MCP is not enabled, the skills under [`.cursor/skills/`](.cursor/skills/) still work:
+If MCP is not enabled, skills under [`.cursor/skills/`](.cursor/skills/) provide agent-driven fallbacks:
 
 - `extract-article-main-players` — editorial player extraction only
-- `article-main-players-yahoo-available` — extraction + Yahoo filter via CLI
+- `article-main-players-yahoo-available` — extraction + Yahoo filter via MCP tools
 
-With MCP enabled, prefer the MCP tools above; skills are optional fallback.
+With MCP enabled, prefer the MCP tools above.
 
-## Web UI (available pitchers)
+---
 
-A mobile-friendly one-page site shows **available probable starters** for the next 5 days (starting tomorrow), with matchup, Pacific game time, and season stats.
+## Overrides
 
-### Run the web server
+- **`team_abbr_overrides.json`** — maps StatsAPI-style abbreviations for display.
+- **`player_name_overrides.json`** — manual fixes when a pitcher's name from the Fantasy Pros URL slug does not match Yahoo:
+  - `yahoo_name_by_slug`: keys are FP player slugs (e.g. `chris-sale`), values are the exact name Yahoo shows.
+  - `mlbam_by_slug`: optional numeric MLBAM ids if automatic lookup fails.
 
-1. Complete Yahoo OAuth bootstrap above (run `get_available_pitchers.py` once so tokens exist).
-2. Install dependencies (includes Flask):
+Unmatched probable pitchers appear in the web API/MCP `unmatched` payload with their `fp_slug` for easy override entry.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-3. Start the server:
+## Project layout
 
-   ```bash
-   python -m fantasy_avail.web
-   ```
+```
+fantasy_avail/
+  yahoo.py              Yahoo OAuth, targeted + bulk availability
+  fantasypros.py        Fantasy Pros probable-pitchers scrape
+  mlb_api.py            MLB Stats API (schedule, stats, team OPS)
+  article_utils.py      Article fetch and snippet extraction
+  article_main_players.py  Editorial main-player extraction
+  availability_cache.py Session league + bulk-list cache
+  services/             Orchestration shared by web and MCP
+    availability.py
+    probable_pitchers.py
+    article_analysis.py
+    team_ops.py
+  web/                  Flask UI
+  mcp_server.py         FastMCP tools
+  config.py             Env-based configuration
+tests/
+.cursor/                MCP config, agent skills, workspace rules
+```
 
-4. Open [http://127.0.0.1:8080](http://127.0.0.1:8080). To view from a phone on the same Wi‑Fi:
+---
 
-   ```bash
-   WEB_HOST=0.0.0.0 python -m fantasy_avail.web
-   ```
+## Development
 
-Responses are cached on disk for up to 1 hour (`.cache/available_pitchers.json`). Use the **Refresh** button or `GET /api/pitchers?refresh=1` to bypass the cache.
+Run tests:
 
-Optional environment variables:
-
-| Variable | Default | Purpose |
-|----------|---------|---------|
-| `WEB_CACHE_TTL_SECONDS` | `3600` | Disk cache TTL for `/api/pitchers` |
-| `WEB_HOST` | `127.0.0.1` | Bind address |
-| `WEB_PORT` | `8080` | Listen port |
-| `WEB_CACHE_PATH` | `.cache/available_pitchers.json` | Cache file path |
-
-A Fantasy Pros cookie (`fantasypros_cookie.txt`) is still recommended for a fuller probable-pitchers grid.
+```bash
+python tests/test_yahoo_ownership.py
+python tests/test_probable_pitchers.py
+python tests/test_mlb_schedule.py
+python tests/test_web.py
+```

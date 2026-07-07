@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 from zoneinfo import ZoneInfo
 
 from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
+from fantasy_avail.stat_highlights import stat_highlights_for
 
 
 def _format_cached_at(ts: float) -> str:
@@ -23,7 +24,7 @@ def _format_date_range(start_date: str, days: int) -> str:
 def _stats_payload(stats: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     if not stats:
         return None
-    return {
+    payload = {
         "wins": stats.get("wins"),
         "losses": stats.get("losses"),
         "era": stats.get("era"),
@@ -31,6 +32,16 @@ def _stats_payload(stats: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         "innings_pitched": stats.get("innings_pitched"),
         "strikeouts": stats.get("strikeouts"),
     }
+    payload["highlights"] = stat_highlights_for(payload)
+    return payload
+
+
+def ensure_stats_highlights(payload: Dict[str, Any]) -> None:
+    """Backfill highlights for disk-cached payloads written before highlighting."""
+    for pitcher in payload.get("pitchers") or []:
+        stats = pitcher.get("stats")
+        if stats:
+            stats["highlights"] = stat_highlights_for(stats)
 
 
 def _game_time_for_tile(game_time_pt: str) -> str:

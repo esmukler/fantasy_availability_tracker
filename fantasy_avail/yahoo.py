@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Any, Dict, Iterable, List, Optional, Sequence
 
@@ -13,6 +14,8 @@ AVAIL_SOURCE_NA_FREE_AGENT = "na_free_agent"
 
 # Yahoo's ownership endpoint returns at most ~25 players per request.
 _OWNERSHIP_BATCH_SIZE = 25
+
+_FALLBACK_POSITIONS = ("C", "1B", "2B", "3B", "SS", "OF", "Util", "SP", "RP")
 
 
 def init_league(league_id: int, oauth_path: str, token_dir: str):
@@ -33,53 +36,98 @@ def init_league(league_id: int, oauth_path: str, token_dir: str):
     return League(sc, league_key)
 
 
-def fetch_yahoo_free_agent_pitchers(league) -> List[Dict[str, Any]]:
-    return league.free_agents("P") or []
-
-
-def fetch_yahoo_waiver_pitchers(league) -> List[Dict[str, Any]]:
-    """Pitchers on waivers (position_type P), mirroring free_agents('P') semantics."""
-    raw = league.waivers() or []
-    return [p for p in raw if (p.get("position_type") or "").strip().upper() == "P"]
-
-
-def index_available_pitchers_by_normalized_name(
-    free_agents: Iterable[Dict[str, Any]],
-    waiver_pitchers: Iterable[Dict[str, Any]],
-) -> Dict[str, List[Dict[str, Any]]]:
-    """
-    Index FA and waiver pitchers by normalize_name(name).
-    Free agents are indexed first; waiver-only names are added after.
-    Each value dict includes FANTASY_AVAIL_SOURCE_KEY for downstream (W) / JSON.
-    """
-    idx: Dict[str, List[Dict[str, Any]]] = {}
-
-    def _add(key: str, p: Dict[str, Any], source: str) -> None:
-        tagged = dict(p)
-        tagged[FANTASY_AVAIL_SOURCE_KEY] = source
-        idx.setdefault(key, []).append(tagged)
-
-    for p in free_agents:
-        name = p.get("name")
-        if not name:
+def _dedupe_players(players: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    out: List[Dict[str, Any]] = []
+    seen: set[str] = set()
+    for p in players:
+        key = str(
+            p.get("player_id")
+            or p.get("player_key")
+            or p.get("name")
+            or json.dumps(p, sort_keys=True, default=str)
+        )
+        if key in seen:
             continue
-        key = normalize_name(str(name))
-        if not key:
-            continue
-        _add(key, p, AVAIL_SOURCE_FREE_AGENT)
+        seen.add(key)
+        out.append(p)
+    return out
 
-    for p in waiver_pitchers:
-        name = p.get("name")
-        if not name:
-            continue
-        key = normalize_name(str(name))
-        if not key:
-            continue
-        if key in idx:
-            continue
-        _add(key, p, AVAIL_SOURCE_WAIVERS)
 
-    return idx
+def _tag_players(players: Iterable[Dict[str, Any]], source: str) -> List[Dict[str, Any]]:
+    tagged: List[Dict[str, Any]] = []
+    for p in players:
+        row = dict(p)
+        row[FANTASY_AVAIL_SOURCE_KEY] = source
+        tagged.append(row)
+    return tagged
+
+
+def _fetch_free_agents_all_positions(league) -> List[Dict[str, Any]]:
+    all_free_agents: List[Dict[str, Any]] = []
+    try:
+        all_free_agents = league.free_agents() or []
+    except TypeError:
+        for pos in _FALLBACK_POSITIONS:
+            all_free_agents.extend(league.free_agents(pos) or [])
+    except Exception:
+        for pos in _FALLBACK_POSITIONS:
+            try:
+                all_free_agents.extend(league.free_agents(pos) or [])
+            except Exception:
+                continue
+    return _dedupe_players(all_free_agents)
+
+
+def _fetch_waivers(league) -> List[Dict[str, Any]]:
+    try:
+        waiver_players = league.waivers() or []
+    except Exception:
+        waiver_players = []
+    return _dedupe_players(waiver_players)
+
+
+def fetch_yahoo_available_players(league, include_waivers: bool = True) -> List[Dict[str, Any]]:
+    """Full FA/waiver pool scan — expensive; prefer targeted lookups when possible."""
+    all_free_agents = _fetch_free_agents_all_positions(league)
+    tagged = _tag_players(all_free_agents, AVAIL_SOURCE_FREE_AGENT)
+    if not include_waivers:
+        return tagged
+
+    waiver_players = _fetch_waivers(league)
+    fa_names = {normalize_name(str(p.get("name") or "")) for p in tagged}
+    for p in waiver_players:
+        nm = normalize_name(str(p.get("name") or ""))
+        if not nm or nm in fa_names:
+            continue
+        row = dict(p)
+        row[FANTASY_AVAIL_SOURCE_KEY] = AVAIL_SOURCE_WAIVERS
+        tagged.append(row)
+
+    return tagged
+
+
+def _hits_include_waivers(hits: List[Dict[str, Any]]) -> bool:
+    return any(h.get(FANTASY_AVAIL_SOURCE_KEY) == AVAIL_SOURCE_WAIVERS for h in hits)
+
+
+def _hits_include_na(hits: List[Dict[str, Any]]) -> bool:
+    return any(
+        h.get(FANTASY_AVAIL_SOURCE_KEY) == AVAIL_SOURCE_NA_FREE_AGENT
+        or (h.get("status") or "").strip().upper() == "NA"
+        for h in hits
+    )
+
+
+def yahoo_availability_from_hits(hits: List[Dict[str, Any]]) -> str:
+    if _hits_include_waivers(hits):
+        return AVAIL_SOURCE_WAIVERS
+    if _hits_include_na(hits):
+        return AVAIL_SOURCE_NA_FREE_AGENT
+    return AVAIL_SOURCE_FREE_AGENT
+
+
+def hits_for_json(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    return [{k: v for k, v in h.items() if k != FANTASY_AVAIL_SOURCE_KEY} for h in hits]
 
 
 def yahoo_display_name(details: Dict[str, Any]) -> str:
@@ -354,22 +402,3 @@ def enrich_targeted_availability_lists_by_names(
     )
 
 
-def enrich_available_by_name_for_names(
-    league,
-    names: Iterable[str],
-    available_by_name: Dict[str, Dict[str, Any]],
-    *,
-    include_waivers: bool = True,
-) -> None:
-    """Add available players to an index in place via targeted lookups."""
-    pending = [
-        name
-        for name in names
-        if normalize_name(name) and normalize_name(name) not in available_by_name
-    ]
-    if not pending:
-        return
-    idx = availability_index_from_lookups(
-        lookup_players_availability(league, pending, include_waivers=include_waivers)
-    )
-    available_by_name.update(idx)

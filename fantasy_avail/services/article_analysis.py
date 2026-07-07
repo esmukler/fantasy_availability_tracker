@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Dict, List, Optional
 
-from fantasy_avail.article_availability_summary import (
+from fantasy_avail.article_utils import (
     article_text_from_soup,
     fetch_article_soup,
     summarize_available_player_mentions,

@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock
 
-from fantasy_avail.output import _yahoo_availability_from_hits
+from fantasy_avail.yahoo import yahoo_availability_from_hits
 from fantasy_avail.yahoo import (
     AVAIL_SOURCE_FREE_AGENT,
     AVAIL_SOURCE_NA_FREE_AGENT,
@@ -60,7 +60,7 @@ class YahooAvailabilityFromHitsTests(unittest.TestCase):
                 "status": "NA",
             }
         ]
-        self.assertEqual(_yahoo_availability_from_hits(hits), AVAIL_SOURCE_NA_FREE_AGENT)
+        self.assertEqual(yahoo_availability_from_hits(hits), AVAIL_SOURCE_NA_FREE_AGENT)
 
     def test_prefers_waivers_over_na(self) -> None:
         hits = [
@@ -69,11 +69,11 @@ class YahooAvailabilityFromHitsTests(unittest.TestCase):
                 "status": "",
             }
         ]
-        self.assertEqual(_yahoo_availability_from_hits(hits), AVAIL_SOURCE_WAIVERS)
+        self.assertEqual(yahoo_availability_from_hits(hits), AVAIL_SOURCE_WAIVERS)
 
     def test_defaults_to_free_agent(self) -> None:
         hits = [{FANTASY_AVAIL_SOURCE_KEY: AVAIL_SOURCE_FREE_AGENT, "status": ""}]
-        self.assertEqual(_yahoo_availability_from_hits(hits), AVAIL_SOURCE_FREE_AGENT)
+        self.assertEqual(yahoo_availability_from_hits(hits), AVAIL_SOURCE_FREE_AGENT)
 
 
 if __name__ == "__main__":

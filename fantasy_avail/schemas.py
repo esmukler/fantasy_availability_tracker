@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, List, Optional
 
-from fantasy_avail.article_availability_summary import MentionSummary
+from fantasy_avail.article_utils import MentionSummary
 from fantasy_avail.yahoo import FANTASY_AVAIL_SOURCE_KEY
 
 

@@ -373,7 +373,7 @@ def record_team_ops_csv_refreshed(
     repo_root: Optional[Path] = None,
     today: Optional[date] = None,
 ) -> None:
-    """Mark team OPS as refreshed for today (used after a manual ``update_team_ops`` run)."""
+    """Mark team OPS as refreshed for today (used after a manual refresh via MCP)."""
     _mark_team_ops_csv_refreshed(repo_root if repo_root is not None else _REPO_ROOT, today)
 
 

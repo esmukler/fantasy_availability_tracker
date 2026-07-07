@@ -6,7 +6,7 @@ from pathlib import Path
 
 from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
 from fantasy_avail.web.cache import DiskCache
-from fantasy_avail.web.serialize import pitcher_row_to_web, result_to_web_payload
+from fantasy_avail.web.serialize import ensure_stats_highlights, pitcher_row_to_web, result_to_web_payload
 
 
 class DiskCacheTests(unittest.TestCase):
@@ -77,7 +77,31 @@ class WebSerializeTests(unittest.TestCase):
         self.assertEqual(payload["pitchers"][0]["game_time_pt"], "4:10 PM PT")
         self.assertEqual(payload["pitchers"][0]["opposing_pitcher_name"], "Spencer Strider")
         self.assertEqual(payload["pitchers"][0]["stats"]["strikeouts"], 94)
+        self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["era"], "good")
+        self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["whip"], "good")
+        self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["k_ip"], "good")
         self.assertIn("cached_at", payload)
+
+    def test_ensure_stats_highlights_backfills_cache_shape(self) -> None:
+        payload = {
+            "pitchers": [
+                {
+                    "name": "Ryan Gusto",
+                    "stats": {
+                        "wins": 0,
+                        "losses": 2,
+                        "era": "5.55",
+                        "whip": "1.60",
+                        "innings_pitched": "24.1",
+                        "strikeouts": 22,
+                    },
+                }
+            ]
+        }
+        ensure_stats_highlights(payload)
+        highlights = payload["pitchers"][0]["stats"]["highlights"]
+        self.assertEqual(highlights["era"], "warn")
+        self.assertEqual(highlights["whip"], "warn")
 
     def test_pitcher_row_to_web_minimal(self) -> None:
         row = ProbablePitcherRow(

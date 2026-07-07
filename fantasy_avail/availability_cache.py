@@ -63,7 +63,7 @@ class AvailabilityCache:
         refresh: bool = False,
     ) -> Tuple[List[Dict[str, Any]], bool]:
         """Full FA/waiver pool scan — only for list_available_players."""
-        from fantasy_avail.article_availability_summary import fetch_yahoo_available_players
+        from fantasy_avail.yahoo import fetch_yahoo_available_players
 
         lid = league_id if league_id is not None else self._config.league_id
         key = self._make_key(
