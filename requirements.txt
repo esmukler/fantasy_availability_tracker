@@ -1,0 +1,6 @@
+yahoo-fantasy-api
+yahoo-oauth
+requests
+beautifulsoup4
+mcp>=1.0,<2
+flask>=3.0,<4

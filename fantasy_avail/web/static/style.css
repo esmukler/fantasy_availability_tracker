@@ -1,0 +1,187 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --text: #1a1d23;
+  --muted: #5c6570;
+  --border: #dde1e8;
+  --accent: #1f6feb;
+  --badge-fa: #e8f5e9;
+  --badge-fa-text: #2e7d32;
+  --badge-w: #fff3e0;
+  --badge-w-text: #e65100;
+  --badge-na: #ede7f6;
+  --badge-na-text: #5e35b1;
+  --error: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1rem 0.85rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.date-range,
+.meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.refresh-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 2.5rem;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+main {
+  padding: 0.75rem 1rem 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.loading,
+.empty,
+.error {
+  text-align: center;
+  padding: 2rem 0.5rem;
+  color: var(--muted);
+}
+
+.error {
+  color: var(--error);
+}
+
+.warnings {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #6d4c00;
+}
+
+.day-section {
+  margin-bottom: 0.5rem;
+}
+
+.day-heading {
+  position: sticky;
+  top: 5.5rem;
+  z-index: 5;
+  margin: 0;
+  padding: 0.65rem 0 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: linear-gradient(var(--bg) 70%, transparent);
+}
+
+.pitcher-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.65rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.pitcher-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.badge {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+
+.badge-free_agent {
+  background: var(--badge-fa);
+  color: var(--badge-fa-text);
+}
+
+.badge-waivers {
+  background: var(--badge-w);
+  color: var(--badge-w-text);
+}
+
+.badge-na_free_agent {
+  background: var(--badge-na);
+  color: var(--badge-na-text);
+}
+
+.matchup,
+.stats {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+}
+
+.matchup {
+  color: var(--text);
+}
+
+.stats {
+  color: var(--muted);
+}
+
+@media (min-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .pitcher-card {
+    padding: 1rem 1.1rem;
+  }
+}

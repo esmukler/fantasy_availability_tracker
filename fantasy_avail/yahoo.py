@@ -1,0 +1,375 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any, Dict, Iterable, List, Optional, Sequence
+
+from fantasy_avail.name_utils import normalize_name
+
+# Internal marker on Yahoo player dicts for output (stripped from JSON).
+FANTASY_AVAIL_SOURCE_KEY = "_fantasy_avail_source"
+AVAIL_SOURCE_FREE_AGENT = "free_agent"
+AVAIL_SOURCE_WAIVERS = "waivers"
+AVAIL_SOURCE_NA_FREE_AGENT = "na_free_agent"
+
+# Yahoo's ownership endpoint returns at most ~25 players per request.
+_OWNERSHIP_BATCH_SIZE = 25
+
+
+def init_league(league_id: int, oauth_path: str, token_dir: str):
+    try:
+        from yahoo_oauth import OAuth2
+        from yahoo_fantasy_api import Game
+        from yahoo_fantasy_api.league import League
+    except Exception as e:  # pragma: no cover
+        raise RuntimeError(
+            "Missing dependencies. Install requirements first:\n"
+            "  pip install -r requirements.txt\n"
+        ) from e
+
+    sc = OAuth2(None, None, from_file=oauth_path, store_path=token_dir)
+    gm = Game(sc, "mlb")
+    game_id = gm.game_id()
+    league_key = f"{game_id}.l.{league_id}"
+    return League(sc, league_key)
+
+
+def fetch_yahoo_free_agent_pitchers(league) -> List[Dict[str, Any]]:
+    return league.free_agents("P") or []
+
+
+def fetch_yahoo_waiver_pitchers(league) -> List[Dict[str, Any]]:
+    """Pitchers on waivers (position_type P), mirroring free_agents('P') semantics."""
+    raw = league.waivers() or []
+    return [p for p in raw if (p.get("position_type") or "").strip().upper() == "P"]
+
+
+def index_available_pitchers_by_normalized_name(
+    free_agents: Iterable[Dict[str, Any]],
+    waiver_pitchers: Iterable[Dict[str, Any]],
+) -> Dict[str, List[Dict[str, Any]]]:
+    """
+    Index FA and waiver pitchers by normalize_name(name).
+    Free agents are indexed first; waiver-only names are added after.
+    Each value dict includes FANTASY_AVAIL_SOURCE_KEY for downstream (W) / JSON.
+    """
+    idx: Dict[str, List[Dict[str, Any]]] = {}
+
+    def _add(key: str, p: Dict[str, Any], source: str) -> None:
+        tagged = dict(p)
+        tagged[FANTASY_AVAIL_SOURCE_KEY] = source
+        idx.setdefault(key, []).append(tagged)
+
+    for p in free_agents:
+        name = p.get("name")
+        if not name:
+            continue
+        key = normalize_name(str(name))
+        if not key:
+            continue
+        _add(key, p, AVAIL_SOURCE_FREE_AGENT)
+
+    for p in waiver_pitchers:
+        name = p.get("name")
+        if not name:
+            continue
+        key = normalize_name(str(name))
+        if not key:
+            continue
+        if key in idx:
+            continue
+        _add(key, p, AVAIL_SOURCE_WAIVERS)
+
+    return idx
+
+
+def yahoo_display_name(details: Dict[str, Any]) -> str:
+    name = details.get("name")
+    if isinstance(name, dict):
+        return str(name.get("full") or "").strip()
+    return str(name or "").strip()
+
+
+def _eligible_positions_from_details(details: Dict[str, Any]) -> List[str]:
+    eligible = details.get("eligible_positions") or []
+    if not eligible:
+        return []
+    if isinstance(eligible[0], dict):
+        return [str(e.get("position") or "") for e in eligible if e.get("position")]
+    return [str(e) for e in eligible]
+
+
+def player_details_to_availability_row(
+    details: Dict[str, Any],
+    *,
+    source: str,
+) -> Dict[str, Any]:
+    return {
+        "player_id": int(details["player_id"]),
+        "name": yahoo_display_name(details),
+        "position_type": str(details.get("position_type") or ""),
+        "eligible_positions": _eligible_positions_from_details(details),
+        "status": str(details.get("status") or ""),
+        FANTASY_AVAIL_SOURCE_KEY: source,
+    }
+
+
+def fetch_player_ownership_batched(
+    league,
+    player_ids: Sequence[int],
+    *,
+    batch_size: int = _OWNERSHIP_BATCH_SIZE,
+) -> Dict[str, Dict[str, Any]]:
+    """Fetch Yahoo ownership for many player ids, chunking to API limits."""
+    ownership: Dict[str, Dict[str, Any]] = {}
+    if not player_ids:
+        return ownership
+
+    unique_ids = list(dict.fromkeys(int(pid) for pid in player_ids))
+    for i in range(0, len(unique_ids), batch_size):
+        chunk = unique_ids[i : i + batch_size]
+        try:
+            ownership.update(league.ownership(chunk) or {})
+        except Exception:
+            continue
+    return ownership
+
+
+def ownership_indicates_available(
+    ownership_info: Dict[str, Any],
+    *,
+    include_waivers: bool = True,
+) -> bool:
+    own_type = (ownership_info.get("ownership_type") or "").strip().lower()
+    if own_type == "freeagents":
+        return True
+    return include_waivers and own_type == "waivers"
+
+
+def _availability_source_for_ownership(
+    ownership_info: Dict[str, Any],
+    *,
+    player_status: str,
+) -> str:
+    own_type = (ownership_info.get("ownership_type") or "").strip().lower()
+    if own_type == "waivers":
+        return AVAIL_SOURCE_WAIVERS
+    if (player_status or "").strip().upper() == "NA":
+        return AVAIL_SOURCE_NA_FREE_AGENT
+    return AVAIL_SOURCE_FREE_AGENT
+
+
+@dataclass(frozen=True)
+class PlayerAvailabilityLookup:
+    query_name: str
+    normalized_name: str
+    is_available: bool
+    availability: Optional[str] = None
+    yahoo_player: Optional[Dict[str, Any]] = None
+
+
+def lookup_players_availability(
+    league,
+    names: Sequence[str],
+    *,
+    include_waivers: bool = True,
+) -> List[PlayerAvailabilityLookup]:
+    """
+    Resolve display names to availability via player_details + batched ownership.
+
+    Makes one ownership call for all resolved player IDs (no bulk FA/waiver fetch).
+    """
+    resolved: List[tuple[str, str, Dict[str, Any]]] = []
+    results: List[PlayerAvailabilityLookup] = []
+
+    for raw_name in names:
+        key = normalize_name(raw_name)
+        if not key:
+            results.append(
+                PlayerAvailabilityLookup(
+                    query_name=raw_name,
+                    normalized_name=key,
+                    is_available=False,
+                )
+            )
+            continue
+
+        details = find_player_details_for_name(league, raw_name)
+        if not details:
+            results.append(
+                PlayerAvailabilityLookup(
+                    query_name=raw_name,
+                    normalized_name=key,
+                    is_available=False,
+                )
+            )
+            continue
+
+        resolved.append((raw_name, key, details))
+
+    if not resolved:
+        return results
+
+    pids = [int(d["player_id"]) for _, _, d in resolved]
+    ownership = fetch_player_ownership_batched(league, pids)
+
+    for raw_name, key, details in resolved:
+        pid = int(details["player_id"])
+        own_info = ownership.get(str(pid), {})
+        if not ownership_indicates_available(own_info, include_waivers=include_waivers):
+            results.append(
+                PlayerAvailabilityLookup(
+                    query_name=raw_name,
+                    normalized_name=key,
+                    is_available=False,
+                )
+            )
+            continue
+
+        source = _availability_source_for_ownership(
+            own_info,
+            player_status=str(details.get("status") or ""),
+        )
+        row = player_details_to_availability_row(details, source=source)
+        results.append(
+            PlayerAvailabilityLookup(
+                query_name=raw_name,
+                normalized_name=key,
+                is_available=True,
+                availability=source,
+                yahoo_player=row,
+            )
+        )
+
+    return results
+
+
+def index_targeted_availability_by_names(
+    league,
+    names: Iterable[str],
+    *,
+    include_waivers: bool = True,
+) -> Dict[str, List[Dict[str, Any]]]:
+    """Index available players by normalized name (values are single-element lists)."""
+    idx: Dict[str, List[Dict[str, Any]]] = {}
+    for hit in lookup_players_availability(league, list(names), include_waivers=include_waivers):
+        if not hit.is_available or not hit.yahoo_player:
+            continue
+        idx[hit.normalized_name] = [hit.yahoo_player]
+        yahoo_key = normalize_name(str(hit.yahoo_player.get("name") or ""))
+        if yahoo_key and yahoo_key not in idx:
+            idx[yahoo_key] = [hit.yahoo_player]
+    return idx
+
+
+def availability_index_from_lookups(
+    lookups: Sequence[PlayerAvailabilityLookup],
+) -> Dict[str, Dict[str, Any]]:
+    """Build a normalized-name -> player dict from lookup results."""
+    idx: Dict[str, Dict[str, Any]] = {}
+    for hit in lookups:
+        if not hit.is_available or not hit.yahoo_player:
+            continue
+        idx[hit.normalized_name] = hit.yahoo_player
+        yahoo_key = normalize_name(str(hit.yahoo_player.get("name") or ""))
+        if yahoo_key and yahoo_key not in idx:
+            idx[yahoo_key] = hit.yahoo_player
+    return idx
+
+
+def find_player_details_for_name(league, query_name: str) -> Optional[Dict[str, Any]]:
+    key = normalize_name(query_name)
+    if not key:
+        return None
+    try:
+        matches = league.player_details(query_name) or []
+    except Exception:
+        return None
+    if not matches:
+        return None
+
+    exact = [m for m in matches if normalize_name(yahoo_display_name(m)) == key]
+    if len(exact) == 1:
+        return exact[0]
+
+    prefix = [
+        m
+        for m in matches
+        if normalize_name(yahoo_display_name(m)).startswith(f"{key} ")
+    ]
+    if len(prefix) == 1:
+        return prefix[0]
+
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+def lookup_league_available_player(
+    league,
+    query_name: str,
+    *,
+    fa_waiver_idx: Optional[Dict[str, Dict[str, Any]]] = None,
+    include_waivers: bool = True,
+) -> Optional[Dict[str, Any]]:
+    """
+    Resolve a display name to an unrostered league player.
+
+    Optional fa_waiver_idx is a legacy shortcut when a bulk index is already loaded.
+    """
+    key = normalize_name(query_name)
+    if not key:
+        return None
+    if fa_waiver_idx is not None:
+        hit = fa_waiver_idx.get(key)
+        if hit:
+            return hit
+
+    hits = lookup_players_availability(
+        league, [query_name], include_waivers=include_waivers
+    )
+    if not hits or not hits[0].is_available:
+        return None
+    return hits[0].yahoo_player
+
+
+def enrich_targeted_availability_lists_by_names(
+    league,
+    names: Iterable[str],
+    available_by_name: Dict[str, List[Dict[str, Any]]],
+    *,
+    include_waivers: bool = True,
+) -> None:
+    """Add targeted availability hits to a list-valued index (probable pitchers)."""
+    pending = [
+        name
+        for name in names
+        if normalize_name(name) and normalize_name(name) not in available_by_name
+    ]
+    if not pending:
+        return
+    available_by_name.update(
+        index_targeted_availability_by_names(
+            league, pending, include_waivers=include_waivers
+        )
+    )
+
+
+def enrich_available_by_name_for_names(
+    league,
+    names: Iterable[str],
+    available_by_name: Dict[str, Dict[str, Any]],
+    *,
+    include_waivers: bool = True,
+) -> None:
+    """Add available players to an index in place via targeted lookups."""
+    pending = [
+        name
+        for name in names
+        if normalize_name(name) and normalize_name(name) not in available_by_name
+    ]
+    if not pending:
+        return
+    idx = availability_index_from_lookups(
+        lookup_players_availability(league, pending, include_waivers=include_waivers)
+    )
+    available_by_name.update(idx)

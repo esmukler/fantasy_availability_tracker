@@ -1,0 +1,8 @@
+# Copy this file to fantasypros_cookie.txt (spell: fantasyPROS, not fantasyPROPS)
+# and add your cookie on a line below the comments.
+#
+# How to get it (logged in at fantasypros.com):
+#   DevTools → Network → reload probable-pitchers.php → click the document request →
+#   Request Headers → copy the full value after "cookie:" (not the label).
+#
+# Paste as ONE line below (no "Cookie:" prefix). Lines starting with # are ignored.

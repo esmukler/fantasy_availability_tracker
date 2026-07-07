@@ -33,6 +33,16 @@ def _stats_payload(stats: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     }
 
 
+def _game_time_for_tile(game_time_pt: str) -> str:
+    """Drop weekday prefix; day is shown in the section header."""
+    if game_time_pt == "TBD":
+        return game_time_pt
+    parts = game_time_pt.split(" ", 1)
+    if len(parts) == 2:
+        return parts[1]
+    return game_time_pt
+
+
 def pitcher_row_to_web(row: ProbablePitcherRow) -> Dict[str, Any]:
     return {
         "name": row.mlb_name,
@@ -40,7 +50,7 @@ def pitcher_row_to_web(row: ProbablePitcherRow) -> Dict[str, Any]:
         "pitcher_team": row.pitcher_team,
         "opponent_team": row.opponent_team,
         "home_away": row.home_away,
-        "game_time_pt": row.game_time_pt,
+        "game_time_pt": _game_time_for_tile(row.game_time_pt),
         "availability": row.availability,
         "stats": _stats_payload(row.mlb_season_stats),
         "opposing_pitcher_name": row.opposing_pitcher_name,

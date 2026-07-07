@@ -74,6 +74,7 @@ class WebSerializeTests(unittest.TestCase):
         self.assertEqual(payload["league_id"], 43384)
         self.assertEqual(payload["date_range"], "Jul 8–12")
         self.assertEqual(payload["pitchers"][0]["name"], "Chris Sale")
+        self.assertEqual(payload["pitchers"][0]["game_time_pt"], "4:10 PM PT")
         self.assertEqual(payload["pitchers"][0]["opposing_pitcher_name"], "Spencer Strider")
         self.assertEqual(payload["pitchers"][0]["stats"]["strikeouts"], 94)
         self.assertIn("cached_at", payload)
