@@ -1,0 +1,68 @@
+from __future__ import annotations
+
+import datetime as dt
+from typing import Any, Dict, List, Optional
+from zoneinfo import ZoneInfo
+
+from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
+
+
+def _format_cached_at(ts: float) -> str:
+    pacific = dt.datetime.fromtimestamp(ts, tz=ZoneInfo("America/Los_Angeles"))
+    return pacific.isoformat(timespec="seconds")
+
+
+def _format_date_range(start_date: str, days: int) -> str:
+    start = dt.date.fromisoformat(start_date)
+    end = start + dt.timedelta(days=days - 1)
+    if start.month == end.month:
+        return f"{start:%b} {start.day}–{end.day}"
+    return f"{start:%b} {start.day}–{end:%b} {end.day}"
+
+
+def _stats_payload(stats: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    if not stats:
+        return None
+    return {
+        "wins": stats.get("wins"),
+        "losses": stats.get("losses"),
+        "era": stats.get("era"),
+        "whip": stats.get("whip"),
+        "innings_pitched": stats.get("innings_pitched"),
+        "strikeouts": stats.get("strikeouts"),
+    }
+
+
+def pitcher_row_to_web(row: ProbablePitcherRow) -> Dict[str, Any]:
+    return {
+        "name": row.mlb_name,
+        "date": row.date,
+        "pitcher_team": row.pitcher_team,
+        "opponent_team": row.opponent_team,
+        "home_away": row.home_away,
+        "game_time_pt": row.game_time_pt,
+        "availability": row.availability,
+        "stats": _stats_payload(row.mlb_season_stats),
+        "opposing_pitcher_name": row.opposing_pitcher_name,
+    }
+
+
+def result_to_web_payload(
+    result: GetAvailableProbablePitchersResult,
+    *,
+    cached: bool,
+    cached_at: Optional[float] = None,
+) -> Dict[str, Any]:
+    pitchers: List[Dict[str, Any]] = [pitcher_row_to_web(row) for row in result.available]
+    payload: Dict[str, Any] = {
+        "league_id": result.league_id,
+        "start_date": result.start_date,
+        "days": result.days,
+        "date_range": _format_date_range(result.start_date, result.days),
+        "cached": cached,
+        "pitchers": pitchers,
+        "warnings": list(result.warnings),
+    }
+    if cached_at is not None:
+        payload["cached_at"] = _format_cached_at(cached_at)
+    return payload

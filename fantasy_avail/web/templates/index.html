@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Available Pitchers</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-top">
+      <h1>Available Pitchers</h1>
+      <button type="button" id="refresh-btn" class="refresh-btn">Refresh</button>
+    </div>
+    <p id="date-range" class="date-range"></p>
+    <p id="meta" class="meta"></p>
+  </header>
+
+  <main id="content">
+    <p class="loading">Loading pitchers…</p>
+  </main>
+
+  <script>
+    const contentEl = document.getElementById("content");
+    const dateRangeEl = document.getElementById("date-range");
+    const metaEl = document.getElementById("meta");
+    const refreshBtn = document.getElementById("refresh-btn");
+
+    const AVAIL_LABELS = {
+      free_agent: "FA",
+      waivers: "W",
+      na_free_agent: "NA",
+    };
+
+    function formatDateHeader(isoDate) {
+      const d = new Date(isoDate + "T12:00:00");
+      return d.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "short",
+        day: "numeric",
+      });
+    }
+
+    function formatCachedAt(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      return d.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short",
+      });
+    }
+
+    function statsLine(stats) {
+      if (!stats) return "Stats unavailable";
+      const wl = `${stats.wins ?? 0}-${stats.losses ?? 0}`;
+      return `${wl} · ${stats.era ?? "—"} ERA · ${stats.whip ?? "—"} WHIP · ${stats.innings_pitched ?? "—"} IP · ${stats.strikeouts ?? 0} K`;
+    }
+
+    function homeAwayLabel(value) {
+      return value === "away" ? "Away" : "Home";
+    }
+
+    function renderPitchers(data) {
+      dateRangeEl.textContent = data.date_range
+        ? `Next ${data.days} days: ${data.date_range}`
+        : "";
+
+      const cachedLabel = data.cached ? "Cached" : "Fresh";
+      const updated = data.cached_at ? ` · Updated ${formatCachedAt(data.cached_at)}` : "";
+      metaEl.textContent = `${cachedLabel}${updated}`;
+
+      if (data.warnings && data.warnings.length) {
+        const warn = document.createElement("div");
+        warn.className = "warnings";
+        warn.textContent = data.warnings.join(" ");
+        contentEl.innerHTML = "";
+        contentEl.appendChild(warn);
+      } else {
+        contentEl.innerHTML = "";
+      }
+
+      const pitchers = data.pitchers || [];
+      if (!pitchers.length) {
+        const empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = "No available probable starters in this window.";
+        contentEl.appendChild(empty);
+        return;
+      }
+
+      let currentDate = null;
+      let section = null;
+
+      for (const p of pitchers) {
+        if (p.date !== currentDate) {
+          currentDate = p.date;
+          section = document.createElement("section");
+          section.className = "day-section";
+
+          const heading = document.createElement("h2");
+          heading.className = "day-heading";
+          heading.textContent = formatDateHeader(p.date);
+          section.appendChild(heading);
+
+          contentEl.appendChild(section);
+        }
+
+        const card = document.createElement("article");
+        card.className = "pitcher-card";
+
+        const top = document.createElement("div");
+        top.className = "card-top";
+
+        const name = document.createElement("h3");
+        name.className = "pitcher-name";
+        name.textContent = p.name;
+
+        const badge = document.createElement("span");
+        badge.className = `badge badge-${p.availability || "free_agent"}`;
+        badge.textContent = AVAIL_LABELS[p.availability] || "FA";
+
+        top.appendChild(name);
+        top.appendChild(badge);
+
+        const matchup = document.createElement("p");
+        matchup.className = "matchup";
+        const venue = p.home_away === "away" ? "@" : "vs";
+        const opponentPitcher = p.opposing_pitcher_name ? ` (${p.opposing_pitcher_name})` : "";
+        matchup.textContent = `${p.pitcher_team} ${venue} ${p.opponent_team}${opponentPitcher} · ${p.game_time_pt} · ${homeAwayLabel(p.home_away)}`;
+
+        const stats = document.createElement("p");
+        stats.className = "stats";
+        stats.textContent = statsLine(p.stats);
+
+        card.appendChild(top);
+        card.appendChild(matchup);
+        card.appendChild(stats);
+        section.appendChild(card);
+      }
+    }
+
+    async function loadPitchers(refresh = false) {
+      refreshBtn.disabled = true;
+      const started = Date.now();
+      const timer = setInterval(() => {
+        const secs = Math.floor((Date.now() - started) / 1000);
+        const hint = secs < 10
+          ? "Loading pitchers…"
+          : secs < 60
+            ? `Loading pitchers… (${secs}s — first load can take up to 2 minutes)`
+            : `Still loading… (${secs}s — fetching Yahoo availability for probable starters)`;
+        contentEl.innerHTML = `<p class="loading">${hint}</p>`;
+      }, 1000);
+      contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+      try {
+        const url = refresh ? "/api/pitchers?refresh=1" : "/api/pitchers";
+        const resp = await fetch(url);
+        const text = await resp.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (_) {
+          throw new Error("Server returned an invalid response. Check the terminal for errors.");
+        }
+        if (!resp.ok) {
+          throw new Error(data.error || "Failed to load pitchers");
+        }
+        renderPitchers(data);
+      } catch (err) {
+        contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+      } finally {
+        clearInterval(timer);
+        refreshBtn.disabled = false;
+      }
+    }
+
+    refreshBtn.addEventListener("click", () => loadPitchers(true));
+    loadPitchers(false);
+  </script>
+</body>
+</html>
