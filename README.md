@@ -7,7 +7,7 @@ Yahoo Fantasy Baseball research tool with four feature domains:
 3. **Article analysis** — extract editorial main players from news URLs and return only those available in your league
 4. **Team OPS** — cached team offensive stats for matchup context
 
-**Human access:** web UI (`python -m fantasy_avail.web`). **Agent access:** MCP server for Cursor.
+**Human access:** web UI locally (`python -m fantasy_avail.web`) or on [GitHub Pages](https://esmukler.github.io/fantasy_availability_tracker/). **Agent access:** MCP server for Cursor.
 
 ---
 
@@ -21,7 +21,7 @@ Yahoo Fantasy Baseball research tool with four feature domains:
    pip install -r requirements.txt
    ```
 
-2. Put your Yahoo OAuth app credentials in `oauth2.json` (see [Yahoo Developer Network](https://developer.yahoo.com/)). The first Yahoo API call opens a browser to sign in and caches tokens under `.yahoo_tokens/`.
+2. Copy [`oauth2.json.example`](oauth2.json.example) to `oauth2.json` and add your Yahoo app credentials (see [Yahoo Developer Network](https://developer.yahoo.com/)). The first Yahoo API call opens a browser to sign in and caches tokens under `.yahoo_tokens/`.
 
 3. **Fantasy Pros (optional):** Copy [`fantasypros_cookie.example`](fantasypros_cookie.example) to `fantasypros_cookie.txt`, then paste your browser's `cookie` request header (one line, no `Cookie:` prefix). That file is gitignored. Set `FP_COOKIE_FILE` to override the path.
 
@@ -67,6 +67,49 @@ Responses are cached on disk for up to 1 hour (`.cache/available_pitchers.json`)
 A Fantasy Pros cookie is recommended for a fuller probable-pitchers grid.
 
 **Coming later:** article analysis, player lookup, and team-ops refresh in the web UI. Those features are available via MCP today.
+
+---
+
+## Deployment (GitHub Pages)
+
+The public site is a static frontend in [`docs/`](docs/) backed by [`docs/data/pitchers.json`](docs/data/pitchers.json). A GitHub Actions workflow refreshes that JSON every 6 hours and on demand.
+
+### Enable Pages
+
+1. Repo **Settings → Pages**
+2. Source: deploy from branch **`main`**, folder **`/docs`**
+3. Site URL: `https://esmukler.github.io/fantasy_availability_tracker/`
+
+### GitHub Secrets
+
+| Secret | Required | Purpose |
+|--------|----------|---------|
+| `YAHOO_OAUTH_JSON` | Yes | Full contents of your local `oauth2.json` after OAuth bootstrap (must include `refresh_token`) |
+| `FP_COOKIE` | Recommended | Fantasy Pros session cookie (one line, same as `fantasypros_cookie.txt`) |
+| `PAGES_REFRESH_TOKEN` | Recommended | Fine-grained PAT with `actions:write` on this repo so the **Refresh** button can trigger a workflow run. This token is written into the public `docs/js/config.js` by CI — use a repo-scoped token you are comfortable exposing; the only risk is someone spamming workflow runs.
+
+**One-time OAuth bootstrap for CI:**
+
+1. Run `python -m fantasy_avail.web` locally and complete Yahoo sign-in.
+2. Confirm `oauth2.json` contains `refresh_token`.
+3. Copy the entire file into the `YAHOO_OAUTH_JSON` secret.
+
+**Refresh button:** dispatches the [Refresh pitcher data](.github/workflows/refresh-data.yml) workflow, then polls until `pitchers.json` updates (up to ~3 minutes). Without `PAGES_REFRESH_TOKEN`, Refresh only reloads the last committed JSON.
+
+**Fantasy Pros cookie:** expires periodically. Update the `FP_COOKIE` secret when the probable-pitchers grid shrinks.
+
+### Manual workflow run
+
+Actions → **Refresh pitcher data** → **Run workflow**.
+
+### Local static preview
+
+```bash
+python -m fantasy_avail.web.export --output docs/data/pitchers.json
+python -m http.server --directory docs 8888
+```
+
+Open [http://127.0.0.1:8888](http://127.0.0.1:8888).
 
 ---
 
@@ -147,7 +190,7 @@ fantasy_avail/
     probable_pitchers.py
     article_analysis.py
     team_ops.py
-  web/                  Flask UI
+  web/                  Flask UI + static export for GitHub Pages
   mcp_server.py         FastMCP tools
   config.py             Env-based configuration
 tests/

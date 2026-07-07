@@ -1,0 +1,12 @@
+{
+  "league_id": 43384,
+  "start_date": "",
+  "days": 5,
+  "date_range": "",
+  "cached": true,
+  "pitchers": [],
+  "warnings": [
+    "No data yet. Run the Refresh Data workflow in GitHub Actions to populate this file."
+  ],
+  "cached_at": null
+}
