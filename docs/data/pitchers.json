@@ -1,85 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-08",
+  "start_date": "2026-07-09",
   "days": 5,
-  "date_range": "Jul 8\u201312",
+  "date_range": "Jul 9\u201313",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Alan Rangel",
-      "date": "2026-07-08",
-      "pitcher_team": "PHI",
-      "opponent_team": "CIN",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "3.38",
-        "whip": "1.31",
-        "innings_pitched": "16.0",
-        "strikeouts": 17,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Chase Burns",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
-      "name": "Stephen Kolek",
-      "date": "2026-07-08",
-      "pitcher_team": "KC",
-      "opponent_team": "NYM",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 3,
-        "era": "4.50",
-        "whip": "1.24",
-        "innings_pitched": "54.0",
-        "strikeouts": 34,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Christian Scott",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60645/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
-      "name": "Jose Cabrera",
-      "date": "2026-07-08",
-      "pitcher_team": "AZ",
-      "opponent_team": "SD",
-      "home_away": "away",
-      "game_time_pt": "7:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "4.73",
-        "whip": "1.58",
-        "innings_pitched": "13.1",
-        "strikeouts": 10,
-        "highlights": {
-          "era": null,
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/65383/gamelog/",
-      "opponent_highlight": "good"
-    },
     {
       "name": "Mike Paredes",
       "date": "2026-07-09",
@@ -131,31 +56,6 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Tomoyuki Sugano",
-      "date": "2026-07-09",
-      "pitcher_team": "COL",
-      "opponent_team": "SF",
-      "home_away": "away",
-      "game_time_pt": "6:45 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 8,
-        "losses": 4,
-        "era": "4.80",
-        "whip": "1.32",
-        "innings_pitched": "84.1",
-        "strikeouts": 48,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Robbie Ray",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/64895/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "David Peterson",
       "date": "2026-07-09",
       "pitcher_team": "CHC",
@@ -200,7 +100,7 @@
       "opponent_team": "HOU",
       "home_away": "home",
       "game_time_pt": "5:05 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 3,
         "losses": 1,
@@ -275,7 +175,7 @@
       "opponent_team": "COL",
       "home_away": "home",
       "game_time_pt": "7:15 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 1,
         "losses": 8,
@@ -350,7 +250,7 @@
       "opponent_team": "TOR",
       "home_away": "home",
       "game_time_pt": "5:40 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 5,
         "losses": 5,
@@ -450,7 +350,7 @@
       "opponent_team": "TEX",
       "home_away": "away",
       "game_time_pt": "11:35 AM PT",
-      "availability": "waivers",
+      "availability": "na_free_agent",
       "stats": {
         "wins": 4,
         "losses": 9,
@@ -495,5 +395,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-07T21:45:01-07:00"
+  "cached_at": "2026-07-08T01:32:11-07:00"
 }
