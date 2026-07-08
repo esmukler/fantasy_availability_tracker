@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime as dt
 from typing import Any, Dict, List, Optional, Tuple
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -34,6 +35,19 @@ from fantasy_avail.yahoo import (
     index_targeted_availability_by_names,
     yahoo_availability_from_hits,
 )
+
+PACIFIC_TZ = ZoneInfo("America/Los_Angeles")
+
+
+def default_start_date() -> dt.date:
+    """Return the default schedule start: tomorrow in US Pacific time.
+
+    "Tomorrow" is defined relative to the current calendar day in
+    ``America/Los_Angeles`` so the first day shown stays e.g. Wednesday until
+    11:59 PM Tuesday Pacific, regardless of the host machine's timezone.
+    """
+    pacific_today = dt.datetime.now(PACIFIC_TZ).date()
+    return pacific_today + dt.timedelta(days=1)
 
 
 def partition_probables_by_fa(
@@ -147,7 +161,7 @@ def get_available_probable_pitchers(
 ) -> GetAvailableProbablePitchersResult:
     cfg = config or load_config()
     lid = league_id if league_id is not None else cfg.league_id
-    start = start_date or (dt.date.today() + dt.timedelta(days=1))
+    start = start_date or default_start_date()
     season_year = season if season is not None else start.year
     warnings: List[str] = []
 

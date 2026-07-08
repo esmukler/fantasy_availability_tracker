@@ -97,7 +97,7 @@ def get_available_probable_pitchers_tool(
     """Find probable MLB starting pitchers who are FA, on waivers, or NA free agents.
 
     Args:
-        start_date: First day of schedule window YYYY-MM-DD (default tomorrow).
+        start_date: First day of schedule window YYYY-MM-DD (default tomorrow in US Pacific time).
         days: Number of days in window (default 5).
         include_waivers: Include waiver pitchers (default true).
         include_stats: Attach MLB season pitching stats (default true).

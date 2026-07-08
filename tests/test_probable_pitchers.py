@@ -2,13 +2,17 @@ from __future__ import annotations
 
 import datetime as dt
 import unittest
+from unittest import mock
+from zoneinfo import ZoneInfo
 
 from fantasy_avail.models import ProbableStart
 from fantasy_avail.schemas import ProbablePitcherRow
+from fantasy_avail.services import probable_pitchers
 from fantasy_avail.services.probable_pitchers import (
     _index_probables_by_game,
     _opposing_pitcher_name,
     _probable_row_sort_key,
+    default_start_date,
 )
 
 
@@ -103,6 +107,35 @@ class ProbableRowSortTests(unittest.TestCase):
         ]
         rows.sort(key=_probable_row_sort_key)
         self.assertEqual([r.mlb_name for r in rows], ["Low ERA", "No Stats"])
+
+
+class DefaultStartDatePacificTests(unittest.TestCase):
+    UTC = dt.timezone.utc
+
+    def _run_at(self, moment: dt.datetime) -> dt.date:
+        class _FrozenDatetime(dt.datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return moment.astimezone(tz)
+
+        with mock.patch.object(probable_pitchers.dt, "datetime", _FrozenDatetime):
+            return default_start_date()
+
+    def test_late_tuesday_pacific_still_before_midnight(self) -> None:
+        # Tue Jul 7 2026 11:30 PM PT (still Tuesday in Pacific) -> Wednesday
+        moment = dt.datetime(2026, 7, 8, 6, 30, tzinfo=self.UTC)  # 23:30 PT Tue
+        self.assertEqual(self._run_at(moment), dt.date(2026, 7, 8))
+
+    def test_after_midnight_pacific_rolls_forward(self) -> None:
+        # Wed Jul 8 2026 12:30 AM PT -> Thursday
+        moment = dt.datetime(2026, 7, 8, 7, 30, tzinfo=self.UTC)  # 00:30 PT Wed
+        self.assertEqual(self._run_at(moment), dt.date(2026, 7, 9))
+
+    def test_uses_pacific_not_host_utc(self) -> None:
+        # 06:30 UTC on Jul 8 is already Wednesday in UTC/Eastern but still
+        # Tuesday in Pacific, so tomorrow must be Wednesday (Jul 8), not Thursday.
+        moment = dt.datetime(2026, 7, 8, 6, 30, tzinfo=self.UTC)
+        self.assertEqual(self._run_at(moment).isoformat(), "2026-07-08")
 
 
 if __name__ == "__main__":
