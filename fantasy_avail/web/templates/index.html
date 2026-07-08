@@ -155,6 +155,17 @@
       appendStatPart(parentEl, `${formatKPer9(k9)} K/9`, h.k_per_9);
     }
 
+    function renderMatchup(p, parentEl) {
+      parentEl.replaceChildren();
+      parentEl.appendChild(document.createTextNode(`${p.pitcher_team} `));
+      parentEl.appendChild(document.createTextNode(p.home_away === "away" ? "@ " : "vs "));
+      appendStatPart(parentEl, p.opponent_team, p.opponent_highlight);
+      if (p.opposing_pitcher_name) {
+        parentEl.appendChild(document.createTextNode(` (${p.opposing_pitcher_name})`));
+      }
+      parentEl.appendChild(document.createTextNode(` · ${p.game_time_pt} · ${homeAwayLabel(p.home_away)}`));
+    }
+
     function homeAwayLabel(value) {
       return value === "away" ? "Away" : "Home";
     }
@@ -232,9 +243,7 @@
 
         const matchup = document.createElement("p");
         matchup.className = "matchup";
-        const venue = p.home_away === "away" ? "@" : "vs";
-        const opponentPitcher = p.opposing_pitcher_name ? ` (${p.opposing_pitcher_name})` : "";
-        matchup.textContent = `${p.pitcher_team} ${venue} ${p.opponent_team}${opponentPitcher} · ${p.game_time_pt} · ${homeAwayLabel(p.home_away)}`;
+        renderMatchup(p, matchup);
 
         const stats = document.createElement("p");
         stats.className = "stats";

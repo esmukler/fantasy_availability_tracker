@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import datetime as dt
+import time
 from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -325,7 +326,7 @@ def write_team_ops_csv(
 ) -> Path:
     """
     Fetch team hitting OPS for ``season`` (default: calendar year), sort by OPS
-    descending, write CSV with columns rank,team,ops. Overwrites ``output_path``.
+    descending, write CSV with columns rank,team,abbr,ops. Overwrites ``output_path``.
     """
     if season is None:
         season = date.today().year
@@ -333,11 +334,14 @@ def write_team_ops_csv(
     rows = fetch_team_season_ops(session, season)
     rows.sort(key=lambda x: (-x[2], x[0]))
     ranked = _competition_ranks_by_ops(rows)
+    _, team_name_to_abbr = fetch_mlb_teams_context(session)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["rank", "team", "ops"])
-        w.writerows(ranked)
+        w.writerow(["rank", "team", "abbr", "ops"])
+        for rank, team, ops_s in ranked:
+            abbr = team_name_to_abbr.get(team.lower(), "")
+            w.writerow([rank, team, abbr, ops_s])
     return path
 
 
@@ -351,17 +355,19 @@ def _team_ops_stamp_path(repo_root: Path) -> Path:
     return repo_root / _TEAM_OPS_STAMP_NAME
 
 
-def team_ops_csv_stale(repo_root: Path, today: Optional[date] = None) -> bool:
-    """True if we have not successfully refreshed team OPS CSV today (local date)."""
-    today = today or date.today()
-    stamp = _team_ops_stamp_path(repo_root)
-    if not stamp.exists():
+def team_ops_csv_stale(
+    csv_path: Path,
+    *,
+    ttl_seconds: int,
+) -> bool:
+    """True if ``csv_path`` is missing or older than ``ttl_seconds``."""
+    if not csv_path.is_file():
         return True
     try:
-        last = date.fromisoformat(stamp.read_text(encoding="utf-8").strip())
-    except (ValueError, OSError):
+        age = time.time() - csv_path.stat().st_mtime
+    except OSError:
         return True
-    return last < today
+    return age >= ttl_seconds
 
 
 def _mark_team_ops_csv_refreshed(repo_root: Path, today: Optional[date] = None) -> None:
@@ -382,14 +388,19 @@ def maybe_refresh_team_ops_csv(
     *,
     season: int,
     repo_root: Optional[Path] = None,
+    ttl_seconds: Optional[int] = None,
 ) -> bool:
     """
-    If team OPS was not refreshed yet today, fetch from Stats API and overwrite
+    If team OPS CSV is older than ``ttl_seconds``, fetch from Stats API and overwrite
     ``team_ops_{season}.csv``. Returns True when a refresh ran.
     """
+    from fantasy_avail.config import load_config
+
     root = repo_root if repo_root is not None else _REPO_ROOT
-    if not team_ops_csv_stale(root):
+    ttl = ttl_seconds if ttl_seconds is not None else load_config().web_cache_ttl_seconds
+    path = default_team_ops_csv_path(season)
+    if not team_ops_csv_stale(path, ttl_seconds=ttl):
         return False
-    write_team_ops_csv(session, default_team_ops_csv_path(season), season=season)
+    write_team_ops_csv(session, path, season=season)
     _mark_team_ops_csv_refreshed(root)
     return True

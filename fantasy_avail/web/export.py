@@ -16,7 +16,6 @@ def export_pitchers(*, output: Path) -> None:
     result = get_available_probable_pitchers(
         days=DAYS,
         include_waivers=True,
-        skip_team_ops_update=True,
     )
     payload = result_to_web_payload(result, cached=False, cached_at=time.time())
     output.parent.mkdir(parents=True, exist_ok=True)

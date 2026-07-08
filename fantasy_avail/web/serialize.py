@@ -4,6 +4,7 @@ import datetime as dt
 from typing import Any, Dict, List, Optional
 from zoneinfo import ZoneInfo
 
+from fantasy_avail.opponent_ops_highlights import ensure_opponent_highlights
 from fantasy_avail.schemas import GetAvailableProbablePitchersResult, ProbablePitcherRow
 from fantasy_avail.stat_highlights import stat_highlights_for
 from fantasy_avail.yahoo import yahoo_gamelog_url
@@ -38,11 +39,16 @@ def _stats_payload(stats: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
 
 
 def ensure_stats_highlights(payload: Dict[str, Any]) -> None:
-    """Backfill highlights for disk-cached payloads written before highlighting."""
     for pitcher in payload.get("pitchers") or []:
         stats = pitcher.get("stats")
         if stats:
             stats["highlights"] = stat_highlights_for(stats)
+
+
+def ensure_web_payload_enrichments(payload: Dict[str, Any]) -> None:
+    """Backfill derived fields for disk-cached payloads written before enrichment."""
+    ensure_stats_highlights(payload)
+    ensure_opponent_highlights(payload)
 
 
 def _game_time_for_tile(game_time_pt: str) -> str:
@@ -98,4 +104,5 @@ def result_to_web_payload(
     }
     if cached_at is not None:
         payload["cached_at"] = _format_cached_at(cached_at)
+    ensure_web_payload_enrichments(payload)
     return payload
