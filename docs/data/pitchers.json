@@ -1,102 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-08",
+  "start_date": "2026-07-09",
   "days": 5,
-  "date_range": "Jul 8\u201312",
+  "date_range": "Jul 9\u201313",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Alan Rangel",
-      "date": "2026-07-08",
-      "pitcher_team": "PHI",
-      "opponent_team": "CIN",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "3.38",
-        "whip": "1.31",
-        "innings_pitched": "16.0",
-        "strikeouts": 17,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_ip": "good"
-        }
-      },
-      "opposing_pitcher_name": "Chase Burns"
-    },
-    {
-      "name": "Stephen Kolek",
-      "date": "2026-07-08",
-      "pitcher_team": "KC",
-      "opponent_team": "NYM",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 3,
-        "era": "4.50",
-        "whip": "1.24",
-        "innings_pitched": "54.0",
-        "strikeouts": 34,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_ip": null
-        }
-      },
-      "opposing_pitcher_name": "Christian Scott"
-    },
-    {
-      "name": "Jose Cabrera",
-      "date": "2026-07-08",
-      "pitcher_team": "AZ",
-      "opponent_team": "SD",
-      "home_away": "away",
-      "game_time_pt": "7:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "4.73",
-        "whip": "1.58",
-        "innings_pitched": "13.1",
-        "strikeouts": 10,
-        "highlights": {
-          "era": null,
-          "whip": "warn",
-          "k_ip": null
-        }
-      },
-      "opposing_pitcher_name": null
-    },
-    {
-      "name": "Ryan Gusto",
-      "date": "2026-07-08",
-      "pitcher_team": "MIA",
-      "opponent_team": "SEA",
-      "home_away": "home",
-      "game_time_pt": "3:40 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 2,
-        "era": "5.55",
-        "whip": "1.60",
-        "innings_pitched": "24.1",
-        "strikeouts": 22,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_ip": null
-        }
-      },
-      "opposing_pitcher_name": "George Kirby"
-    },
     {
       "name": "Mike Paredes",
       "date": "2026-07-09",
@@ -118,7 +26,32 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Gavin Williams"
+      "opposing_pitcher_name": "Gavin Williams",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/"
+    },
+    {
+      "name": "Janson Junk",
+      "date": "2026-07-09",
+      "pitcher_team": "MIA",
+      "opponent_team": "SEA",
+      "home_away": "home",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 5,
+        "era": "4.80",
+        "whip": "1.30",
+        "innings_pitched": "60.0",
+        "strikeouts": 43,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Bryce Miller",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12263/gamelog/"
     },
     {
       "name": "Tomoyuki Sugano",
@@ -141,7 +74,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Robbie Ray"
+      "opposing_pitcher_name": "Robbie Ray",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/64895/gamelog/"
     },
     {
       "name": "David Peterson",
@@ -164,7 +98,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Trevor Rogers"
+      "opposing_pitcher_name": "Trevor Rogers",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/"
     },
     {
       "name": "Patrick Sandoval",
@@ -175,7 +110,8 @@
       "game_time_pt": "11:10 AM PT",
       "availability": "free_agent",
       "stats": null,
-      "opposing_pitcher_name": "Anthony Kay"
+      "opposing_pitcher_name": "Anthony Kay",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11478/gamelog/"
     },
     {
       "name": "Cal Quantrill",
@@ -198,7 +134,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Hunter Brown"
+      "opposing_pitcher_name": "Hunter Brown",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10573/gamelog/"
     },
     {
       "name": "Jp Sears",
@@ -221,7 +158,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Shane Bieber"
+      "opposing_pitcher_name": "Shane Bieber",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/"
     },
     {
       "name": "Zack Littell",
@@ -244,30 +182,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Ryan Weathers"
-    },
-    {
-      "name": "Matthew Liberatore",
-      "date": "2026-07-10",
-      "pitcher_team": "STL",
-      "opponent_team": "ATL",
-      "home_away": "home",
-      "game_time_pt": "5:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 6,
-        "era": "5.34",
-        "whip": "1.53",
-        "innings_pitched": "87.2",
-        "strikeouts": 82,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_ip": null
-        }
-      },
-      "opposing_pitcher_name": "Chris Sale"
+      "opposing_pitcher_name": "Ryan Weathers",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11035/gamelog/"
     },
     {
       "name": "Tyler Mahle",
@@ -290,7 +206,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Tanner Gordon"
+      "opposing_pitcher_name": "Tanner Gordon",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10455/gamelog/"
     },
     {
       "name": "Tanner Gordon",
@@ -313,7 +230,8 @@
           "k_ip": "good"
         }
       },
-      "opposing_pitcher_name": "Tyler Mahle"
+      "opposing_pitcher_name": "Tyler Mahle",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63288/gamelog/"
     },
     {
       "name": "Grayson Rodriguez",
@@ -336,7 +254,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Zebby Matthews"
+      "opposing_pitcher_name": "Zebby Matthews",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11277/gamelog/"
     },
     {
       "name": "Walker Buehler",
@@ -359,7 +278,32 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Trey Yesavage"
+      "opposing_pitcher_name": "Trey Yesavage",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10509/gamelog/"
+    },
+    {
+      "name": "Matthew Liberatore",
+      "date": "2026-07-11",
+      "pitcher_team": "STL",
+      "opponent_team": "ATL",
+      "home_away": "home",
+      "game_time_pt": "4:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 6,
+        "era": "5.34",
+        "whip": "1.53",
+        "innings_pitched": "87.2",
+        "strikeouts": 82,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_ip": null
+        }
+      },
+      "opposing_pitcher_name": "Reynaldo Lopez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/"
     },
     {
       "name": "Kyle Freeland",
@@ -382,30 +326,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Landen Roupp"
-    },
-    {
-      "name": "Brad Lord",
-      "date": "2026-07-12",
-      "pitcher_team": "WSH",
-      "opponent_team": "NYY",
-      "home_away": "home",
-      "game_time_pt": "10:35 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 2,
-        "era": "3.88",
-        "whip": "1.22",
-        "innings_pitched": "58.0",
-        "strikeouts": 52,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_ip": null
-        }
-      },
-      "opposing_pitcher_name": "Will Warren"
+      "opposing_pitcher_name": "Landen Roupp",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/"
     },
     {
       "name": "Randy Vasquez",
@@ -428,7 +350,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Kevin Gausman"
+      "opposing_pitcher_name": "Kevin Gausman",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/"
     },
     {
       "name": "Mike Burrows",
@@ -451,7 +374,8 @@
           "k_ip": null
         }
       },
-      "opposing_pitcher_name": "Jacob Degrom"
+      "opposing_pitcher_name": "Jacob Degrom",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12519/gamelog/"
     },
     {
       "name": "Kodai Senga",
@@ -464,19 +388,20 @@
       "stats": {
         "wins": 0,
         "losses": 7,
-        "era": "8.66",
-        "whip": "1.70",
-        "innings_pitched": "35.1",
-        "strikeouts": 42,
+        "era": "8.60",
+        "whip": "1.78",
+        "innings_pitched": "37.2",
+        "strikeouts": 45,
         "highlights": {
           "era": "bad",
-          "whip": "warn",
+          "whip": "bad",
           "k_ip": "good"
         }
       },
-      "opposing_pitcher_name": "Payton Tolle"
+      "opposing_pitcher_name": "Payton Tolle",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12776/gamelog/"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-07T14:57:00-07:00"
+  "cached_at": "2026-07-07T17:11:49-07:00"
 }
