@@ -9,6 +9,7 @@ from pathlib import Path
 from fantasy_avail.services.probable_pitchers import get_available_probable_pitchers
 from fantasy_avail.web.serialize import result_to_web_payload
 from fantasy_avail.web.sync_assets import sync_branding_assets
+from fantasy_avail.web.sync_static_site import sync_docs_site
 
 DAYS = 5
 
@@ -35,6 +36,7 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         sync_branding_assets()
+        sync_docs_site()
         export_pitchers(output=args.output)
     except Exception as exc:
         print(f"Export failed: {exc}", file=sys.stderr)

@@ -4,15 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Available Streamers</title>
+  {% if deploy_mode == "pages" %}
+  <link rel="icon" href="./static/baseball-streamer-logo.png" type="image/png">
+  <link rel="stylesheet" href="./static/style.css">
+  {% else %}
   <link rel="icon" href="{{ url_for('static', filename='baseball-streamer-logo.png') }}" type="image/png">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% endif %}
 </head>
 <body>
   <header class="page-header">
     <div class="header-top">
       <div class="header-brand">
         <img
+          {% if deploy_mode == "pages" %}
+          src="./static/baseball-streamer-logo.png"
+          {% else %}
           src="{{ url_for('static', filename='baseball-streamer-logo.png') }}"
+          {% endif %}
           alt=""
           class="header-logo"
           width="36"
@@ -20,7 +29,9 @@
         >
         <h1>Available Streamers</h1>
       </div>
+      {% if deploy_mode != "pages" %}
       <button type="button" id="refresh-btn" class="refresh-btn">Refresh</button>
+      {% endif %}
     </div>
     <p id="date-range" class="date-range"></p>
     <p id="meta" class="meta"></p>
@@ -31,6 +42,7 @@
   </main>
 
   <script>
+    const DEPLOY_MODE = {{ deploy_mode|tojson }};
     const contentEl = document.getElementById("content");
     const dateRangeEl = document.getElementById("date-range");
     const metaEl = document.getElementById("meta");
@@ -181,13 +193,7 @@
     }
 
     function renderPitchers(data) {
-      dateRangeEl.textContent = data.date_range
-        ? `Next ${data.days} days: ${data.date_range}`
-        : "";
-
-      const cachedLabel = data.cached ? "Cached" : "Fresh";
-      const updated = data.cached_at ? ` · Updated ${formatCachedAt(data.cached_at)}` : "";
-      metaEl.textContent = `${cachedLabel}${updated}`;
+      renderMeta(data);
 
       if (data.warnings && data.warnings.length) {
         const warn = document.createElement("div");
@@ -301,19 +307,88 @@
       }
     }
 
+    let currentData = null;
+
+    function renderMeta(data, { refreshing = false, error = "" } = {}) {
+      dateRangeEl.textContent = data.date_range
+        ? `Next ${data.days} days: ${data.date_range}`
+        : "";
+
+      if (DEPLOY_MODE === "pages") {
+        const updated = data.cached_at ? `Updated ${formatCachedAt(data.cached_at)}` : "";
+        const schedule = " · Auto-refresh every 1 hour";
+        metaEl.textContent = updated ? `${updated}${schedule}` : `No data loaded yet${schedule}`;
+        metaEl.classList.remove("is-refreshing", "is-refresh-error");
+        return;
+      }
+
+      const cachedLabel = data.cached ? "Cached" : "Fresh";
+      const updated = data.cached_at ? ` · Updated ${formatCachedAt(data.cached_at)}` : "";
+      let suffix = "";
+      if (refreshing) {
+        suffix = " · Refreshing…";
+      } else if (error) {
+        suffix = ` · Refresh failed: ${error}`;
+      }
+      metaEl.textContent = `${cachedLabel}${updated}${suffix}`;
+      metaEl.classList.toggle("is-refreshing", refreshing);
+      metaEl.classList.toggle("is-refresh-error", Boolean(error));
+    }
+
+    function pitchersUrl() {
+      const base = "./data/pitchers.json";
+      const hourBucket = Math.floor(Date.now() / 3600000);
+      return `${base}?t=${hourBucket}`;
+    }
+
+    async function fetchPitchersJson() {
+      const resp = await fetch(pitchersUrl());
+      const text = await resp.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (_) {
+        throw new Error("Could not read pitcher data.");
+      }
+      if (!resp.ok) {
+        throw new Error(data.error || "Failed to load pitchers");
+      }
+      return data;
+    }
+
     async function loadPitchers(refresh = false) {
+      if (DEPLOY_MODE === "pages") {
+        contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+        try {
+          const data = await fetchPitchersJson();
+          renderPitchers(data);
+        } catch (err) {
+          contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+        }
+        return;
+      }
+
+      const showStale = refresh && currentData !== null;
       refreshBtn.disabled = true;
-      const started = Date.now();
-      const timer = setInterval(() => {
-        const secs = Math.floor((Date.now() - started) / 1000);
-        const hint = secs < 10
-          ? "Loading pitchers…"
-          : secs < 60
-            ? `Loading pitchers… (${secs}s — first load can take up to 2 minutes)`
-            : `Still loading… (${secs}s — fetching Yahoo availability for probable starters)`;
-        contentEl.innerHTML = `<p class="loading">${hint}</p>`;
-      }, 1000);
-      contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+      refreshBtn.classList.toggle("is-refreshing", showStale);
+
+      let timer = null;
+      if (!showStale) {
+        const started = Date.now();
+        timer = setInterval(() => {
+          const secs = Math.floor((Date.now() - started) / 1000);
+          const hint = secs < 10
+            ? "Loading pitchers…"
+            : secs < 60
+              ? `Loading pitchers… (${secs}s — first load can take up to 2 minutes)`
+              : `Still loading… (${secs}s — fetching Yahoo availability for probable starters)`;
+          contentEl.innerHTML = `<p class="loading">${hint}</p>`;
+        }, 1000);
+        contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+      } else {
+        renderMeta(currentData, { refreshing: true });
+      }
+
       try {
         const url = refresh ? "/api/pitchers?refresh=1" : "/api/pitchers";
         const resp = await fetch(url);
@@ -327,17 +402,27 @@
         if (!resp.ok) {
           throw new Error(data.error || "Failed to load pitchers");
         }
+        currentData = data;
         renderPitchers(data);
       } catch (err) {
-        contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+        if (showStale) {
+          renderMeta(currentData, { error: err.message });
+        } else {
+          contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+        }
       } finally {
-        clearInterval(timer);
+        if (timer) clearInterval(timer);
         refreshBtn.disabled = false;
+        refreshBtn.classList.remove("is-refreshing");
       }
     }
 
-    refreshBtn.addEventListener("click", () => loadPitchers(true));
-    loadPitchers(false);
+    if (DEPLOY_MODE === "pages") {
+      loadPitchers();
+    } else {
+      refreshBtn.addEventListener("click", () => loadPitchers(true));
+      loadPitchers(false);
+    }
   </script>
 </body>
 </html>

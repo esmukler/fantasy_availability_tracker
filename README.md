@@ -74,6 +74,8 @@ A Fantasy Pros cookie is recommended for a fuller probable-pitchers grid.
 
 The public site is a static frontend in [`docs/`](docs/) backed by [`docs/data/pitchers.json`](docs/data/pitchers.json). A GitHub Actions workflow refreshes that JSON every 1 hour and on demand.
 
+`docs/index.html` and `docs/static/` are **generated** from `fantasy_avail/web/templates/index.html` and `fantasy_avail/web/static/` (same UI as the Flask server). Run `python -m fantasy_avail.web.sync_static_site` after UI changes, or use `python -m fantasy_avail.web.export` which syncs the site automatically.
+
 ### Enable Pages
 
 1. Repo **Settings → Pages**

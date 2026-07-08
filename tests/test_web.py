@@ -12,6 +12,12 @@ from fantasy_avail.web.serialize import (
     pitcher_row_to_web,
     result_to_web_payload,
 )
+from fantasy_avail.web.sync_static_site import (
+    DOCS_DIR,
+    DOCS_STATIC_DIR,
+    render_pages_index_html,
+    sync_docs_site,
+)
 
 
 class DiskCacheTests(unittest.TestCase):
@@ -40,6 +46,38 @@ class DiskCacheTests(unittest.TestCase):
             cache.write({"pitchers": []})
             time.sleep(1.1)
             self.assertIsNone(cache.read())
+
+
+class StaticSiteSyncTests(unittest.TestCase):
+    def test_render_pages_index_includes_collapsible_sections(self) -> None:
+        html = render_pages_index_html()
+        self.assertIn('const DEPLOY_MODE = "pages"', html)
+        self.assertIn("day-toggle", html)
+        self.assertIn("./static/style.css", html)
+        self.assertNotIn('id="refresh-btn"', html)
+
+    def test_sync_docs_site_writes_generated_assets(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            docs_dir = Path(tmp) / "docs"
+            docs_static = docs_dir / "static"
+            import fantasy_avail.web.sync_static_site as sync_module
+
+            original_docs_dir = sync_module.DOCS_DIR
+            original_docs_static = sync_module.DOCS_STATIC_DIR
+            try:
+                sync_module.DOCS_DIR = docs_dir
+                sync_module.DOCS_STATIC_DIR = docs_static
+                sync_docs_site()
+            finally:
+                sync_module.DOCS_DIR = original_docs_dir
+                sync_module.DOCS_STATIC_DIR = original_docs_static
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            style_css = (docs_static / "style.css").read_text(encoding="utf-8")
+            self.assertIn("day-toggle", index_html)
+            self.assertIn(".day-toggle", style_css)
 
 
 class WebSerializeTests(unittest.TestCase):

@@ -70,6 +70,14 @@ h1 {
   color: var(--muted);
 }
 
+.meta.is-refreshing {
+  color: var(--accent);
+}
+
+.meta.is-refresh-error {
+  color: var(--error);
+}
+
 .refresh-btn {
   border: 1px solid var(--border);
   background: var(--card);
@@ -85,6 +93,10 @@ h1 {
 .refresh-btn:disabled {
   opacity: 0.6;
   cursor: wait;
+}
+
+.refresh-btn.is-refreshing:disabled {
+  opacity: 1;
 }
 
 main {

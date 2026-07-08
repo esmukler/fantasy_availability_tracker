@@ -95,7 +95,7 @@ def create_app() -> Flask:
     @app.get("/")
     def index():
         _warm_cache_async(cache)
-        return render_template("index.html")
+        return render_template("index.html", deploy_mode="flask")
 
     @app.get("/api/pitchers")
     def api_pitchers():

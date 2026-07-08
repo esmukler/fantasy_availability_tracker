@@ -4,15 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Available Streamers</title>
+  
   <link rel="icon" href="./static/baseball-streamer-logo.png" type="image/png">
   <link rel="stylesheet" href="./static/style.css">
+  
 </head>
 <body>
   <header class="page-header">
     <div class="header-top">
       <div class="header-brand">
         <img
+          
           src="./static/baseball-streamer-logo.png"
+          
           alt=""
           class="header-logo"
           width="36"
@@ -20,6 +24,7 @@
         >
         <h1>Available Streamers</h1>
       </div>
+      
     </div>
     <p id="date-range" class="date-range"></p>
     <p id="meta" class="meta"></p>
@@ -30,9 +35,11 @@
   </main>
 
   <script>
+    const DEPLOY_MODE = "pages";
     const contentEl = document.getElementById("content");
     const dateRangeEl = document.getElementById("date-range");
     const metaEl = document.getElementById("meta");
+    const refreshBtn = document.getElementById("refresh-btn");
 
     const AVAIL_LABELS = {
       free_agent: "FA",
@@ -179,20 +186,16 @@
     }
 
     function renderPitchers(data) {
-      dateRangeEl.textContent = data.date_range
-        ? `Next ${data.days} days: ${data.date_range}`
-        : "";
+      renderMeta(data);
 
-      const updated = data.cached_at ? `Updated ${formatCachedAt(data.cached_at)}` : "";
-      const schedule = " · Auto-refresh every 1 hour";
-      metaEl.textContent = updated ? `${updated}${schedule}` : `No data loaded yet${schedule}`;
-
-      contentEl.innerHTML = "";
       if (data.warnings && data.warnings.length) {
         const warn = document.createElement("div");
         warn.className = "warnings";
         warn.textContent = data.warnings.join(" ");
+        contentEl.innerHTML = "";
         contentEl.appendChild(warn);
+      } else {
+        contentEl.innerHTML = "";
       }
 
       const pitchers = data.pitchers || [];
@@ -206,17 +209,52 @@
 
       let currentDate = null;
       let section = null;
+      let sectionBody = null;
+      let dayIndex = 0;
 
       for (const p of pitchers) {
         if (p.date !== currentDate) {
           currentDate = p.date;
+          dayIndex += 1;
+
           section = document.createElement("section");
           section.className = "day-section";
 
           const heading = document.createElement("h2");
           heading.className = "day-heading";
-          heading.textContent = formatDateHeader(p.date);
+          const toggle = document.createElement("button");
+          toggle.type = "button";
+          toggle.className = "day-toggle";
+          toggle.setAttribute("aria-expanded", "true");
+
+          const bodyId = `day-body-${dayIndex}`;
+          toggle.setAttribute("aria-controls", bodyId);
+
+          const title = document.createElement("span");
+          title.className = "day-title";
+          title.textContent = formatDateHeader(p.date);
+
+          const caret = document.createElement("span");
+          caret.className = "day-caret";
+          caret.setAttribute("aria-hidden", "true");
+
+          toggle.appendChild(title);
+          toggle.appendChild(caret);
+          heading.appendChild(toggle);
           section.appendChild(heading);
+
+          sectionBody = document.createElement("div");
+          sectionBody.id = bodyId;
+          sectionBody.className = "day-body";
+          section.appendChild(sectionBody);
+
+          const daySection = section;
+          const dayBody = sectionBody;
+          toggle.addEventListener("click", () => {
+            const isCollapsed = daySection.classList.toggle("is-collapsed");
+            toggle.setAttribute("aria-expanded", String(!isCollapsed));
+            dayBody.hidden = isCollapsed;
+          });
 
           contentEl.appendChild(section);
         }
@@ -258,8 +296,36 @@
         card.appendChild(top);
         card.appendChild(matchup);
         card.appendChild(stats);
-        section.appendChild(card);
+        sectionBody.appendChild(card);
       }
+    }
+
+    let currentData = null;
+
+    function renderMeta(data, { refreshing = false, error = "" } = {}) {
+      dateRangeEl.textContent = data.date_range
+        ? `Next ${data.days} days: ${data.date_range}`
+        : "";
+
+      if (DEPLOY_MODE === "pages") {
+        const updated = data.cached_at ? `Updated ${formatCachedAt(data.cached_at)}` : "";
+        const schedule = " · Auto-refresh every 1 hour";
+        metaEl.textContent = updated ? `${updated}${schedule}` : `No data loaded yet${schedule}`;
+        metaEl.classList.remove("is-refreshing", "is-refresh-error");
+        return;
+      }
+
+      const cachedLabel = data.cached ? "Cached" : "Fresh";
+      const updated = data.cached_at ? ` · Updated ${formatCachedAt(data.cached_at)}` : "";
+      let suffix = "";
+      if (refreshing) {
+        suffix = " · Refreshing…";
+      } else if (error) {
+        suffix = ` · Refresh failed: ${error}`;
+      }
+      metaEl.textContent = `${cachedLabel}${updated}${suffix}`;
+      metaEl.classList.toggle("is-refreshing", refreshing);
+      metaEl.classList.toggle("is-refresh-error", Boolean(error));
     }
 
     function pitchersUrl() {
@@ -268,7 +334,7 @@
       return `${base}?t=${hourBucket}`;
     }
 
-    async function fetchPitchers() {
+    async function fetchPitchersJson() {
       const resp = await fetch(pitchersUrl());
       const text = await resp.text();
       let data;
@@ -283,17 +349,73 @@
       return data;
     }
 
-    async function loadPitchers() {
-      contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+    async function loadPitchers(refresh = false) {
+      if (DEPLOY_MODE === "pages") {
+        contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+        try {
+          const data = await fetchPitchersJson();
+          renderPitchers(data);
+        } catch (err) {
+          contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+        }
+        return;
+      }
+
+      const showStale = refresh && currentData !== null;
+      refreshBtn.disabled = true;
+      refreshBtn.classList.toggle("is-refreshing", showStale);
+
+      let timer = null;
+      if (!showStale) {
+        const started = Date.now();
+        timer = setInterval(() => {
+          const secs = Math.floor((Date.now() - started) / 1000);
+          const hint = secs < 10
+            ? "Loading pitchers…"
+            : secs < 60
+              ? `Loading pitchers… (${secs}s — first load can take up to 2 minutes)`
+              : `Still loading… (${secs}s — fetching Yahoo availability for probable starters)`;
+          contentEl.innerHTML = `<p class="loading">${hint}</p>`;
+        }, 1000);
+        contentEl.innerHTML = '<p class="loading">Loading pitchers…</p>';
+      } else {
+        renderMeta(currentData, { refreshing: true });
+      }
+
       try {
-        const data = await fetchPitchers();
+        const url = refresh ? "/api/pitchers?refresh=1" : "/api/pitchers";
+        const resp = await fetch(url);
+        const text = await resp.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (_) {
+          throw new Error("Server returned an invalid response. Check the terminal for errors.");
+        }
+        if (!resp.ok) {
+          throw new Error(data.error || "Failed to load pitchers");
+        }
+        currentData = data;
         renderPitchers(data);
       } catch (err) {
-        contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+        if (showStale) {
+          renderMeta(currentData, { error: err.message });
+        } else {
+          contentEl.innerHTML = `<p class="error">${err.message}</p>`;
+        }
+      } finally {
+        if (timer) clearInterval(timer);
+        refreshBtn.disabled = false;
+        refreshBtn.classList.remove("is-refreshing");
       }
     }
 
-    loadPitchers();
+    if (DEPLOY_MODE === "pages") {
+      loadPitchers();
+    } else {
+      refreshBtn.addEventListener("click", () => loadPitchers(true));
+      loadPitchers(false);
+    }
   </script>
 </body>
 </html>
