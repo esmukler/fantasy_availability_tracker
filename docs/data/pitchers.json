@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Mike Paredes",
-      "date": "2026-07-09",
-      "pitcher_team": "MIN",
-      "opponent_team": "CLE",
-      "home_away": "home",
-      "game_time_pt": "10:40 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 2,
-        "era": "4.60",
-        "whip": "1.30",
-        "innings_pitched": "29.1",
-        "strikeouts": 15,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Gavin Williams",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "Janson Junk",
       "date": "2026-07-09",
       "pitcher_team": "MIA",
@@ -131,31 +106,6 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Tyler Mahle",
-      "date": "2026-07-10",
-      "pitcher_team": "SF",
-      "opponent_team": "COL",
-      "home_away": "home",
-      "game_time_pt": "7:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 8,
-        "era": "5.70",
-        "whip": "1.49",
-        "innings_pitched": "71.0",
-        "strikeouts": 69,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Tanner Gordon",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10455/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
       "name": "Tanner Gordon",
       "date": "2026-07-10",
       "pitcher_team": "COL",
@@ -176,7 +126,7 @@
           "k_per_9": "good"
         }
       },
-      "opposing_pitcher_name": "Tyler Mahle",
+      "opposing_pitcher_name": "Robbie Ray",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63288/gamelog/",
       "opponent_highlight": null
     },
@@ -256,6 +206,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Tyler Mahle",
+      "date": "2026-07-11",
+      "pitcher_team": "SF",
+      "opponent_team": "COL",
+      "home_away": "home",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 8,
+        "era": "5.70",
+        "whip": "1.49",
+        "innings_pitched": "71.0",
+        "strikeouts": 69,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Kyle Freeland",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10455/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
       "name": "Kyle Freeland",
       "date": "2026-07-11",
       "pitcher_team": "COL",
@@ -276,7 +251,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Landen Roupp",
+      "opposing_pitcher_name": "Tyler Mahle",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
       "opponent_highlight": null
     },
@@ -382,5 +357,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-08T14:56:50-07:00"
+  "cached_at": "2026-07-08T15:56:33-07:00"
 }
