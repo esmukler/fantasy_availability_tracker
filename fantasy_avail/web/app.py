@@ -10,6 +10,7 @@ from fantasy_avail.config import load_config
 from fantasy_avail.services.probable_pitchers import get_available_probable_pitchers
 from fantasy_avail.web.cache import DiskCache
 from fantasy_avail.web.serialize import _format_cached_at, ensure_web_payload_enrichments, result_to_web_payload
+from fantasy_avail.web.sync_assets import sync_branding_assets
 
 DAYS = 5
 _fetch_lock = threading.Lock()
@@ -111,6 +112,7 @@ def create_app() -> Flask:
 
 
 def run_server(*, host: Optional[str] = None, port: Optional[int] = None) -> None:
+    sync_branding_assets()
     cfg = load_config()
     app = create_app()
     _warm_cache_async(DiskCache())

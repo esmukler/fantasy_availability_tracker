@@ -43,6 +43,20 @@ body {
   gap: 0.75rem;
 }
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.header-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 h1 {
   margin: 0;
   font-size: 1.25rem;

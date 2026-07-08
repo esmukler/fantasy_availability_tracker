@@ -3,13 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Available Pitchers</title>
+  <title>Available Streamers</title>
+  <link rel="icon" href="{{ url_for('static', filename='baseball-streamer-logo.png') }}" type="image/png">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <header class="page-header">
     <div class="header-top">
-      <h1>Available Pitchers</h1>
+      <div class="header-brand">
+        <img
+          src="{{ url_for('static', filename='baseball-streamer-logo.png') }}"
+          alt=""
+          class="header-logo"
+          width="36"
+          height="36"
+        >
+        <h1>Available Streamers</h1>
+      </div>
       <button type="button" id="refresh-btn" class="refresh-btn">Refresh</button>
     </div>
     <p id="date-range" class="date-range"></p>
