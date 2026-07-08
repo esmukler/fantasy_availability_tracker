@@ -70,23 +70,6 @@ h1 {
   color: var(--muted);
 }
 
-.refresh-btn {
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--accent);
-  border-radius: 999px;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  min-height: 2.5rem;
-}
-
-.refresh-btn:disabled {
-  opacity: 0.6;
-  cursor: wait;
-}
-
 main {
   padding: 0.75rem 1rem 2rem;
   max-width: 640px;
