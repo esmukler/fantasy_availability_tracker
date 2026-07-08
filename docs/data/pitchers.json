@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Janson Junk",
-      "date": "2026-07-09",
-      "pitcher_team": "MIA",
-      "opponent_team": "SEA",
-      "home_away": "home",
-      "game_time_pt": "3:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 5,
-        "era": "4.80",
-        "whip": "1.30",
-        "innings_pitched": "60.0",
-        "strikeouts": 43,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Bryce Miller",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12263/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "David Peterson",
       "date": "2026-07-09",
       "pitcher_team": "CHC",
@@ -281,6 +256,31 @@
       "opponent_highlight": "good"
     },
     {
+      "name": "Trevor Mcdonald",
+      "date": "2026-07-12",
+      "pitcher_team": "SF",
+      "opponent_team": "COL",
+      "home_away": "home",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.46",
+        "whip": "1.38",
+        "innings_pitched": "59.1",
+        "strikeouts": 50,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Michael Lorenzen",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
       "name": "Mike Burrows",
       "date": "2026-07-12",
       "pitcher_team": "HOU",
@@ -357,5 +357,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-08T15:56:33-07:00"
+  "cached_at": "2026-07-08T16:59:25-07:00"
 }
