@@ -81,19 +81,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Patrick Sandoval",
-      "date": "2026-07-09",
-      "pitcher_team": "BOS",
-      "opponent_team": "CWS",
-      "home_away": "away",
-      "game_time_pt": "11:10 AM PT",
-      "availability": "free_agent",
-      "stats": null,
-      "opposing_pitcher_name": "Anthony Kay",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11478/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Cal Quantrill",
       "date": "2026-07-10",
       "pitcher_team": "TEX",
@@ -117,31 +104,6 @@
       "opposing_pitcher_name": "Hunter Brown",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10573/gamelog/",
       "opponent_highlight": null
-    },
-    {
-      "name": "Jp Sears",
-      "date": "2026-07-10",
-      "pitcher_team": "SD",
-      "opponent_team": "TOR",
-      "home_away": "home",
-      "game_time_pt": "6:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 1,
-        "era": "4.70",
-        "whip": "1.37",
-        "innings_pitched": "15.1",
-        "strikeouts": 14,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Shane Bieber",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/",
-      "opponent_highlight": "good"
     },
     {
       "name": "Zack Littell",
@@ -369,6 +331,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Hurston Waldrep",
+      "date": "2026-07-12",
+      "pitcher_team": "ATL",
+      "opponent_team": "STL",
+      "home_away": "away",
+      "game_time_pt": "11:15 AM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "8.44",
+        "whip": "2.16",
+        "innings_pitched": "10.2",
+        "strikeouts": 9,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Dustin May",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62958/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Kodai Senga",
       "date": "2026-07-12",
       "pitcher_team": "NYM",
@@ -395,5 +382,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-08T07:13:26-07:00"
+  "cached_at": "2026-07-08T10:17:04-07:00"
 }
