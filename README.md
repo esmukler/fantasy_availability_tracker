@@ -72,7 +72,7 @@ A Fantasy Pros cookie is recommended for a fuller probable-pitchers grid.
 
 ## Deployment (GitHub Pages)
 
-The public site is a static frontend in [`docs/`](docs/) backed by [`docs/data/pitchers.json`](docs/data/pitchers.json). A GitHub Actions workflow refreshes that JSON every 6 hours and on demand.
+The public site is a static frontend in [`docs/`](docs/) backed by [`docs/data/pitchers.json`](docs/data/pitchers.json). A GitHub Actions workflow refreshes that JSON every 1 hour and on demand.
 
 ### Enable Pages
 
@@ -86,7 +86,7 @@ The public site is a static frontend in [`docs/`](docs/) backed by [`docs/data/p
 |--------|----------|---------|
 | `YAHOO_OAUTH_JSON` | Yes | Full contents of your local `oauth2.json` after OAuth bootstrap (must include `refresh_token`) |
 | `FP_COOKIE` | Recommended | Fantasy Pros session cookie (one line, same as `fantasypros_cookie.txt`) |
-| `PAGES_REFRESH_TOKEN` | Recommended | Fine-grained PAT with `actions:write` on this repo so the **Refresh** button can trigger a workflow run. This token is written into the public `docs/js/config.js` by CI — use a repo-scoped token you are comfortable exposing; the only risk is someone spamming workflow runs.
+| *(none required for live refresh)* | - | The site refreshes from an hourly scheduled workflow. |
 
 **One-time OAuth bootstrap for CI:**
 
@@ -94,7 +94,7 @@ The public site is a static frontend in [`docs/`](docs/) backed by [`docs/data/p
 2. Confirm `oauth2.json` contains `refresh_token`.
 3. Copy the entire file into the `YAHOO_OAUTH_JSON` secret.
 
-**Refresh button:** dispatches the [Refresh pitcher data](.github/workflows/refresh-data.yml) workflow, then polls until `pitchers.json` updates (up to ~3 minutes). Without `PAGES_REFRESH_TOKEN`, Refresh only reloads the last committed JSON.
+The page fetches `pitchers.json` with an hour-based cache-bust, so data stays current within about an hour.
 
 **Fantasy Pros cookie:** expires periodically. Update the `FP_COOKIE` secret when the probable-pitchers grid shrinks.
 

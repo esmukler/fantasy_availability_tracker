@@ -2,5 +2,5 @@
 window.GH_PAGES_CONFIG = {
   "repo": "esmukler/fantasy_availability_tracker",
   "workflowFile": "refresh-data.yml",
-  "dispatchToken": "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"
+  "dispatchToken": ""
 };
