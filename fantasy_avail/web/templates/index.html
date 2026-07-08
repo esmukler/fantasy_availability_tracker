@@ -91,19 +91,32 @@
       return null;
     }
 
-    function kIpHighlight(strikeouts, inningsPitched) {
+    function kPer9(strikeouts, inningsPitched) {
       const ip = parseInningsPitched(inningsPitched);
-      if (ip === null) return null;
+      if (ip === null || ip <= 0) return null;
       const ks = Number(strikeouts);
       if (!Number.isFinite(ks)) return null;
-      return ks > ip ? "good" : null;
+      return (ks / ip) * 9;
+    }
+
+    function formatKPer9(value) {
+      if (value === null) return "—";
+      const rounded = Math.round(value * 10) / 10;
+      if (rounded === Math.floor(rounded)) return String(Math.floor(rounded));
+      return String(rounded);
+    }
+
+    function kPer9Highlight(strikeouts, inningsPitched) {
+      const value = kPer9(strikeouts, inningsPitched);
+      if (value === null) return null;
+      return value >= 9 ? "good" : null;
     }
 
     function statHighlights(stats) {
       return {
         era: eraHighlight(stats.era),
         whip: whipHighlight(stats.whip),
-        k_ip: kIpHighlight(stats.strikeouts, stats.innings_pitched),
+        k_per_9: kPer9Highlight(stats.strikeouts, stats.innings_pitched),
       };
     }
 
@@ -136,9 +149,10 @@
       parentEl.appendChild(document.createTextNode(" · "));
       appendStatPart(parentEl, `${stats.whip ?? "—"} WHIP`, h.whip);
       parentEl.appendChild(document.createTextNode(" · "));
-      appendStatPart(parentEl, `${stats.innings_pitched ?? "—"} IP`, h.k_ip);
+      parentEl.appendChild(document.createTextNode(`${stats.innings_pitched ?? "—"} IP`));
       parentEl.appendChild(document.createTextNode(" · "));
-      appendStatPart(parentEl, `${stats.strikeouts ?? 0} K`, h.k_ip);
+      const k9 = kPer9(stats.strikeouts, stats.innings_pitched);
+      appendStatPart(parentEl, `${formatKPer9(k9)} K/9`, h.k_per_9);
     }
 
     function homeAwayLabel(value) {

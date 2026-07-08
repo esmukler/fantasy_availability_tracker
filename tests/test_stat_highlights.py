@@ -4,7 +4,9 @@ import unittest
 
 from fantasy_avail.stat_highlights import (
     era_highlight,
-    k_ip_highlight,
+    format_k_per_9,
+    k_per_9,
+    k_per_9_highlight,
     parse_innings_pitched,
     stat_highlights_for,
     whip_highlight,
@@ -41,11 +43,22 @@ class WhipHighlightTests(unittest.TestCase):
         self.assertEqual(whip_highlight("1.71"), "bad")
 
 
-class KIpHighlightTests(unittest.TestCase):
-    def test_strikeouts_above_innings(self) -> None:
-        self.assertEqual(k_ip_highlight(95, "72.1"), "good")
-        self.assertIsNone(k_ip_highlight(72, "72.1"))
-        self.assertIsNone(k_ip_highlight(72, "72.2"))
+class KPer9Tests(unittest.TestCase):
+    def test_computation(self) -> None:
+        self.assertAlmostEqual(k_per_9(14, "18.0"), 7.0)
+        self.assertAlmostEqual(k_per_9(18, "18.0"), 9.0)
+
+    def test_format(self) -> None:
+        self.assertEqual(format_k_per_9(7.0), "7")
+        self.assertEqual(format_k_per_9(9.0), "9")
+        self.assertEqual(format_k_per_9(9.5), "9.5")
+        self.assertEqual(format_k_per_9(None), "—")
+
+    def test_highlight_threshold(self) -> None:
+        self.assertEqual(k_per_9_highlight(14, "18.0"), None)
+        self.assertEqual(k_per_9_highlight(18, "18.0"), "good")
+        self.assertEqual(k_per_9_highlight(95, "72.1"), "good")
+        self.assertIsNone(k_per_9_highlight(72, "72.1"))
 
 
 class StatHighlightsForTests(unittest.TestCase):
@@ -58,7 +71,7 @@ class StatHighlightsForTests(unittest.TestCase):
                 "strikeouts": 94,
             }
         )
-        self.assertEqual(highlights, {"era": "good", "whip": "good", "k_ip": "good"})
+        self.assertEqual(highlights, {"era": "good", "whip": "good", "k_per_9": "good"})
 
 
 if __name__ == "__main__":

@@ -59,15 +59,31 @@ def whip_highlight(whip: Any) -> StatHighlight:
     return None
 
 
-def k_ip_highlight(strikeouts: Any, innings_pitched: Any) -> StatHighlight:
+def k_per_9(strikeouts: Any, innings_pitched: Any) -> Optional[float]:
     ip = parse_innings_pitched(innings_pitched)
-    if ip is None:
+    if ip is None or ip <= 0:
         return None
     try:
         ks = int(strikeouts)
     except (TypeError, ValueError):
         return None
-    if ks > ip:
+    return (ks / ip) * 9.0
+
+
+def format_k_per_9(value: Optional[float]) -> str:
+    if value is None:
+        return "—"
+    rounded = round(value, 1)
+    if rounded == int(rounded):
+        return str(int(rounded))
+    return str(rounded)
+
+
+def k_per_9_highlight(strikeouts: Any, innings_pitched: Any) -> StatHighlight:
+    value = k_per_9(strikeouts, innings_pitched)
+    if value is None:
+        return None
+    if value >= 9:
         return "good"
     return None
 
@@ -76,5 +92,5 @@ def stat_highlights_for(stats: Dict[str, Any]) -> Dict[str, StatHighlight]:
     return {
         "era": era_highlight(stats.get("era")),
         "whip": whip_highlight(stats.get("whip")),
-        "k_ip": k_ip_highlight(stats.get("strikeouts"), stats.get("innings_pitched")),
+        "k_per_9": k_per_9_highlight(stats.get("strikeouts"), stats.get("innings_pitched")),
     }

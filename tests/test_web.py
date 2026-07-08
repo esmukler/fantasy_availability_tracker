@@ -79,7 +79,7 @@ class WebSerializeTests(unittest.TestCase):
         self.assertEqual(payload["pitchers"][0]["stats"]["strikeouts"], 94)
         self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["era"], "good")
         self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["whip"], "good")
-        self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["k_ip"], "good")
+        self.assertEqual(payload["pitchers"][0]["stats"]["highlights"]["k_per_9"], "good")
         self.assertIn("cached_at", payload)
 
     def test_ensure_stats_highlights_backfills_cache_shape(self) -> None:
