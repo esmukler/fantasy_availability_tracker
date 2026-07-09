@@ -106,6 +106,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Brayan Bello",
+      "date": "2026-07-11",
+      "pitcher_team": "BOS",
+      "opponent_team": "NYM",
+      "home_away": "away",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "na_free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 6,
+        "era": "6.34",
+        "whip": "1.67",
+        "innings_pitched": "61.0",
+        "strikeouts": 44,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Freddy Peralta",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12330/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Kyle Freeland",
       "date": "2026-07-11",
       "pitcher_team": "COL",
@@ -154,31 +179,6 @@
       "opposing_pitcher_name": "Kevin Gausman",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10402/gamelog/",
       "opponent_highlight": "good"
-    },
-    {
-      "name": "Mike Burrows",
-      "date": "2026-07-12",
-      "pitcher_team": "HOU",
-      "opponent_team": "TEX",
-      "home_away": "away",
-      "game_time_pt": "11:35 AM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 9,
-        "era": "5.99",
-        "whip": "1.55",
-        "innings_pitched": "94.2",
-        "strikeouts": 75,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Jacob Degrom",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12519/gamelog/",
-      "opponent_highlight": null
     },
     {
       "name": "Jeffrey Springs",
@@ -254,8 +254,33 @@
       "opposing_pitcher_name": "Payton Tolle",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12776/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Cristian Javier",
+      "date": "2026-07-12",
+      "pitcher_team": "HOU",
+      "opponent_team": "TEX",
+      "home_away": "away",
+      "game_time_pt": "11:35 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "10.22",
+        "whip": "2.27",
+        "innings_pitched": "12.1",
+        "strikeouts": 8,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Jacob Degrom",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11315/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-09T09:20:36-07:00"
+  "cached_at": "2026-07-09T11:45:23-07:00"
 }
