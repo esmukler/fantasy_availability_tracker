@@ -31,6 +31,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Carson Palmquist",
+      "date": "2026-07-10",
+      "pitcher_team": "WSH",
+      "opponent_team": "NYY",
+      "home_away": "home",
+      "game_time_pt": "3:45 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "7.11",
+        "whip": "1.58",
+        "innings_pitched": "6.1",
+        "strikeouts": 7,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Ryan Weathers",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60152/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
       "name": "Walker Buehler",
       "date": "2026-07-11",
       "pitcher_team": "SD",
@@ -282,5 +307,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-09T15:11:47-07:00"
+  "cached_at": "2026-07-09T16:56:58-07:00"
 }
