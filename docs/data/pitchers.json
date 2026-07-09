@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Cal Quantrill",
-      "date": "2026-07-10",
-      "pitcher_team": "TEX",
-      "opponent_team": "HOU",
-      "home_away": "home",
-      "game_time_pt": "5:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 1,
-        "era": "3.35",
-        "whip": "1.17",
-        "innings_pitched": "40.1",
-        "strikeouts": 27,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Hunter Brown",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10573/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Tanner Gordon",
       "date": "2026-07-10",
       "pitcher_team": "COL",
@@ -282,5 +257,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-09T06:41:31-07:00"
+  "cached_at": "2026-07-09T09:20:36-07:00"
 }
