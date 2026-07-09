@@ -6,28 +6,28 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "David Peterson",
+      "name": "Jose Suarez",
       "date": "2026-07-09",
-      "pitcher_team": "CHC",
-      "opponent_team": "BAL",
+      "pitcher_team": "ATH",
+      "opponent_team": "DET",
       "home_away": "away",
-      "game_time_pt": "10:35 AM PT",
+      "game_time_pt": "3:40 PM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 4,
-        "losses": 7,
-        "era": "6.75",
-        "whip": "1.67",
-        "innings_pitched": "77.1",
-        "strikeouts": 68,
+        "wins": 1,
+        "losses": 2,
+        "era": "4.56",
+        "whip": "1.56",
+        "innings_pitched": "47.1",
+        "strikeouts": 52,
         "highlights": {
-          "era": "bad",
+          "era": null,
           "whip": "warn",
-          "k_per_9": null
+          "k_per_9": "good"
         }
       },
-      "opposing_pitcher_name": "Trevor Rogers",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/",
+      "opposing_pitcher_name": "Framber Valdez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11211/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -54,31 +54,6 @@
       "opposing_pitcher_name": "Hunter Brown",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10573/gamelog/",
       "opponent_highlight": null
-    },
-    {
-      "name": "Zack Littell",
-      "date": "2026-07-10",
-      "pitcher_team": "WSH",
-      "opponent_team": "NYY",
-      "home_away": "home",
-      "game_time_pt": "3:45 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 7,
-        "losses": 6,
-        "era": "5.02",
-        "whip": "1.31",
-        "innings_pitched": "86.0",
-        "strikeouts": 52,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Ryan Weathers",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11035/gamelog/",
-      "opponent_highlight": "warn"
     },
     {
       "name": "Tanner Gordon",
@@ -306,6 +281,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Jeffrey Springs",
+      "date": "2026-07-12",
+      "pitcher_team": "ATH",
+      "opponent_team": "CWS",
+      "home_away": "away",
+      "game_time_pt": "11:10 AM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 9,
+        "era": "6.08",
+        "whip": "1.42",
+        "innings_pitched": "97.2",
+        "strikeouts": 84,
+        "highlights": {
+          "era": "bad",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Noah Schultz",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Hurston Waldrep",
       "date": "2026-07-12",
       "pitcher_team": "ATL",
@@ -357,5 +357,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-08T19:44:07-07:00"
+  "cached_at": "2026-07-08T23:31:57-07:00"
 }
