@@ -1,35 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-09",
+  "start_date": "2026-07-10",
   "days": 5,
-  "date_range": "Jul 9\u201313",
+  "date_range": "Jul 10\u201314",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Jose Suarez",
-      "date": "2026-07-09",
-      "pitcher_team": "ATH",
-      "opponent_team": "DET",
-      "home_away": "away",
-      "game_time_pt": "3:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 2,
-        "era": "4.56",
-        "whip": "1.56",
-        "innings_pitched": "47.1",
-        "strikeouts": 52,
-        "highlights": {
-          "era": null,
-          "whip": "warn",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Framber Valdez",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11211/gamelog/",
-      "opponent_highlight": null
-    },
     {
       "name": "Cal Quantrill",
       "date": "2026-07-10",
@@ -206,54 +181,29 @@
       "opponent_highlight": null
     },
     {
-      "name": "Randy Vasquez",
+      "name": "German Marquez",
       "date": "2026-07-12",
       "pitcher_team": "SD",
       "opponent_team": "TOR",
       "home_away": "home",
       "game_time_pt": "1:10 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
-        "wins": 6,
-        "losses": 6,
-        "era": "4.71",
-        "whip": "1.50",
-        "innings_pitched": "84.0",
-        "strikeouts": 60,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Kevin Gausman",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
-      "name": "Trevor Mcdonald",
-      "date": "2026-07-12",
-      "pitcher_team": "SF",
-      "opponent_team": "COL",
-      "home_away": "home",
-      "game_time_pt": "1:05 PM PT",
-      "availability": "waivers",
-      "stats": {
-        "wins": 3,
-        "losses": 7,
-        "era": "5.46",
-        "whip": "1.38",
-        "innings_pitched": "59.1",
-        "strikeouts": 50,
+        "wins": 4,
+        "losses": 2,
+        "era": "5.02",
+        "whip": "1.43",
+        "innings_pitched": "37.2",
+        "strikeouts": 24,
         "highlights": {
           "era": "warn",
           "whip": null,
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Michael Lorenzen",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
-      "opponent_highlight": "bad"
+      "opposing_pitcher_name": "Kevin Gausman",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10402/gamelog/",
+      "opponent_highlight": "good"
     },
     {
       "name": "Mike Burrows",
@@ -357,5 +307,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-08T23:31:57-07:00"
+  "cached_at": "2026-07-09T03:17:02-07:00"
 }
