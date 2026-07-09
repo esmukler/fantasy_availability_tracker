@@ -11,7 +11,7 @@
       "pitcher_team": "CHC",
       "opponent_team": "BAL",
       "home_away": "away",
-      "game_time_pt": "3:35 PM PT",
+      "game_time_pt": "10:35 AM PT",
       "availability": "free_agent",
       "stats": {
         "wins": 4,
@@ -357,5 +357,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-08T16:59:25-07:00"
+  "cached_at": "2026-07-08T19:44:07-07:00"
 }
