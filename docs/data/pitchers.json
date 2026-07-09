@@ -56,31 +56,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Grayson Rodriguez",
-      "date": "2026-07-10",
-      "pitcher_team": "LAA",
-      "opponent_team": "MIN",
-      "home_away": "away",
-      "game_time_pt": "5:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 2,
-        "era": "8.06",
-        "whip": "1.83",
-        "innings_pitched": "25.2",
-        "strikeouts": 24,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Zebby Matthews",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11277/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Walker Buehler",
       "date": "2026-07-11",
       "pitcher_team": "SD",
@@ -307,5 +282,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-09T03:17:02-07:00"
+  "cached_at": "2026-07-09T06:41:31-07:00"
 }
