@@ -1,35 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-10",
+  "start_date": "2026-07-11",
   "days": 5,
-  "date_range": "Jul 10\u201314",
+  "date_range": "Jul 11\u201315",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Carson Palmquist",
-      "date": "2026-07-10",
-      "pitcher_team": "WSH",
-      "opponent_team": "NYY",
-      "home_away": "home",
-      "game_time_pt": "3:45 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "7.11",
-        "whip": "1.58",
-        "innings_pitched": "6.1",
-        "strikeouts": 7,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Ryan Weathers",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60152/gamelog/",
-      "opponent_highlight": "warn"
-    },
     {
       "name": "Walker Buehler",
       "date": "2026-07-11",
@@ -187,7 +162,7 @@
       "opponent_team": "CWS",
       "home_away": "away",
       "game_time_pt": "11:10 AM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 3,
         "losses": 9,
@@ -212,7 +187,7 @@
       "opponent_team": "STL",
       "home_away": "away",
       "game_time_pt": "11:15 AM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 0,
         "losses": 1,
@@ -282,5 +257,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-09T22:50:14-07:00"
+  "cached_at": "2026-07-10T01:56:23-07:00"
 }
