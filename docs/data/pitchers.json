@@ -181,29 +181,29 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Jeffrey Springs",
+      "name": "Trevor Mcdonald",
       "date": "2026-07-12",
-      "pitcher_team": "ATH",
-      "opponent_team": "CWS",
-      "home_away": "away",
-      "game_time_pt": "11:10 AM PT",
+      "pitcher_team": "SF",
+      "opponent_team": "COL",
+      "home_away": "home",
+      "game_time_pt": "1:05 PM PT",
       "availability": "free_agent",
       "stats": {
         "wins": 3,
-        "losses": 9,
-        "era": "6.08",
-        "whip": "1.42",
-        "innings_pitched": "97.2",
-        "strikeouts": 84,
+        "losses": 7,
+        "era": "5.46",
+        "whip": "1.38",
+        "innings_pitched": "59.1",
+        "strikeouts": 50,
         "highlights": {
-          "era": "bad",
+          "era": "warn",
           "whip": null,
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Noah Schultz",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
-      "opponent_highlight": null
+      "opposing_pitcher_name": "Michael Lorenzen",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
+      "opponent_highlight": "bad"
     },
     {
       "name": "Kodai Senga",
@@ -257,5 +257,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-10T09:12:52-07:00"
+  "cached_at": "2026-07-10T11:15:29-07:00"
 }
