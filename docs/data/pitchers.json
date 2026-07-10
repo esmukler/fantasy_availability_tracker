@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Tanner Gordon",
-      "date": "2026-07-10",
-      "pitcher_team": "COL",
-      "opponent_team": "SF",
-      "home_away": "away",
-      "game_time_pt": "7:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 2,
-        "era": "6.95",
-        "whip": "1.59",
-        "innings_pitched": "45.1",
-        "strikeouts": 46,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Robbie Ray",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63288/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Carson Palmquist",
       "date": "2026-07-10",
       "pitcher_team": "WSH",
@@ -307,5 +282,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-09T18:53:16-07:00"
+  "cached_at": "2026-07-09T22:50:14-07:00"
 }
