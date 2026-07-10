@@ -131,6 +131,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Jr Ritchie",
+      "date": "2026-07-12",
+      "pitcher_team": "ATL",
+      "opponent_team": "STL",
+      "home_away": "away",
+      "game_time_pt": "11:15 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 2,
+        "era": "4.60",
+        "whip": "1.47",
+        "innings_pitched": "45.0",
+        "strikeouts": 42,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Dustin May",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60071/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "German Marquez",
       "date": "2026-07-12",
       "pitcher_team": "SD",
@@ -178,31 +203,6 @@
       },
       "opposing_pitcher_name": "Noah Schultz",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Hurston Waldrep",
-      "date": "2026-07-12",
-      "pitcher_team": "ATL",
-      "opponent_team": "STL",
-      "home_away": "away",
-      "game_time_pt": "11:15 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "8.44",
-        "whip": "2.16",
-        "innings_pitched": "10.2",
-        "strikeouts": 9,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Dustin May",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62958/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -257,5 +257,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-10T06:51:18-07:00"
+  "cached_at": "2026-07-10T09:12:52-07:00"
 }
