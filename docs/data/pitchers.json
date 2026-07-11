@@ -1,110 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-11",
+  "start_date": "2026-07-12",
   "days": 5,
-  "date_range": "Jul 11\u201315",
+  "date_range": "Jul 12\u201316",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Matthew Liberatore",
-      "date": "2026-07-11",
-      "pitcher_team": "STL",
-      "opponent_team": "ATL",
-      "home_away": "home",
-      "game_time_pt": "4:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 6,
-        "era": "5.34",
-        "whip": "1.53",
-        "innings_pitched": "87.2",
-        "strikeouts": 82,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Reynaldo Lopez",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Tyler Mahle",
-      "date": "2026-07-11",
-      "pitcher_team": "SF",
-      "opponent_team": "COL",
-      "home_away": "home",
-      "game_time_pt": "1:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 8,
-        "era": "5.70",
-        "whip": "1.49",
-        "innings_pitched": "71.0",
-        "strikeouts": 69,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Kyle Freeland",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10455/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
-      "name": "Brayan Bello",
-      "date": "2026-07-11",
-      "pitcher_team": "BOS",
-      "opponent_team": "NYM",
-      "home_away": "away",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 6,
-        "era": "6.34",
-        "whip": "1.67",
-        "innings_pitched": "61.0",
-        "strikeouts": 44,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Freddy Peralta",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12330/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
-      "name": "Kyle Freeland",
-      "date": "2026-07-11",
-      "pitcher_team": "COL",
-      "opponent_team": "SF",
-      "home_away": "away",
-      "game_time_pt": "1:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 7,
-        "era": "7.46",
-        "whip": "1.61",
-        "innings_pitched": "82.0",
-        "strikeouts": 70,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Tyler Mahle",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
-      "opponent_highlight": null
-    },
     {
       "name": "Jr Ritchie",
       "date": "2026-07-12",
@@ -257,5 +157,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-10T21:51:08-07:00"
+  "cached_at": "2026-07-11T00:03:45-07:00"
 }
