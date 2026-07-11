@@ -6,6 +6,31 @@
   "cached": false,
   "pitchers": [
     {
+      "name": "Mitch Bratt",
+      "date": "2026-07-12",
+      "pitcher_team": "AZ",
+      "opponent_team": "LAD",
+      "home_away": "away",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "3.00",
+        "whip": "1.33",
+        "innings_pitched": "3.0",
+        "strikeouts": 3,
+        "highlights": {
+          "era": "good",
+          "whip": null,
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
       "name": "Noah Schultz",
       "date": "2026-07-12",
       "pitcher_team": "CWS",
@@ -82,5 +107,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-11T15:34:53-07:00"
+  "cached_at": "2026-07-11T16:40:45-07:00"
 }
