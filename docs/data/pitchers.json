@@ -6,56 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Jr Ritchie",
-      "date": "2026-07-12",
-      "pitcher_team": "ATL",
-      "opponent_team": "STL",
-      "home_away": "away",
-      "game_time_pt": "11:15 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 2,
-        "era": "4.60",
-        "whip": "1.47",
-        "innings_pitched": "45.0",
-        "strikeouts": 42,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Dustin May",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60071/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "German Marquez",
-      "date": "2026-07-12",
-      "pitcher_team": "SD",
-      "opponent_team": "TOR",
-      "home_away": "home",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 2,
-        "era": "5.02",
-        "whip": "1.43",
-        "innings_pitched": "37.2",
-        "strikeouts": 24,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Kevin Gausman",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10402/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "Trevor Mcdonald",
       "date": "2026-07-12",
       "pitcher_team": "SF",
@@ -157,5 +107,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-11T04:41:36-07:00"
+  "cached_at": "2026-07-11T05:46:14-07:00"
 }
