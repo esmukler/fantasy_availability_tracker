@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Walker Buehler",
-      "date": "2026-07-11",
-      "pitcher_team": "SD",
-      "opponent_team": "TOR",
-      "home_away": "home",
-      "game_time_pt": "5:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 5,
-        "era": "5.07",
-        "whip": "1.39",
-        "innings_pitched": "87.0",
-        "strikeouts": 80,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Trey Yesavage",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10509/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "Matthew Liberatore",
       "date": "2026-07-11",
       "pitcher_team": "STL",
@@ -206,6 +181,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Noah Schultz",
+      "date": "2026-07-12",
+      "pitcher_team": "CWS",
+      "opponent_team": "ATH",
+      "home_away": "home",
+      "game_time_pt": "11:10 AM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 2,
+        "losses": 6,
+        "era": "6.00",
+        "whip": "1.42",
+        "innings_pitched": "48.0",
+        "strikeouts": 43,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Jt Ginn",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
       "name": "Kodai Senga",
       "date": "2026-07-12",
       "pitcher_team": "NYM",
@@ -216,10 +216,10 @@
       "stats": {
         "wins": 0,
         "losses": 7,
-        "era": "8.92",
-        "whip": "1.80",
-        "innings_pitched": "38.1",
-        "strikeouts": 46,
+        "era": "8.69",
+        "whip": "1.75",
+        "innings_pitched": "39.1",
+        "strikeouts": 47,
         "highlights": {
           "era": "bad",
           "whip": "bad",
@@ -257,5 +257,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-10T18:20:10-07:00"
+  "cached_at": "2026-07-10T21:51:08-07:00"
 }
