@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Mitch Bratt",
-      "date": "2026-07-12",
-      "pitcher_team": "AZ",
-      "opponent_team": "LAD",
-      "home_away": "away",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "3.00",
-        "whip": "1.33",
-        "innings_pitched": "3.0",
-        "strikeouts": 3,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
       "name": "Noah Schultz",
       "date": "2026-07-12",
       "pitcher_team": "CWS",
@@ -56,31 +31,6 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Kodai Senga",
-      "date": "2026-07-12",
-      "pitcher_team": "NYM",
-      "opponent_team": "BOS",
-      "home_away": "home",
-      "game_time_pt": "10:40 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 7,
-        "era": "8.69",
-        "whip": "1.75",
-        "innings_pitched": "39.1",
-        "strikeouts": 47,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Payton Tolle",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12776/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Cristian Javier",
       "date": "2026-07-12",
       "pitcher_team": "HOU",
@@ -101,11 +51,11 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Jacob Degrom",
+      "opposing_pitcher_name": "Mackenzie Gore",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11315/gamelog/",
       "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-11T18:21:46-07:00"
+  "cached_at": "2026-07-11T22:13:13-07:00"
 }
