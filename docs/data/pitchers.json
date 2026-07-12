@@ -1,61 +1,61 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-12",
+  "start_date": "2026-07-13",
   "days": 5,
-  "date_range": "Jul 12\u201316",
+  "date_range": "Jul 13\u201317",
   "cached": false,
   "pitchers": [
     {
-      "name": "Noah Schultz",
-      "date": "2026-07-12",
-      "pitcher_team": "CWS",
-      "opponent_team": "ATH",
+      "name": "Jeffrey Springs",
+      "date": "2026-07-17",
+      "pitcher_team": "ATH",
+      "opponent_team": "WSH",
       "home_away": "home",
-      "game_time_pt": "11:10 AM PT",
-      "availability": "waivers",
+      "game_time_pt": "6:40 PM PT",
+      "availability": "free_agent",
       "stats": {
-        "wins": 2,
-        "losses": 6,
-        "era": "6.00",
+        "wins": 3,
+        "losses": 9,
+        "era": "6.08",
         "whip": "1.42",
-        "innings_pitched": "48.0",
-        "strikeouts": 43,
+        "innings_pitched": "97.2",
+        "strikeouts": 84,
         "highlights": {
-          "era": "warn",
+          "era": "bad",
           "whip": null,
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Jt Ginn",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
-      "opponent_highlight": "warn"
+      "opposing_pitcher_name": "Foster Griffin",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
+      "opponent_highlight": "bad"
     },
     {
-      "name": "Cristian Javier",
-      "date": "2026-07-12",
-      "pitcher_team": "HOU",
-      "opponent_team": "TEX",
-      "home_away": "away",
-      "game_time_pt": "11:35 AM PT",
+      "name": "Kyle Freeland",
+      "date": "2026-07-17",
+      "pitcher_team": "COL",
+      "opponent_team": "CIN",
+      "home_away": "home",
+      "game_time_pt": "5:40 PM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "10.22",
-        "whip": "2.27",
-        "innings_pitched": "12.1",
-        "strikeouts": 8,
+        "wins": 2,
+        "losses": 8,
+        "era": "7.36",
+        "whip": "1.57",
+        "innings_pitched": "88.0",
+        "strikeouts": 79,
         "highlights": {
           "era": "bad",
-          "whip": "bad",
+          "whip": "warn",
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Mackenzie Gore",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11315/gamelog/",
-      "opponent_highlight": null
+      "opposing_pitcher_name": "Hunter Greene",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
+      "opponent_highlight": "good"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-11T22:13:13-07:00"
+  "cached_at": "2026-07-12T00:54:03-07:00"
 }
