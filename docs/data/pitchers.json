@@ -51,9 +51,59 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Hunter Greene",
+      "opposing_pitcher_name": "Brady Singer",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
       "opponent_highlight": "good"
+    },
+    {
+      "name": "Patrick Sandoval",
+      "date": "2026-07-18",
+      "pitcher_team": "BOS",
+      "opponent_team": "TB",
+      "home_away": "home",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "2.08",
+        "whip": "1.38",
+        "innings_pitched": "4.1",
+        "strikeouts": 5,
+        "highlights": {
+          "era": "good",
+          "whip": null,
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Shane Mcclanahan",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11478/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Sean Manaea",
+      "date": "2026-07-18",
+      "pitcher_team": "NYM",
+      "opponent_team": "PHI",
+      "home_away": "away",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 4,
+        "era": "4.56",
+        "whip": "1.32",
+        "innings_pitched": "75.0",
+        "strikeouts": 74,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Zack Wheeler",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9582/gamelog/",
+      "opponent_highlight": null
     },
     {
       "name": "Randy Vasquez",
@@ -79,6 +129,31 @@
       "opposing_pitcher_name": "Seth Lugo",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Rhett Lowder",
+      "date": "2026-07-18",
+      "pitcher_team": "CIN",
+      "opponent_team": "COL",
+      "home_away": "away",
+      "game_time_pt": "12:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 6,
+        "era": "4.91",
+        "whip": "1.54",
+        "innings_pitched": "69.2",
+        "strikeouts": 59,
+        "highlights": {
+          "era": null,
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Ryan Feltner",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
+      "opponent_highlight": "bad"
     },
     {
       "name": "Matthew Liberatore",
@@ -107,5 +182,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-13T01:41:46-07:00"
+  "cached_at": "2026-07-13T04:48:19-07:00"
 }
