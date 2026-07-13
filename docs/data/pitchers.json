@@ -1,8 +1,8 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-13",
+  "start_date": "2026-07-14",
   "days": 5,
-  "date_range": "Jul 13\u201317",
+  "date_range": "Jul 14\u201318",
   "cached": false,
   "pitchers": [
     {
@@ -54,8 +54,58 @@
       "opposing_pitcher_name": "Hunter Greene",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
       "opponent_highlight": "good"
+    },
+    {
+      "name": "Randy Vasquez",
+      "date": "2026-07-18",
+      "pitcher_team": "SD",
+      "opponent_team": "KC",
+      "home_away": "away",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 6,
+        "losses": 6,
+        "era": "4.71",
+        "whip": "1.50",
+        "innings_pitched": "84.0",
+        "strikeouts": 60,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Seth Lugo",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Matthew Liberatore",
+      "date": "2026-07-18",
+      "pitcher_team": "STL",
+      "opponent_team": "ARI",
+      "home_away": "away",
+      "game_time_pt": "TBD",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 5,
+        "losses": 6,
+        "era": "5.00",
+        "whip": "1.48",
+        "innings_pitched": "93.2",
+        "strikeouts": 88,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-12T22:21:49-07:00"
+  "cached_at": "2026-07-13T01:41:46-07:00"
 }
