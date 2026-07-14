@@ -1,8 +1,8 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-14",
+  "start_date": "2026-07-15",
   "days": 5,
-  "date_range": "Jul 14\u201318",
+  "date_range": "Jul 15\u201319",
   "cached": false,
   "pitchers": [
     {
@@ -179,8 +179,58 @@
       "opposing_pitcher_name": null,
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Jameson Taillon",
+      "date": "2026-07-19",
+      "pitcher_team": "CHC",
+      "opponent_team": "MIN",
+      "home_away": "home",
+      "game_time_pt": "11:20 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 5,
+        "era": "5.19",
+        "whip": "1.30",
+        "innings_pitched": "67.2",
+        "strikeouts": 59,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Joe Ryan",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9123/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
+      "name": "Walker Buehler",
+      "date": "2026-07-19",
+      "pitcher_team": "SD",
+      "opponent_team": "KC",
+      "home_away": "away",
+      "game_time_pt": "11:10 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 5,
+        "losses": 5,
+        "era": "5.36",
+        "whip": "1.44",
+        "innings_pitched": "89.0",
+        "strikeouts": 81,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Noah Cameron",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10509/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-13T21:37:54-07:00"
+  "cached_at": "2026-07-14T00:01:34-07:00"
 }
