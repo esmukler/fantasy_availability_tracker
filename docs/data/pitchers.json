@@ -1,8 +1,8 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-15",
+  "start_date": "2026-07-16",
   "days": 5,
-  "date_range": "Jul 15\u201319",
+  "date_range": "Jul 16\u201320",
   "cached": false,
   "pitchers": [
     {
@@ -232,5 +232,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-14T21:37:48-07:00"
+  "cached_at": "2026-07-15T00:05:32-07:00"
 }
