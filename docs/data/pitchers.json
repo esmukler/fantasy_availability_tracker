@@ -151,7 +151,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Zack Wheeler",
+      "opposing_pitcher_name": "Jesus Luzardo",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9582/gamelog/",
       "opponent_highlight": null
     },
@@ -206,31 +206,31 @@
       "opponent_highlight": null
     },
     {
-      "name": "Jameson Taillon",
+      "name": "Alan Rangel",
       "date": "2026-07-19",
-      "pitcher_team": "CHC",
-      "opponent_team": "MIN",
+      "pitcher_team": "PHI",
+      "opponent_team": "NYM",
       "home_away": "home",
-      "game_time_pt": "11:20 AM PT",
+      "game_time_pt": "10:35 AM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 2,
-        "losses": 5,
-        "era": "5.19",
-        "whip": "1.30",
-        "innings_pitched": "67.2",
-        "strikeouts": 59,
+        "wins": 0,
+        "losses": 2,
+        "era": "4.19",
+        "whip": "1.40",
+        "innings_pitched": "19.1",
+        "strikeouts": 22,
         "highlights": {
-          "era": "warn",
+          "era": null,
           "whip": null,
-          "k_per_9": null
+          "k_per_9": "good"
         }
       },
-      "opposing_pitcher_name": "Joe Ryan",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9123/gamelog/",
-      "opponent_highlight": "warn"
+      "opposing_pitcher_name": "Nolan Mclean",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
+      "opponent_highlight": "good"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-15T14:00:25-07:00"
+  "cached_at": "2026-07-15T15:01:08-07:00"
 }
