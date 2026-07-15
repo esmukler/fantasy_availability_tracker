@@ -6,6 +6,31 @@
   "cached": false,
   "pitchers": [
     {
+      "name": "Spencer Miles",
+      "date": "2026-07-17",
+      "pitcher_team": "TOR",
+      "opponent_team": "CWS",
+      "home_away": "home",
+      "game_time_pt": "4:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 1,
+        "era": "2.85",
+        "whip": "1.10",
+        "innings_pitched": "60.0",
+        "strikeouts": 57,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Anthony Kay",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/65029/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Jeffrey Springs",
       "date": "2026-07-17",
       "pitcher_team": "ATH",
@@ -81,6 +106,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Owen Murphy",
+      "date": "2026-07-18",
+      "pitcher_team": "ATL",
+      "opponent_team": "TEX",
+      "home_away": "home",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "2.25",
+        "whip": "0.25",
+        "innings_pitched": "4.0",
+        "strikeouts": 4,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Mackenzie Gore",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60070/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Sean Manaea",
       "date": "2026-07-18",
       "pitcher_team": "NYM",
@@ -103,31 +153,6 @@
       },
       "opposing_pitcher_name": "Zack Wheeler",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9582/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Randy Vasquez",
-      "date": "2026-07-18",
-      "pitcher_team": "SD",
-      "opponent_team": "KC",
-      "home_away": "away",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 6,
-        "era": "4.71",
-        "whip": "1.50",
-        "innings_pitched": "84.0",
-        "strikeouts": 60,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Seth Lugo",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -204,33 +229,8 @@
       "opposing_pitcher_name": "Joe Ryan",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9123/gamelog/",
       "opponent_highlight": "warn"
-    },
-    {
-      "name": "Walker Buehler",
-      "date": "2026-07-19",
-      "pitcher_team": "SD",
-      "opponent_team": "KC",
-      "home_away": "away",
-      "game_time_pt": "11:10 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 5,
-        "era": "5.36",
-        "whip": "1.44",
-        "innings_pitched": "89.0",
-        "strikeouts": 81,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Noah Cameron",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10509/gamelog/",
-      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-15T10:02:51-07:00"
+  "cached_at": "2026-07-15T11:51:16-07:00"
 }
