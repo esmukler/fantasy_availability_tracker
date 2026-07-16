@@ -206,6 +206,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Griffin Canning",
+      "date": "2026-07-18",
+      "pitcher_team": "SD",
+      "opponent_team": "KC",
+      "home_away": "away",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 1,
+        "losses": 7,
+        "era": "6.47",
+        "whip": "1.60",
+        "innings_pitched": "55.2",
+        "strikeouts": 55,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Alan Rangel",
       "date": "2026-07-19",
       "pitcher_team": "PHI",
@@ -257,5 +282,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T06:12:20-07:00"
+  "cached_at": "2026-07-16T08:24:52-07:00"
 }
