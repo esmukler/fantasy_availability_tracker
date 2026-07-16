@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Spencer Miles",
-      "date": "2026-07-17",
-      "pitcher_team": "TOR",
-      "opponent_team": "CWS",
-      "home_away": "home",
-      "game_time_pt": "4:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 1,
-        "era": "2.85",
-        "whip": "1.10",
-        "innings_pitched": "60.0",
-        "strikeouts": 57,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Anthony Kay",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/65029/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Jeffrey Springs",
       "date": "2026-07-17",
       "pitcher_team": "ATH",
@@ -103,31 +78,6 @@
       },
       "opposing_pitcher_name": "Shane Mcclanahan",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11478/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Owen Murphy",
-      "date": "2026-07-18",
-      "pitcher_team": "ATL",
-      "opponent_team": "TEX",
-      "home_away": "home",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "2.25",
-        "whip": "0.25",
-        "innings_pitched": "4.0",
-        "strikeouts": 4,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Mackenzie Gore",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60070/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -282,5 +232,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T08:24:52-07:00"
+  "cached_at": "2026-07-16T10:00:29-07:00"
 }
