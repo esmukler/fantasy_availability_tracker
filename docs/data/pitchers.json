@@ -1,8 +1,8 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-16",
+  "start_date": "2026-07-17",
   "days": 5,
-  "date_range": "Jul 16\u201320",
+  "date_range": "Jul 17\u201321",
   "cached": false,
   "pitchers": [
     {
@@ -229,8 +229,33 @@
       "opposing_pitcher_name": "Nolan Mclean",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
       "opponent_highlight": "good"
+    },
+    {
+      "name": "Noah Schultz",
+      "date": "2026-07-21",
+      "pitcher_team": "CWS",
+      "opponent_team": "TEX",
+      "home_away": "away",
+      "game_time_pt": "5:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 6,
+        "era": "5.60",
+        "whip": "1.36",
+        "innings_pitched": "53.0",
+        "strikeouts": 47,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-15T21:47:59-07:00"
+  "cached_at": "2026-07-16T00:13:33-07:00"
 }
