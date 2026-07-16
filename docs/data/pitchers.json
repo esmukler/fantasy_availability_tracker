@@ -56,31 +56,6 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Patrick Sandoval",
-      "date": "2026-07-18",
-      "pitcher_team": "BOS",
-      "opponent_team": "TB",
-      "home_away": "home",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "2.08",
-        "whip": "1.38",
-        "innings_pitched": "4.1",
-        "strikeouts": 5,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Shane Mcclanahan",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11478/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Sean Manaea",
       "date": "2026-07-18",
       "pitcher_team": "NYM",
@@ -232,5 +207,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T10:00:29-07:00"
+  "cached_at": "2026-07-16T11:07:04-07:00"
 }
