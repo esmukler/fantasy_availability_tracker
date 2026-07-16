@@ -207,11 +207,11 @@
     },
     {
       "name": "Zebby Matthews",
-      "date": "2026-07-20",
+      "date": "2026-07-19",
       "pitcher_team": "MIN",
-      "opponent_team": "CLE",
+      "opponent_team": "CHC",
       "home_away": "away",
-      "game_time_pt": "3:40 PM PT",
+      "game_time_pt": "11:20 AM PT",
       "availability": "free_agent",
       "stats": {
         "wins": 4,
@@ -226,9 +226,9 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Parker Messick",
+      "opposing_pitcher_name": "Shota Imanaga",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63601/gamelog/",
-      "opponent_highlight": "good"
+      "opponent_highlight": "bad"
     },
     {
       "name": "Randy Vasquez",
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T15:47:02-07:00"
+  "cached_at": "2026-07-16T16:46:06-07:00"
 }
