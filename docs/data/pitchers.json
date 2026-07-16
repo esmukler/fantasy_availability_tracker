@@ -56,6 +56,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Stephen Kolek",
+      "date": "2026-07-18",
+      "pitcher_team": "KC",
+      "opponent_team": "SD",
+      "home_away": "home",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "na_free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 3,
+        "era": "4.50",
+        "whip": "1.24",
+        "innings_pitched": "54.0",
+        "strikeouts": 34,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Griffin Canning",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60645/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Sean Manaea",
       "date": "2026-07-18",
       "pitcher_team": "NYM",
@@ -151,7 +176,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Stephen Kolek",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
       "opponent_highlight": null
     },
@@ -181,6 +206,231 @@
       "opponent_highlight": "good"
     },
     {
+      "name": "Zebby Matthews",
+      "date": "2026-07-20",
+      "pitcher_team": "MIN",
+      "opponent_team": "CLE",
+      "home_away": "away",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 6,
+        "era": "4.57",
+        "whip": "1.22",
+        "innings_pitched": "67.0",
+        "strikeouts": 54,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Parker Messick",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63601/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
+      "name": "Randy Vasquez",
+      "date": "2026-07-20",
+      "pitcher_team": "SD",
+      "opponent_team": "ATL",
+      "home_away": "away",
+      "game_time_pt": "4:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 6,
+        "losses": 6,
+        "era": "4.71",
+        "whip": "1.50",
+        "innings_pitched": "84.0",
+        "strikeouts": 60,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Bryce Elder",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Jameson Taillon",
+      "date": "2026-07-20",
+      "pitcher_team": "CHC",
+      "opponent_team": "DET",
+      "home_away": "home",
+      "game_time_pt": "5:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 5,
+        "era": "5.19",
+        "whip": "1.30",
+        "innings_pitched": "67.2",
+        "strikeouts": 59,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Jack Flaherty",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9123/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Tyler Mahle",
+      "date": "2026-07-20",
+      "pitcher_team": "SF",
+      "opponent_team": "KC",
+      "home_away": "away",
+      "game_time_pt": "4:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 8,
+        "era": "5.31",
+        "whip": "1.46",
+        "innings_pitched": "78.0",
+        "strikeouts": 73,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Michael Wacha",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10455/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Jeffrey Springs",
+      "date": "2026-07-20",
+      "pitcher_team": "ATH",
+      "opponent_team": "ARI",
+      "home_away": "away",
+      "game_time_pt": "TBD",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 9,
+        "era": "6.08",
+        "whip": "1.42",
+        "innings_pitched": "97.2",
+        "strikeouts": 84,
+        "highlights": {
+          "era": "bad",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Kyle Freeland",
+      "date": "2026-07-20",
+      "pitcher_team": "COL",
+      "opponent_team": "WSH",
+      "home_away": "home",
+      "game_time_pt": "5:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 8,
+        "era": "7.36",
+        "whip": "1.57",
+        "innings_pitched": "88.0",
+        "strikeouts": 79,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Andrew Alvarez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
+      "name": "Mike Paredes",
+      "date": "2026-07-21",
+      "pitcher_team": "MIN",
+      "opponent_team": "CLE",
+      "home_away": "away",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "4.60",
+        "whip": "1.30",
+        "innings_pitched": "29.1",
+        "strikeouts": 15,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Slade Cecconi",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
+      "name": "Walker Buehler",
+      "date": "2026-07-21",
+      "pitcher_team": "SD",
+      "opponent_team": "ATL",
+      "home_away": "away",
+      "game_time_pt": "4:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 5,
+        "losses": 5,
+        "era": "5.36",
+        "whip": "1.44",
+        "innings_pitched": "89.0",
+        "strikeouts": 81,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Reynaldo Lopez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10509/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Miles Mikolas",
+      "date": "2026-07-21",
+      "pitcher_team": "WSH",
+      "opponent_team": "COL",
+      "home_away": "away",
+      "game_time_pt": "5:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.53",
+        "whip": "1.33",
+        "innings_pitched": "94.1",
+        "strikeouts": 50,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Michael Lorenzen",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9173/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
       "name": "Noah Schultz",
       "date": "2026-07-21",
       "pitcher_team": "CWS",
@@ -201,11 +451,61 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Kumar Rocker",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "David Peterson",
+      "date": "2026-07-21",
+      "pitcher_team": "CHC",
+      "opponent_team": "DET",
+      "home_away": "home",
+      "game_time_pt": "5:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 7,
+        "era": "6.45",
+        "whip": "1.64",
+        "innings_pitched": "82.1",
+        "strikeouts": 70,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Framber Valdez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Cristian Javier",
+      "date": "2026-07-21",
+      "pitcher_team": "HOU",
+      "opponent_team": "MIA",
+      "home_away": "home",
+      "game_time_pt": "5:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "9.98",
+        "whip": "2.28",
+        "innings_pitched": "15.1",
+        "strikeouts": 12,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Tyler Phillips",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11315/gamelog/",
+      "opponent_highlight": "warn"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T13:42:15-07:00"
+  "cached_at": "2026-07-16T14:58:49-07:00"
 }
