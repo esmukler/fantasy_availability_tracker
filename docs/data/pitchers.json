@@ -6,6 +6,31 @@
   "cached": false,
   "pitchers": [
     {
+      "name": "Gabriel Hughes",
+      "date": "2026-07-17",
+      "pitcher_team": "COL",
+      "opponent_team": "CIN",
+      "home_away": "home",
+      "game_time_pt": "5:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "3.00",
+        "whip": "1.00",
+        "innings_pitched": "9.0",
+        "strikeouts": 8,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Brady Singer",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Jeffrey Springs",
       "date": "2026-07-17",
       "pitcher_team": "ATH",
@@ -29,31 +54,6 @@
       "opposing_pitcher_name": "Foster Griffin",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
       "opponent_highlight": "bad"
-    },
-    {
-      "name": "Kyle Freeland",
-      "date": "2026-07-17",
-      "pitcher_team": "COL",
-      "opponent_team": "CIN",
-      "home_away": "home",
-      "game_time_pt": "5:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 8,
-        "era": "7.36",
-        "whip": "1.57",
-        "innings_pitched": "88.0",
-        "strikeouts": 79,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Brady Singer",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
-      "opponent_highlight": "good"
     },
     {
       "name": "Sean Manaea",
@@ -207,5 +207,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T11:07:04-07:00"
+  "cached_at": "2026-07-16T12:55:16-07:00"
 }
