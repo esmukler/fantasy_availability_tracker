@@ -56,6 +56,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Tomoyuki Sugano",
+      "date": "2026-07-18",
+      "pitcher_team": "COL",
+      "opponent_team": "CIN",
+      "home_away": "home",
+      "game_time_pt": "12:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 8,
+        "losses": 4,
+        "era": "4.80",
+        "whip": "1.32",
+        "innings_pitched": "84.1",
+        "strikeouts": 48,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Rhett Lowder",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/64895/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Rhett Lowder",
       "date": "2026-07-18",
       "pitcher_team": "CIN",
@@ -76,7 +101,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Tomoyuki Sugano",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
       "opponent_highlight": "bad"
     },
@@ -482,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-17T02:44:21-07:00"
+  "cached_at": "2026-07-17T04:12:38-07:00"
 }
