@@ -1,35 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-17",
+  "start_date": "2026-07-18",
   "days": 5,
-  "date_range": "Jul 17\u201321",
+  "date_range": "Jul 18\u201322",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Gabriel Hughes",
-      "date": "2026-07-17",
-      "pitcher_team": "COL",
-      "opponent_team": "CIN",
-      "home_away": "home",
-      "game_time_pt": "5:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "3.00",
-        "whip": "1.00",
-        "innings_pitched": "9.0",
-        "strikeouts": 8,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Brady Singer",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
-      "opponent_highlight": "good"
-    },
     {
       "name": "Stephen Kolek",
       "date": "2026-07-18",
@@ -504,8 +479,33 @@
       "opposing_pitcher_name": "Tyler Phillips",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11315/gamelog/",
       "opponent_highlight": "warn"
+    },
+    {
+      "name": "Gabriel Hughes",
+      "date": "2026-07-22",
+      "pitcher_team": "COL",
+      "opponent_team": "WSH",
+      "home_away": "home",
+      "game_time_pt": "12:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "3.00",
+        "whip": "1.00",
+        "innings_pitched": "9.0",
+        "strikeouts": 8,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
+      "opponent_highlight": "bad"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T21:51:30-07:00"
+  "cached_at": "2026-07-17T00:08:19-07:00"
 }
