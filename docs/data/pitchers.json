@@ -31,31 +31,6 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Sean Manaea",
-      "date": "2026-07-18",
-      "pitcher_team": "NYM",
-      "opponent_team": "PHI",
-      "home_away": "away",
-      "game_time_pt": "1:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 4,
-        "era": "4.56",
-        "whip": "1.32",
-        "innings_pitched": "75.0",
-        "strikeouts": 74,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Jesus Luzardo",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9582/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Tomoyuki Sugano",
       "date": "2026-07-18",
       "pitcher_team": "COL",
@@ -557,5 +532,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-17T05:57:29-07:00"
+  "cached_at": "2026-07-17T07:27:10-07:00"
 }
