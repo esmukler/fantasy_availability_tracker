@@ -76,34 +76,9 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Ryan Feltner",
+      "opposing_pitcher_name": null,
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
       "opponent_highlight": "bad"
-    },
-    {
-      "name": "Matthew Liberatore",
-      "date": "2026-07-18",
-      "pitcher_team": "STL",
-      "opponent_team": "ARI",
-      "home_away": "away",
-      "game_time_pt": "TBD",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 6,
-        "era": "5.00",
-        "whip": "1.48",
-        "innings_pitched": "93.2",
-        "strikeouts": 88,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
-      "opponent_highlight": null
     },
     {
       "name": "Griffin Canning",
@@ -201,7 +176,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Zack Littell",
+      "opposing_pitcher_name": "Foster Griffin",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
       "opponent_highlight": "bad"
     },
@@ -507,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-17T00:08:19-07:00"
+  "cached_at": "2026-07-17T02:44:21-07:00"
 }
