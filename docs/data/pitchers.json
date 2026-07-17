@@ -31,31 +31,6 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Jeffrey Springs",
-      "date": "2026-07-17",
-      "pitcher_team": "ATH",
-      "opponent_team": "WSH",
-      "home_away": "home",
-      "game_time_pt": "6:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 9,
-        "era": "6.08",
-        "whip": "1.42",
-        "innings_pitched": "97.2",
-        "strikeouts": 84,
-        "highlights": {
-          "era": "bad",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Foster Griffin",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
       "name": "Stephen Kolek",
       "date": "2026-07-18",
       "pitcher_team": "KC",
@@ -228,6 +203,31 @@
       },
       "opposing_pitcher_name": "Shota Imanaga",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63601/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
+      "name": "Jacob Lopez",
+      "date": "2026-07-19",
+      "pitcher_team": "ATH",
+      "opponent_team": "WSH",
+      "home_away": "home",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 3,
+        "era": "6.83",
+        "whip": "1.79",
+        "innings_pitched": "55.1",
+        "strikeouts": 43,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Zack Littell",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
       "opponent_highlight": "bad"
     },
     {
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-16T18:22:48-07:00"
+  "cached_at": "2026-07-16T21:51:30-07:00"
 }
