@@ -231,6 +231,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Matthew Liberatore",
+      "date": "2026-07-20",
+      "pitcher_team": "STL",
+      "opponent_team": "LAA",
+      "home_away": "away",
+      "game_time_pt": "7:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 5,
+        "losses": 6,
+        "era": "5.00",
+        "whip": "1.48",
+        "innings_pitched": "93.2",
+        "strikeouts": 88,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Jose Soriano",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Jameson Taillon",
       "date": "2026-07-20",
       "pitcher_team": "CHC",
@@ -279,6 +304,31 @@
       "opposing_pitcher_name": "Michael Wacha",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10455/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Mitch Bratt",
+      "date": "2026-07-20",
+      "pitcher_team": "AZ",
+      "opponent_team": "ATH",
+      "home_away": "home",
+      "game_time_pt": "6:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "6.00",
+        "whip": "1.67",
+        "innings_pitched": "6.0",
+        "strikeouts": 3,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
+      "opponent_highlight": "warn"
     },
     {
       "name": "Jeffrey Springs",
@@ -501,11 +551,11 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Cade Cavalli P",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
       "opponent_highlight": "bad"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-17T04:12:38-07:00"
+  "cached_at": "2026-07-17T05:57:29-07:00"
 }
