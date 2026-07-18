@@ -106,31 +106,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Jameson Taillon",
-      "date": "2026-07-20",
-      "pitcher_team": "CHC",
-      "opponent_team": "DET",
-      "home_away": "home",
-      "game_time_pt": "5:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 5,
-        "era": "5.19",
-        "whip": "1.30",
-        "innings_pitched": "67.2",
-        "strikeouts": 59,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Jack Flaherty",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9123/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Tyler Mahle",
       "date": "2026-07-20",
       "pitcher_team": "SF",
@@ -507,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-18T05:44:10-07:00"
+  "cached_at": "2026-07-18T07:13:45-07:00"
 }
