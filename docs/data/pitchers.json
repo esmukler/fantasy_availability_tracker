@@ -465,7 +465,7 @@
       "availability": "free_agent",
       "stats": {
         "wins": 1,
-        "losses": 7,
+        "losses": 8,
         "era": "6.67",
         "whip": "1.62",
         "innings_pitched": "59.1",
@@ -482,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-18T15:36:13-07:00"
+  "cached_at": "2026-07-18T16:40:57-07:00"
 }
