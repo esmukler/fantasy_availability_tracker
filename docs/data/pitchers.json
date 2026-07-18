@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Alan Rangel",
-      "date": "2026-07-19",
-      "pitcher_team": "PHI",
-      "opponent_team": "NYM",
-      "home_away": "home",
-      "game_time_pt": "10:35 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 2,
-        "era": "4.19",
-        "whip": "1.40",
-        "innings_pitched": "19.1",
-        "strikeouts": 22,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Nolan Mclean",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "Noah Cameron",
       "date": "2026-07-19",
       "pitcher_team": "KC",
@@ -431,6 +406,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Dean Kremer",
+      "date": "2026-07-22",
+      "pitcher_team": "BAL",
+      "opponent_team": "BOS",
+      "home_away": "away",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 1,
+        "losses": 2,
+        "era": "4.15",
+        "whip": "1.12",
+        "innings_pitched": "26.0",
+        "strikeouts": 29,
+        "highlights": {
+          "era": null,
+          "whip": "good",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Jake Bennett",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11428/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Stephen Kolek",
       "date": "2026-07-23",
       "pitcher_team": "KC",
@@ -482,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-18T08:43:07-07:00"
+  "cached_at": "2026-07-18T09:42:20-07:00"
 }
