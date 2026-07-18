@@ -467,9 +467,9 @@
         "wins": 1,
         "losses": 7,
         "era": "6.67",
-        "whip": "1.61",
-        "innings_pitched": "56.2",
-        "strikeouts": 56,
+        "whip": "1.62",
+        "innings_pitched": "59.1",
+        "strikeouts": 59,
         "highlights": {
           "era": "bad",
           "whip": "warn",
@@ -482,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-18T13:39:44-07:00"
+  "cached_at": "2026-07-18T14:39:01-07:00"
 }
