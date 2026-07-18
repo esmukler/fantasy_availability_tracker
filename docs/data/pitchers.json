@@ -515,15 +515,15 @@
       "availability": "free_agent",
       "stats": {
         "wins": 0,
-        "losses": 0,
-        "era": "3.09",
-        "whip": "0.94",
-        "innings_pitched": "11.2",
-        "strikeouts": 12,
+        "losses": 1,
+        "era": "3.14",
+        "whip": "1.12",
+        "innings_pitched": "14.1",
+        "strikeouts": 14,
         "highlights": {
           "era": "good",
           "whip": "good",
-          "k_per_9": "good"
+          "k_per_9": null
         }
       },
       "opposing_pitcher_name": "Cade Cavalli P",
@@ -532,5 +532,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-17T18:14:34-07:00"
+  "cached_at": "2026-07-17T21:37:41-07:00"
 }
