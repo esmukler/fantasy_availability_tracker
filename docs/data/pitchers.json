@@ -192,9 +192,9 @@
         "wins": 0,
         "losses": 2,
         "era": "4.60",
-        "whip": "1.30",
-        "innings_pitched": "29.1",
-        "strikeouts": 15,
+        "whip": "1.34",
+        "innings_pitched": "31.1",
+        "strikeouts": 19,
         "highlights": {
           "era": null,
           "whip": null,
@@ -466,10 +466,10 @@
       "stats": {
         "wins": 1,
         "losses": 7,
-        "era": "6.47",
-        "whip": "1.60",
-        "innings_pitched": "55.2",
-        "strikeouts": 55,
+        "era": "6.67",
+        "whip": "1.61",
+        "innings_pitched": "56.2",
+        "strikeouts": 56,
         "highlights": {
           "era": "bad",
           "whip": "warn",
@@ -482,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-18T12:58:05-07:00"
+  "cached_at": "2026-07-18T13:39:44-07:00"
 }
