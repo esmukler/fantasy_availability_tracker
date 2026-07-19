@@ -6,7 +6,7 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Randy Vasquez",
+      "name": "Jp Sears",
       "date": "2026-07-20",
       "pitcher_team": "SD",
       "opponent_team": "ATL",
@@ -14,20 +14,20 @@
       "game_time_pt": "4:15 PM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 6,
-        "losses": 6,
-        "era": "4.71",
-        "whip": "1.50",
-        "innings_pitched": "84.0",
-        "strikeouts": 60,
+        "wins": 2,
+        "losses": 2,
+        "era": "5.03",
+        "whip": "1.42",
+        "innings_pitched": "19.2",
+        "strikeouts": 17,
         "highlights": {
-          "era": null,
+          "era": "warn",
           "whip": null,
           "k_per_9": null
         }
       },
       "opposing_pitcher_name": "Bryce Elder",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12500/gamelog/",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -281,31 +281,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Cristian Javier",
-      "date": "2026-07-21",
-      "pitcher_team": "HOU",
-      "opponent_team": "MIA",
-      "home_away": "home",
-      "game_time_pt": "5:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "9.98",
-        "whip": "2.28",
-        "innings_pitched": "15.1",
-        "strikeouts": 12,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Tyler Phillips",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11315/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Gabriel Hughes",
       "date": "2026-07-22",
       "pitcher_team": "COL",
@@ -329,6 +304,31 @@
       "opposing_pitcher_name": "Cade Cavalli P",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
       "opponent_highlight": "bad"
+    },
+    {
+      "name": "Martin Perez",
+      "date": "2026-07-22",
+      "pitcher_team": "ATL",
+      "opponent_team": "SD",
+      "home_away": "home",
+      "game_time_pt": "4:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 6,
+        "losses": 6,
+        "era": "3.54",
+        "whip": "1.19",
+        "innings_pitched": "81.1",
+        "strikeouts": 62,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Michael King",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
+      "opponent_highlight": "good"
     },
     {
       "name": "Dean Kremer",
@@ -362,7 +362,7 @@
       "opponent_team": "DET",
       "home_away": "away",
       "game_time_pt": "3:40 PM PT",
-      "availability": "na_free_agent",
+      "availability": "free_agent",
       "stats": {
         "wins": 4,
         "losses": 3,
@@ -401,7 +401,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Owen Murphy",
+      "opposing_pitcher_name": "Chris Sale",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
       "opponent_highlight": null
     },
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-19T09:41:58-07:00"
+  "cached_at": "2026-07-19T10:46:54-07:00"
 }
