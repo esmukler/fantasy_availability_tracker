@@ -437,7 +437,7 @@
       "opponent_team": "DET",
       "home_away": "away",
       "game_time_pt": "3:40 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 5,
         "losses": 7,
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-19T00:24:44-07:00"
+  "cached_at": "2026-07-19T02:41:58-07:00"
 }
