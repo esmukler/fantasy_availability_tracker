@@ -6,6 +6,31 @@
   "cached": false,
   "pitchers": [
     {
+      "name": "Trevor Mcdonald",
+      "date": "2026-07-20",
+      "pitcher_team": "SF",
+      "opponent_team": "KC",
+      "home_away": "away",
+      "game_time_pt": "4:40 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.02",
+        "whip": "1.30",
+        "innings_pitched": "66.1",
+        "strikeouts": 54,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Michael Wacha",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Jp Sears",
       "date": "2026-07-20",
       "pitcher_team": "SD",
@@ -151,7 +176,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Slade Cecconi",
+      "opposing_pitcher_name": null,
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/",
       "opponent_highlight": "good"
     },
@@ -178,31 +203,6 @@
       },
       "opposing_pitcher_name": "Walbert Urena",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Trevor Mcdonald",
-      "date": "2026-07-21",
-      "pitcher_team": "SF",
-      "opponent_team": "KC",
-      "home_away": "away",
-      "game_time_pt": "4:40 PM PT",
-      "availability": "waivers",
-      "stats": {
-        "wins": 3,
-        "losses": 7,
-        "era": "5.02",
-        "whip": "1.30",
-        "innings_pitched": "66.1",
-        "strikeouts": 54,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Luinder Avila",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -532,5 +532,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-19T14:39:43-07:00"
+  "cached_at": "2026-07-19T15:39:41-07:00"
 }
