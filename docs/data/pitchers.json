@@ -106,6 +106,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Ethan Roberts",
+      "date": "2026-07-21",
+      "pitcher_team": "CHC",
+      "opponent_team": "DET",
+      "home_away": "home",
+      "game_time_pt": "5:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "4.21",
+        "whip": "1.40",
+        "innings_pitched": "25.2",
+        "strikeouts": 17,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Framber Valdez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12327/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Mike Paredes",
       "date": "2026-07-21",
       "pitcher_team": "MIN",
@@ -126,7 +151,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Slade Cecconi",
+      "opposing_pitcher_name": "Parker Messick",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/",
       "opponent_highlight": "good"
     },
@@ -253,31 +278,6 @@
       },
       "opposing_pitcher_name": "Kumar Rocker",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "David Peterson",
-      "date": "2026-07-21",
-      "pitcher_team": "CHC",
-      "opponent_team": "DET",
-      "home_away": "home",
-      "game_time_pt": "5:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 7,
-        "era": "6.45",
-        "whip": "1.64",
-        "innings_pitched": "82.1",
-        "strikeouts": 70,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Framber Valdez",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-19T13:01:00-07:00"
+  "cached_at": "2026-07-19T13:50:39-07:00"
 }
