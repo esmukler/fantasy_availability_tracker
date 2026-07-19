@@ -441,10 +441,10 @@
       "stats": {
         "wins": 5,
         "losses": 7,
-        "era": "5.18",
-        "whip": "1.47",
-        "innings_pitched": "97.1",
-        "strikeouts": 91,
+        "era": "5.27",
+        "whip": "1.46",
+        "innings_pitched": "100.2",
+        "strikeouts": 92,
         "highlights": {
           "era": "warn",
           "whip": null,
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-19T11:46:05-07:00"
+  "cached_at": "2026-07-19T13:01:00-07:00"
 }
