@@ -51,7 +51,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Parker Messick",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/",
       "opponent_highlight": "good"
     },
@@ -181,56 +181,6 @@
       "opponent_highlight": "bad"
     },
     {
-      "name": "Keider Montero",
-      "date": "2026-07-22",
-      "pitcher_team": "DET",
-      "opponent_team": "CHC",
-      "home_away": "away",
-      "game_time_pt": "5:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 5,
-        "era": "3.22",
-        "whip": "0.98",
-        "innings_pitched": "100.2",
-        "strikeouts": 70,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Colin Rea",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63428/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
-      "name": "Martin Perez",
-      "date": "2026-07-22",
-      "pitcher_team": "ATL",
-      "opponent_team": "SD",
-      "home_away": "home",
-      "game_time_pt": "4:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 6,
-        "era": "3.54",
-        "whip": "1.19",
-        "innings_pitched": "81.1",
-        "strikeouts": 62,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Michael King",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "Dean Kremer",
       "date": "2026-07-22",
       "pitcher_team": "BAL",
@@ -253,6 +203,31 @@
       },
       "opposing_pitcher_name": "Jake Bennett",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11428/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Max Scherzer",
+      "date": "2026-07-22",
+      "pitcher_team": "TOR",
+      "opponent_team": "TB",
+      "home_away": "home",
+      "game_time_pt": "4:07 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 4,
+        "era": "10.23",
+        "whip": "1.73",
+        "innings_pitched": "22.0",
+        "strikeouts": 14,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Griffin Jax",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8193/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -301,7 +276,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Chris Sale",
+      "opposing_pitcher_name": null,
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
       "opponent_highlight": null
     },
@@ -482,5 +457,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-20T01:33:54-07:00"
+  "cached_at": "2026-07-20T04:33:29-07:00"
 }
