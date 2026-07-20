@@ -56,31 +56,6 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Matthew Liberatore",
-      "date": "2026-07-21",
-      "pitcher_team": "STL",
-      "opponent_team": "LAA",
-      "home_away": "away",
-      "game_time_pt": "6:38 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 6,
-        "era": "5.00",
-        "whip": "1.48",
-        "innings_pitched": "93.2",
-        "strikeouts": 88,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Walbert Urena",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11397/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Walker Buehler",
       "date": "2026-07-21",
       "pitcher_team": "SD",
@@ -406,6 +381,31 @@
       "opponent_highlight": "warn"
     },
     {
+      "name": "Ryan Feltner",
+      "date": "2026-07-25",
+      "pitcher_team": "COL",
+      "opponent_team": "MIL",
+      "home_away": "away",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 4,
+        "era": "5.48",
+        "whip": "1.42",
+        "innings_pitched": "65.2",
+        "strikeouts": 50,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Robert Gasser",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12265/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
       "name": "Mitch Bratt",
       "date": "2026-07-25",
       "pitcher_team": "AZ",
@@ -457,5 +457,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-20T08:43:14-07:00"
+  "cached_at": "2026-07-20T10:17:37-07:00"
 }
