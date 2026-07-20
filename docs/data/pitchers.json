@@ -1,135 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-20",
+  "start_date": "2026-07-21",
   "days": 5,
-  "date_range": "Jul 20\u201324",
+  "date_range": "Jul 21\u201325",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Trevor Mcdonald",
-      "date": "2026-07-20",
-      "pitcher_team": "SF",
-      "opponent_team": "KC",
-      "home_away": "away",
-      "game_time_pt": "4:40 PM PT",
-      "availability": "waivers",
-      "stats": {
-        "wins": 3,
-        "losses": 7,
-        "era": "5.02",
-        "whip": "1.30",
-        "innings_pitched": "66.1",
-        "strikeouts": 54,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Michael Wacha",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Jp Sears",
-      "date": "2026-07-20",
-      "pitcher_team": "SD",
-      "opponent_team": "ATL",
-      "home_away": "away",
-      "game_time_pt": "4:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 2,
-        "era": "5.03",
-        "whip": "1.42",
-        "innings_pitched": "19.2",
-        "strikeouts": 17,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Bryce Elder",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Mitch Bratt",
-      "date": "2026-07-20",
-      "pitcher_team": "AZ",
-      "opponent_team": "ATH",
-      "home_away": "home",
-      "game_time_pt": "6:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "6.00",
-        "whip": "1.67",
-        "innings_pitched": "6.0",
-        "strikeouts": 3,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
-      "name": "Jeffrey Springs",
-      "date": "2026-07-20",
-      "pitcher_team": "ATH",
-      "opponent_team": "ARI",
-      "home_away": "away",
-      "game_time_pt": "TBD",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 9,
-        "era": "6.08",
-        "whip": "1.42",
-        "innings_pitched": "97.2",
-        "strikeouts": 84,
-        "highlights": {
-          "era": "bad",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Kyle Freeland",
-      "date": "2026-07-20",
-      "pitcher_team": "COL",
-      "opponent_team": "WSH",
-      "home_away": "home",
-      "game_time_pt": "5:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 8,
-        "era": "7.36",
-        "whip": "1.57",
-        "innings_pitched": "88.0",
-        "strikeouts": 79,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Andrew Alvarez",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
-      "opponent_highlight": "bad"
-    },
     {
       "name": "Ethan Roberts",
       "date": "2026-07-21",
@@ -362,7 +237,7 @@
       "opponent_team": "BOS",
       "home_away": "away",
       "game_time_pt": "4:10 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 1,
         "losses": 2,
@@ -512,7 +387,7 @@
       "opponent_team": "SF",
       "home_away": "away",
       "game_time_pt": "7:15 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 3,
         "losses": 3,
@@ -529,8 +404,83 @@
       "opposing_pitcher_name": "Logan Webb",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11277/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Jp Sears",
+      "date": "2026-07-25",
+      "pitcher_team": "SD",
+      "opponent_team": "MIA",
+      "home_away": "away",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 2,
+        "era": "5.03",
+        "whip": "1.42",
+        "innings_pitched": "19.2",
+        "strikeouts": 17,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Eury Perez P",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
+      "name": "Mitch Bratt",
+      "date": "2026-07-25",
+      "pitcher_team": "AZ",
+      "opponent_team": "WSH",
+      "home_away": "away",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "6.00",
+        "whip": "1.67",
+        "innings_pitched": "6.0",
+        "strikeouts": 3,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
+      "name": "Jacob Lopez",
+      "date": "2026-07-25",
+      "pitcher_team": "ATH",
+      "opponent_team": "MIN",
+      "home_away": "away",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 4,
+        "era": "6.64",
+        "whip": "1.73",
+        "innings_pitched": "59.2",
+        "strikeouts": 49,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Joe Ryan",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
+      "opponent_highlight": "warn"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-19T22:26:55-07:00"
+  "cached_at": "2026-07-20T01:33:54-07:00"
 }
