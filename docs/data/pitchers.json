@@ -31,6 +31,56 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Keider Montero",
+      "date": "2026-07-22",
+      "pitcher_team": "DET",
+      "opponent_team": "CHC",
+      "home_away": "away",
+      "game_time_pt": "5:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 6,
+        "losses": 5,
+        "era": "3.22",
+        "whip": "0.98",
+        "innings_pitched": "100.2",
+        "strikeouts": 70,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Colin Rea",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63428/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
+      "name": "Martin Perez",
+      "date": "2026-07-22",
+      "pitcher_team": "ATL",
+      "opponent_team": "SD",
+      "home_away": "home",
+      "game_time_pt": "4:15 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 6,
+        "losses": 6,
+        "era": "3.54",
+        "whip": "1.19",
+        "innings_pitched": "81.1",
+        "strikeouts": 62,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Michael King",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Dean Kremer",
       "date": "2026-07-22",
       "pitcher_team": "BAL",
@@ -126,7 +176,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Chris Sale",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
       "opponent_highlight": null
     },
@@ -331,7 +381,7 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Connor Prielipp",
+      "name": "Kendry Rojas",
       "date": "2026-07-26",
       "pitcher_team": "MIN",
       "opponent_team": "ATH",
@@ -339,21 +389,46 @@
       "game_time_pt": "11:10 AM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 2,
-        "losses": 5,
-        "era": "5.00",
-        "whip": "1.37",
-        "innings_pitched": "66.2",
-        "strikeouts": 71,
+        "wins": 1,
+        "losses": 1,
+        "era": "2.79",
+        "whip": "1.60",
+        "innings_pitched": "19.1",
+        "strikeouts": 22,
         "highlights": {
-          "era": null,
-          "whip": null,
+          "era": "good",
+          "whip": "warn",
           "k_per_9": "good"
         }
       },
       "opposing_pitcher_name": "Jeffrey Springs",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60267/gamelog/",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63639/gamelog/",
       "opponent_highlight": "warn"
+    },
+    {
+      "name": "Trevor Mcdonald",
+      "date": "2026-07-26",
+      "pitcher_team": "SF",
+      "opponent_team": "LAA",
+      "home_away": "home",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.12",
+        "whip": "1.31",
+        "innings_pitched": "70.1",
+        "strikeouts": 57,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Jose Soriano",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60389/gamelog/",
+      "opponent_highlight": null
     },
     {
       "name": "Walker Buehler",
@@ -401,7 +476,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Connor Prielipp",
+      "opposing_pitcher_name": "Kendry Rojas",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -432,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-21T00:27:06-07:00"
+  "cached_at": "2026-07-21T03:12:32-07:00"
 }
