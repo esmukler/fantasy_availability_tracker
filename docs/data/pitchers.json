@@ -31,31 +31,6 @@
       "opponent_highlight": "bad"
     },
     {
-      "name": "Keider Montero",
-      "date": "2026-07-22",
-      "pitcher_team": "DET",
-      "opponent_team": "CHC",
-      "home_away": "away",
-      "game_time_pt": "5:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 5,
-        "era": "3.22",
-        "whip": "0.98",
-        "innings_pitched": "100.2",
-        "strikeouts": 70,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Colin Rea",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63428/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
       "name": "Martin Perez",
       "date": "2026-07-22",
       "pitcher_team": "ATL",
@@ -331,6 +306,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Alan Rangel",
+      "date": "2026-07-25",
+      "pitcher_team": "PHI",
+      "opponent_team": "NYY",
+      "home_away": "home",
+      "game_time_pt": "3:05 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 0,
+        "losses": 3,
+        "era": "5.40",
+        "whip": "1.59",
+        "innings_pitched": "23.1",
+        "strikeouts": 26,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Ryan Weathers",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
       "name": "Ryan Feltner",
       "date": "2026-07-25",
       "pitcher_team": "COL",
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-21T07:54:16-07:00"
+  "cached_at": "2026-07-21T09:12:58-07:00"
 }
