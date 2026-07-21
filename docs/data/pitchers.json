@@ -56,31 +56,6 @@
       "opponent_highlight": "good"
     },
     {
-      "name": "Dean Kremer",
-      "date": "2026-07-22",
-      "pitcher_team": "BAL",
-      "opponent_team": "BOS",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 2,
-        "era": "4.15",
-        "whip": "1.12",
-        "innings_pitched": "26.0",
-        "strikeouts": 29,
-        "highlights": {
-          "era": null,
-          "whip": "good",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Jake Bennett",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11428/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Max Scherzer",
       "date": "2026-07-22",
       "pitcher_team": "TOR",
@@ -507,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-21T14:52:14-07:00"
+  "cached_at": "2026-07-21T15:43:03-07:00"
 }
