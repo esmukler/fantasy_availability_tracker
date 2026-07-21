@@ -6,32 +6,7 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Ethan Roberts",
-      "date": "2026-07-21",
-      "pitcher_team": "CHC",
-      "opponent_team": "DET",
-      "home_away": "home",
-      "game_time_pt": "5:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 2,
-        "era": "4.21",
-        "whip": "1.40",
-        "innings_pitched": "25.2",
-        "strikeouts": 17,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Framber Valdez",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12327/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Mike Paredes",
+      "name": "Kendry Rojas",
       "date": "2026-07-21",
       "pitcher_team": "MIN",
       "opponent_team": "CLE",
@@ -39,20 +14,20 @@
       "game_time_pt": "3:40 PM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 0,
-        "losses": 2,
-        "era": "4.60",
-        "whip": "1.34",
-        "innings_pitched": "31.1",
-        "strikeouts": 19,
+        "wins": 1,
+        "losses": 1,
+        "era": "2.79",
+        "whip": "1.60",
+        "innings_pitched": "19.1",
+        "strikeouts": 22,
         "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
+          "era": "good",
+          "whip": "warn",
+          "k_per_9": "good"
         }
       },
       "opposing_pitcher_name": "Parker Messick",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/67137/gamelog/",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63639/gamelog/",
       "opponent_highlight": "good"
     },
     {
@@ -128,6 +103,31 @@
       },
       "opposing_pitcher_name": "Kumar Rocker",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "David Peterson",
+      "date": "2026-07-21",
+      "pitcher_team": "CHC",
+      "opponent_team": "DET",
+      "home_away": "home",
+      "game_time_pt": "5:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 7,
+        "era": "6.45",
+        "whip": "1.64",
+        "innings_pitched": "82.1",
+        "strikeouts": 70,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Framber Valdez",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -365,7 +365,7 @@
       "availability": "free_agent",
       "stats": {
         "wins": 2,
-        "losses": 2,
+        "losses": 3,
         "era": "4.38",
         "whip": "1.26",
         "innings_pitched": "24.2",
@@ -379,6 +379,31 @@
       "opposing_pitcher_name": "Eury Perez P",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/",
       "opponent_highlight": "warn"
+    },
+    {
+      "name": "Mitch Bratt",
+      "date": "2026-07-25",
+      "pitcher_team": "AZ",
+      "opponent_team": "WSH",
+      "home_away": "away",
+      "game_time_pt": "1:05 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "5.06",
+        "whip": "1.78",
+        "innings_pitched": "10.2",
+        "strikeouts": 7,
+        "highlights": {
+          "era": "warn",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
+      "opponent_highlight": "bad"
     },
     {
       "name": "Ryan Feltner",
@@ -404,31 +429,6 @@
       "opposing_pitcher_name": "Robert Gasser",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12265/gamelog/",
       "opponent_highlight": "warn"
-    },
-    {
-      "name": "Mitch Bratt",
-      "date": "2026-07-25",
-      "pitcher_team": "AZ",
-      "opponent_team": "WSH",
-      "home_away": "away",
-      "game_time_pt": "1:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "6.00",
-        "whip": "1.67",
-        "innings_pitched": "6.0",
-        "strikeouts": 3,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
-      "opponent_highlight": "bad"
     },
     {
       "name": "Jacob Lopez",
@@ -457,5 +457,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-20T18:20:28-07:00"
+  "cached_at": "2026-07-20T21:56:23-07:00"
 }
