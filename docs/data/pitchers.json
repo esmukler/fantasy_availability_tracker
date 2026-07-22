@@ -414,7 +414,7 @@
       "game_time_pt": "10:40 AM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 5,
+        "wins": 6,
         "losses": 5,
         "era": "5.23",
         "whip": "1.43",
@@ -482,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-21T18:19:16-07:00"
+  "cached_at": "2026-07-21T21:56:13-07:00"
 }
