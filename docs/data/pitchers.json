@@ -126,7 +126,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Dustin May",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
       "opponent_highlight": null
     },
@@ -226,7 +226,7 @@
           "k_per_9": "good"
         }
       },
-      "opposing_pitcher_name": "Ryan Weathers",
+      "opposing_pitcher_name": "Cam Schlittler",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -237,7 +237,7 @@
       "opponent_team": "MIL",
       "home_away": "away",
       "game_time_pt": "4:10 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 3,
         "losses": 4,
@@ -532,5 +532,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-22T00:28:28-07:00"
+  "cached_at": "2026-07-22T03:12:05-07:00"
 }
