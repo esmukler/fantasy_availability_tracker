@@ -1,85 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-22",
+  "start_date": "2026-07-23",
   "days": 5,
-  "date_range": "Jul 22\u201326",
+  "date_range": "Jul 23\u201327",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Gabriel Hughes",
-      "date": "2026-07-22",
-      "pitcher_team": "COL",
-      "opponent_team": "WSH",
-      "home_away": "home",
-      "game_time_pt": "12:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "3.14",
-        "whip": "1.12",
-        "innings_pitched": "14.1",
-        "strikeouts": 14,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Cade Cavalli P",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
-      "name": "Martin Perez",
-      "date": "2026-07-22",
-      "pitcher_team": "ATL",
-      "opponent_team": "SD",
-      "home_away": "home",
-      "game_time_pt": "4:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 6,
-        "era": "3.54",
-        "whip": "1.19",
-        "innings_pitched": "81.1",
-        "strikeouts": 62,
-        "highlights": {
-          "era": "good",
-          "whip": "good",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Michael King",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
-      "name": "Max Scherzer",
-      "date": "2026-07-22",
-      "pitcher_team": "TOR",
-      "opponent_team": "TB",
-      "home_away": "home",
-      "game_time_pt": "4:07 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 4,
-        "era": "10.23",
-        "whip": "1.73",
-        "innings_pitched": "22.0",
-        "strikeouts": 14,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Griffin Jax",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8193/gamelog/",
-      "opponent_highlight": null
-    },
     {
       "name": "Stephen Kolek",
       "date": "2026-07-23",
@@ -201,7 +126,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Andre Pallante",
+      "opposing_pitcher_name": null,
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
       "opponent_highlight": null
     },
@@ -479,8 +404,133 @@
       "opposing_pitcher_name": "Jacob Misiorowski",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9863/gamelog/",
       "opponent_highlight": "warn"
+    },
+    {
+      "name": "Martin Perez",
+      "date": "2026-07-27",
+      "pitcher_team": "ATL",
+      "opponent_team": "NYM",
+      "home_away": "away",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 6,
+        "losses": 6,
+        "era": "3.54",
+        "whip": "1.19",
+        "innings_pitched": "81.1",
+        "strikeouts": 62,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Zach Thornton",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
+      "name": "Miles Mikolas",
+      "date": "2026-07-27",
+      "pitcher_team": "WSH",
+      "opponent_team": "TOR",
+      "home_away": "home",
+      "game_time_pt": "3:45 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.60",
+        "whip": "1.34",
+        "innings_pitched": "98.0",
+        "strikeouts": 51,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Max Scherzer",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9173/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
+      "name": "David Peterson",
+      "date": "2026-07-27",
+      "pitcher_team": "CHC",
+      "opponent_team": "STL",
+      "home_away": "away",
+      "game_time_pt": "4:45 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 5,
+        "losses": 7,
+        "era": "5.97",
+        "whip": "1.56",
+        "innings_pitched": "89.0",
+        "strikeouts": 74,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Matthew Liberatore",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Noah Schultz",
+      "date": "2026-07-27",
+      "pitcher_team": "CWS",
+      "opponent_team": "NYY",
+      "home_away": "home",
+      "game_time_pt": "4:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "6.04",
+        "whip": "1.46",
+        "innings_pitched": "56.2",
+        "strikeouts": 49,
+        "highlights": {
+          "era": "bad",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Gerrit Cole",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
+      "name": "Max Scherzer",
+      "date": "2026-07-27",
+      "pitcher_team": "TOR",
+      "opponent_team": "WSH",
+      "home_away": "away",
+      "game_time_pt": "3:45 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 4,
+        "era": "10.23",
+        "whip": "1.73",
+        "innings_pitched": "22.0",
+        "strikeouts": 14,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Miles Mikolas",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8193/gamelog/",
+      "opponent_highlight": "bad"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-21T21:56:13-07:00"
+  "cached_at": "2026-07-22T00:28:28-07:00"
 }
