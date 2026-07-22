@@ -6,7 +6,7 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Stephen Kolek",
+      "name": "Randy Dobnak",
       "date": "2026-07-23",
       "pitcher_team": "KC",
       "opponent_team": "DET",
@@ -14,20 +14,20 @@
       "game_time_pt": "3:40 PM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 4,
-        "losses": 3,
-        "era": "4.50",
-        "whip": "1.24",
-        "innings_pitched": "54.0",
-        "strikeouts": 34,
+        "wins": 0,
+        "losses": 0,
+        "era": "1.93",
+        "whip": "1.50",
+        "innings_pitched": "14.0",
+        "strikeouts": 7,
         "highlights": {
-          "era": null,
+          "era": "good",
           "whip": null,
           "k_per_9": null
         }
       },
       "opposing_pitcher_name": "Troy Melton",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60645/gamelog/",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11629/gamelog/",
       "opponent_highlight": null
     },
     {
@@ -532,5 +532,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-22T14:54:36-07:00"
+  "cached_at": "2026-07-22T15:50:09-07:00"
 }
