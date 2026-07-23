@@ -1,60 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-23",
+  "start_date": "2026-07-24",
   "days": 5,
-  "date_range": "Jul 23\u201327",
+  "date_range": "Jul 24\u201328",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Randy Dobnak",
-      "date": "2026-07-23",
-      "pitcher_team": "KC",
-      "opponent_team": "DET",
-      "home_away": "away",
-      "game_time_pt": "3:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "1.93",
-        "whip": "1.50",
-        "innings_pitched": "14.0",
-        "strikeouts": 7,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Troy Melton",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11629/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Griffin Canning",
-      "date": "2026-07-23",
-      "pitcher_team": "SD",
-      "opponent_team": "ATL",
-      "home_away": "away",
-      "game_time_pt": "9:15 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 8,
-        "era": "6.67",
-        "whip": "1.62",
-        "innings_pitched": "59.1",
-        "strikeouts": 59,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Chris Sale",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
-      "opponent_highlight": null
-    },
     {
       "name": "Tomoyuki Sugano",
       "date": "2026-07-24",
@@ -129,6 +79,31 @@
       "opposing_pitcher_name": "Dustin May",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Jacob Lopez",
+      "date": "2026-07-24",
+      "pitcher_team": "ATH",
+      "opponent_team": "MIN",
+      "home_away": "away",
+      "game_time_pt": "5:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 4,
+        "era": "6.64",
+        "whip": "1.73",
+        "innings_pitched": "59.2",
+        "strikeouts": 49,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Zebby Matthews",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
+      "opponent_highlight": "warn"
     },
     {
       "name": "Grayson Rodriguez",
@@ -226,7 +201,7 @@
           "k_per_9": "good"
         }
       },
-      "opposing_pitcher_name": "Cam Schlittler",
+      "opposing_pitcher_name": "Ryan Weathers",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -253,31 +228,6 @@
       },
       "opposing_pitcher_name": "Robert Gasser",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12265/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
-      "name": "Jacob Lopez",
-      "date": "2026-07-25",
-      "pitcher_team": "ATH",
-      "opponent_team": "MIN",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 4,
-        "era": "6.64",
-        "whip": "1.73",
-        "innings_pitched": "59.2",
-        "strikeouts": 49,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Joe Ryan",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
       "opponent_highlight": "warn"
     },
     {
@@ -529,8 +479,33 @@
       "opposing_pitcher_name": "Miles Mikolas",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8193/gamelog/",
       "opponent_highlight": "bad"
+    },
+    {
+      "name": "Dean Kremer",
+      "date": "2026-07-28",
+      "pitcher_team": "BAL",
+      "opponent_team": "DET",
+      "home_away": "away",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 3,
+        "era": "5.06",
+        "whip": "1.19",
+        "innings_pitched": "32.0",
+        "strikeouts": 34,
+        "highlights": {
+          "era": "warn",
+          "whip": "good",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Troy Melton",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11428/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-22T22:02:08-07:00"
+  "cached_at": "2026-07-23T01:07:08-07:00"
 }
