@@ -31,31 +31,6 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Rhett Lowder",
-      "date": "2026-07-24",
-      "pitcher_team": "CIN",
-      "opponent_team": "STL",
-      "home_away": "away",
-      "game_time_pt": "5:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 7,
-        "era": "5.75",
-        "whip": "1.64",
-        "innings_pitched": "72.0",
-        "strikeouts": 61,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Dustin May",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Jacob Lopez",
       "date": "2026-07-24",
       "pitcher_team": "ATH",
@@ -507,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-23T09:24:12-07:00"
+  "cached_at": "2026-07-23T11:06:09-07:00"
 }
