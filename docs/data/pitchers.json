@@ -81,6 +81,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Carson Palmquist",
+      "date": "2026-07-24",
+      "pitcher_team": "WSH",
+      "opponent_team": "ARI",
+      "home_away": "home",
+      "game_time_pt": "TBD",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 1,
+        "era": "8.74",
+        "whip": "1.68",
+        "innings_pitched": "11.1",
+        "strikeouts": 14,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60152/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Jp Sears",
       "date": "2026-07-25",
       "pitcher_team": "SD",
@@ -482,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-23T15:44:28-07:00"
+  "cached_at": "2026-07-23T16:46:29-07:00"
 }
