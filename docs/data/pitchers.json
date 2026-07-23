@@ -31,31 +31,6 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Noah Cameron",
-      "date": "2026-07-24",
-      "pitcher_team": "KC",
-      "opponent_team": "DET",
-      "home_away": "away",
-      "game_time_pt": "3:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 8,
-        "era": "5.27",
-        "whip": "1.46",
-        "innings_pitched": "100.2",
-        "strikeouts": 92,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Tarik Skubal",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Rhett Lowder",
       "date": "2026-07-24",
       "pitcher_team": "CIN",
@@ -481,6 +456,31 @@
       "opponent_highlight": "bad"
     },
     {
+      "name": "Cal Quantrill",
+      "date": "2026-07-28",
+      "pitcher_team": "TEX",
+      "opponent_team": "TB",
+      "home_away": "away",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 3,
+        "era": "4.05",
+        "whip": "1.31",
+        "innings_pitched": "53.1",
+        "strikeouts": 32,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Griffin Jax",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10573/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Dean Kremer",
       "date": "2026-07-28",
       "pitcher_team": "BAL",
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-23T05:18:32-07:00"
+  "cached_at": "2026-07-23T07:58:44-07:00"
 }
