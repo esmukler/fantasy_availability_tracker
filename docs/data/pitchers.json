@@ -187,7 +187,7 @@
       "opponent_team": "NYY",
       "home_away": "home",
       "game_time_pt": "3:05 PM PT",
-      "availability": "waivers",
+      "availability": "na_free_agent",
       "stats": {
         "wins": 0,
         "losses": 3,
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-23T01:07:08-07:00"
+  "cached_at": "2026-07-23T03:56:50-07:00"
 }
