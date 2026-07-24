@@ -1,135 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-24",
+  "start_date": "2026-07-25",
   "days": 5,
-  "date_range": "Jul 24\u201328",
+  "date_range": "Jul 25\u201329",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Beck Way",
-      "date": "2026-07-24",
-      "pitcher_team": "KC",
-      "opponent_team": "DET",
-      "home_away": "away",
-      "game_time_pt": "3:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 0,
-        "era": "3.22",
-        "whip": "1.52",
-        "innings_pitched": "22.1",
-        "strikeouts": 21,
-        "highlights": {
-          "era": "good",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Tarik Skubal",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60203/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Tomoyuki Sugano",
-      "date": "2026-07-24",
-      "pitcher_team": "COL",
-      "opponent_team": "MIL",
-      "home_away": "away",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 9,
-        "losses": 4,
-        "era": "4.76",
-        "whip": "1.29",
-        "innings_pitched": "90.2",
-        "strikeouts": 51,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Shane Drohan",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/64895/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
-      "name": "Jacob Lopez",
-      "date": "2026-07-24",
-      "pitcher_team": "ATH",
-      "opponent_team": "MIN",
-      "home_away": "away",
-      "game_time_pt": "5:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 4,
-        "losses": 4,
-        "era": "6.64",
-        "whip": "1.73",
-        "innings_pitched": "59.2",
-        "strikeouts": 49,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Zebby Matthews",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
-      "name": "Grayson Rodriguez",
-      "date": "2026-07-24",
-      "pitcher_team": "LAA",
-      "opponent_team": "SF",
-      "home_away": "away",
-      "game_time_pt": "7:15 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 3,
-        "era": "8.23",
-        "whip": "1.77",
-        "innings_pitched": "35.0",
-        "strikeouts": 27,
-        "highlights": {
-          "era": "bad",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Logan Webb",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11277/gamelog/",
-      "opponent_highlight": null
-    },
-    {
-      "name": "Carson Palmquist",
-      "date": "2026-07-24",
-      "pitcher_team": "WSH",
-      "opponent_team": "ARI",
-      "home_away": "home",
-      "game_time_pt": "TBD",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 1,
-        "era": "8.74",
-        "whip": "1.68",
-        "innings_pitched": "11.1",
-        "strikeouts": 14,
-        "highlights": {
-          "era": "bad",
-          "whip": "warn",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60152/gamelog/",
-      "opponent_highlight": null
-    },
     {
       "name": "Jp Sears",
       "date": "2026-07-25",
@@ -554,8 +429,133 @@
       "opposing_pitcher_name": "Troy Melton",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11428/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Randy Dobnak",
+      "date": "2026-07-29",
+      "pitcher_team": "KC",
+      "opponent_team": "MIN",
+      "home_away": "away",
+      "game_time_pt": "4:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 0,
+        "era": "1.42",
+        "whip": "1.37",
+        "innings_pitched": "19.0",
+        "strikeouts": 10,
+        "highlights": {
+          "era": "good",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Bailey Ober",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11629/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
+      "name": "Gabriel Hughes",
+      "date": "2026-07-29",
+      "pitcher_team": "COL",
+      "opponent_team": "SD",
+      "home_away": "away",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "2.79",
+        "whip": "1.14",
+        "innings_pitched": "19.1",
+        "strikeouts": 19,
+        "highlights": {
+          "era": "good",
+          "whip": "good",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Griffin Canning",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60145/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
+      "name": "Jacob Lopez",
+      "date": "2026-07-29",
+      "pitcher_team": "ATH",
+      "opponent_team": "BOS",
+      "home_away": "home",
+      "game_time_pt": "6:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 4,
+        "losses": 4,
+        "era": "6.64",
+        "whip": "1.73",
+        "innings_pitched": "59.2",
+        "strikeouts": 49,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Patrick Sandoval",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62642/gamelog/",
+      "opponent_highlight": null
+    },
+    {
+      "name": "Griffin Canning",
+      "date": "2026-07-29",
+      "pitcher_team": "SD",
+      "opponent_team": "COL",
+      "home_away": "home",
+      "game_time_pt": "1:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 9,
+        "era": "6.97",
+        "whip": "1.63",
+        "innings_pitched": "62.0",
+        "strikeouts": 63,
+        "highlights": {
+          "era": "bad",
+          "whip": "warn",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Gabriel Hughes",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10894/gamelog/",
+      "opponent_highlight": "bad"
+    },
+    {
+      "name": "Grayson Rodriguez",
+      "date": "2026-07-29",
+      "pitcher_team": "LAA",
+      "opponent_team": "HOU",
+      "home_away": "home",
+      "game_time_pt": "6:38 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 3,
+        "era": "8.23",
+        "whip": "1.77",
+        "innings_pitched": "35.0",
+        "strikeouts": 27,
+        "highlights": {
+          "era": "bad",
+          "whip": "bad",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Spencer Arrighetti",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11277/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-23T21:57:58-07:00"
+  "cached_at": "2026-07-24T00:27:01-07:00"
 }
