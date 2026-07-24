@@ -6,6 +6,31 @@
   "cached": false,
   "pitchers": [
     {
+      "name": "Connor Prielipp",
+      "date": "2026-07-25",
+      "pitcher_team": "MIN",
+      "opponent_team": "ATH",
+      "home_away": "home",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 2,
+        "losses": 5,
+        "era": "5.00",
+        "whip": "1.37",
+        "innings_pitched": "66.2",
+        "strikeouts": 71,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60267/gamelog/",
+      "opponent_highlight": "warn"
+    },
+    {
       "name": "Mitch Bratt",
       "date": "2026-07-25",
       "pitcher_team": "AZ",
@@ -456,6 +481,31 @@
       "opponent_highlight": "good"
     },
     {
+      "name": "Ryan Gusto",
+      "date": "2026-07-29",
+      "pitcher_team": "MIA",
+      "opponent_team": "PHI",
+      "home_away": "home",
+      "game_time_pt": "9:10 AM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 0,
+        "losses": 2,
+        "era": "4.70",
+        "whip": "1.37",
+        "innings_pitched": "30.2",
+        "strikeouts": 27,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Jesus Luzardo",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63918/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Zack Littell",
       "date": "2026-07-29",
       "pitcher_team": "WSH",
@@ -557,5 +607,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-24T05:10:43-07:00"
+  "cached_at": "2026-07-24T07:41:58-07:00"
 }
