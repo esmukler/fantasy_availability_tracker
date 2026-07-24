@@ -6,6 +6,31 @@
   "cached": false,
   "pitchers": [
     {
+      "name": "Beck Way",
+      "date": "2026-07-24",
+      "pitcher_team": "KC",
+      "opponent_team": "DET",
+      "home_away": "away",
+      "game_time_pt": "3:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 0,
+        "era": "3.22",
+        "whip": "1.52",
+        "innings_pitched": "22.1",
+        "strikeouts": 21,
+        "highlights": {
+          "era": "good",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Tarik Skubal",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60203/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Tomoyuki Sugano",
       "date": "2026-07-24",
       "pitcher_team": "COL",
@@ -206,29 +231,29 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Kendry Rojas",
+      "name": "Kohl Drake",
       "date": "2026-07-26",
-      "pitcher_team": "MIN",
-      "opponent_team": "ATH",
-      "home_away": "home",
-      "game_time_pt": "11:10 AM PT",
+      "pitcher_team": "AZ",
+      "opponent_team": "WSH",
+      "home_away": "away",
+      "game_time_pt": "10:35 AM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 1,
-        "losses": 1,
-        "era": "3.32",
-        "whip": "1.57",
-        "innings_pitched": "21.2",
-        "strikeouts": 24,
+        "wins": 0,
+        "losses": 0,
+        "era": "1.80",
+        "whip": "1.20",
+        "innings_pitched": "5.0",
+        "strikeouts": 5,
         "highlights": {
           "era": "good",
-          "whip": "warn",
+          "whip": null,
           "k_per_9": "good"
         }
       },
-      "opposing_pitcher_name": "Jeffrey Springs",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63639/gamelog/",
-      "opponent_highlight": "warn"
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/65010/gamelog/",
+      "opponent_highlight": "bad"
     },
     {
       "name": "Trevor Mcdonald",
@@ -281,6 +306,31 @@
       "opponent_highlight": "warn"
     },
     {
+      "name": "Miles Mikolas",
+      "date": "2026-07-26",
+      "pitcher_team": "WSH",
+      "opponent_team": "ARI",
+      "home_away": "home",
+      "game_time_pt": "TBD",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.60",
+        "whip": "1.34",
+        "innings_pitched": "98.0",
+        "strikeouts": 51,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": null,
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9173/gamelog/",
+      "opponent_highlight": null
+    },
+    {
       "name": "Jeffrey Springs",
       "date": "2026-07-26",
       "pitcher_team": "ATH",
@@ -301,7 +351,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Kendry Rojas",
+      "opposing_pitcher_name": "Joe Ryan",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -353,31 +403,6 @@
       },
       "opposing_pitcher_name": "Zach Thornton",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
-      "name": "Miles Mikolas",
-      "date": "2026-07-27",
-      "pitcher_team": "WSH",
-      "opponent_team": "TOR",
-      "home_away": "home",
-      "game_time_pt": "3:45 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 7,
-        "era": "5.60",
-        "whip": "1.34",
-        "innings_pitched": "98.0",
-        "strikeouts": 51,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Max Scherzer",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/9173/gamelog/",
       "opponent_highlight": "good"
     },
     {
@@ -451,9 +476,34 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Miles Mikolas",
+      "opposing_pitcher_name": "Andrew Alvarez",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8193/gamelog/",
       "opponent_highlight": "bad"
+    },
+    {
+      "name": "Kendry Rojas",
+      "date": "2026-07-28",
+      "pitcher_team": "MIN",
+      "opponent_team": "KC",
+      "home_away": "home",
+      "game_time_pt": "4:40 PM PT",
+      "availability": "free_agent",
+      "stats": {
+        "wins": 1,
+        "losses": 1,
+        "era": "3.32",
+        "whip": "1.57",
+        "innings_pitched": "21.2",
+        "strikeouts": 24,
+        "highlights": {
+          "era": "good",
+          "whip": "warn",
+          "k_per_9": "good"
+        }
+      },
+      "opposing_pitcher_name": "Seth Lugo",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63639/gamelog/",
+      "opponent_highlight": null
     },
     {
       "name": "Cal Quantrill",
@@ -507,5 +557,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-23T18:22:44-07:00"
+  "cached_at": "2026-07-23T21:57:58-07:00"
 }
