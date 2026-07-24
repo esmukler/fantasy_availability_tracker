@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Jp Sears",
-      "date": "2026-07-25",
-      "pitcher_team": "SD",
-      "opponent_team": "MIA",
-      "home_away": "away",
-      "game_time_pt": "1:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 3,
-        "era": "4.38",
-        "whip": "1.26",
-        "innings_pitched": "24.2",
-        "strikeouts": 20,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Eury Perez P",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12333/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Mitch Bratt",
       "date": "2026-07-25",
       "pitcher_team": "AZ",
@@ -481,6 +456,31 @@
       "opponent_highlight": "good"
     },
     {
+      "name": "Zack Littell",
+      "date": "2026-07-29",
+      "pitcher_team": "WSH",
+      "opponent_team": "TOR",
+      "home_away": "home",
+      "game_time_pt": "10:05 AM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 7,
+        "losses": 7,
+        "era": "5.34",
+        "whip": "1.35",
+        "innings_pitched": "96.0",
+        "strikeouts": 61,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Trey Yesavage",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11035/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Jacob Lopez",
       "date": "2026-07-29",
       "pitcher_team": "ATH",
@@ -557,5 +557,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-24T03:05:08-07:00"
+  "cached_at": "2026-07-24T05:10:43-07:00"
 }
