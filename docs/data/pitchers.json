@@ -81,31 +81,6 @@
       "opponent_highlight": "warn"
     },
     {
-      "name": "Ryan Feltner",
-      "date": "2026-07-25",
-      "pitcher_team": "COL",
-      "opponent_team": "MIL",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 4,
-        "era": "5.48",
-        "whip": "1.42",
-        "innings_pitched": "65.2",
-        "strikeouts": 50,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Robert Gasser",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12265/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Kohl Drake",
       "date": "2026-07-26",
       "pitcher_team": "AZ",
@@ -515,7 +490,7 @@
       "availability": "waivers",
       "stats": {
         "wins": 7,
-        "losses": 7,
+        "losses": 8,
         "era": "5.17",
         "whip": "1.34",
         "innings_pitched": "101.0",
@@ -531,6 +506,31 @@
       "opponent_highlight": "good"
     },
     {
+      "name": "Rhett Lowder",
+      "date": "2026-07-29",
+      "pitcher_team": "CIN",
+      "opponent_team": "CLE",
+      "home_away": "home",
+      "game_time_pt": "4:10 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 3,
+        "losses": 7,
+        "era": "5.61",
+        "whip": "1.57",
+        "innings_pitched": "77.0",
+        "strikeouts": 65,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Joey Cantillo",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/62977/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Jacob Lopez",
       "date": "2026-07-29",
       "pitcher_team": "ATH",
@@ -539,11 +539,11 @@
       "game_time_pt": "6:40 PM PT",
       "availability": "free_agent",
       "stats": {
-        "wins": 4,
+        "wins": 5,
         "losses": 4,
-        "era": "6.22",
-        "whip": "1.68",
-        "innings_pitched": "63.2",
+        "era": "6.12",
+        "whip": "1.67",
+        "innings_pitched": "64.2",
         "strikeouts": 53,
         "highlights": {
           "era": "bad",
@@ -591,10 +591,10 @@
       "stats": {
         "wins": 3,
         "losses": 3,
-        "era": "8.23",
-        "whip": "1.77",
-        "innings_pitched": "35.0",
-        "strikeouts": 27,
+        "era": "8.54",
+        "whip": "1.79",
+        "innings_pitched": "39.0",
+        "strikeouts": 30,
         "highlights": {
           "era": "bad",
           "whip": "bad",
@@ -607,5 +607,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-24T18:22:25-07:00"
+  "cached_at": "2026-07-24T21:53:52-07:00"
 }
