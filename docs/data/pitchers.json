@@ -1,85 +1,10 @@
 {
   "league_id": 43384,
-  "start_date": "2026-07-25",
+  "start_date": "2026-07-26",
   "days": 5,
-  "date_range": "Jul 25\u201329",
+  "date_range": "Jul 26\u201330",
   "cached": false,
   "pitchers": [
-    {
-      "name": "Connor Prielipp",
-      "date": "2026-07-25",
-      "pitcher_team": "MIN",
-      "opponent_team": "ATH",
-      "home_away": "home",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 2,
-        "losses": 5,
-        "era": "5.00",
-        "whip": "1.37",
-        "innings_pitched": "66.2",
-        "strikeouts": 71,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60267/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
-      "name": "Mitch Bratt",
-      "date": "2026-07-25",
-      "pitcher_team": "AZ",
-      "opponent_team": "WSH",
-      "home_away": "away",
-      "game_time_pt": "1:05 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 0,
-        "era": "5.06",
-        "whip": "1.78",
-        "innings_pitched": "10.2",
-        "strikeouts": 7,
-        "highlights": {
-          "era": "warn",
-          "whip": "bad",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": null,
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60430/gamelog/",
-      "opponent_highlight": "bad"
-    },
-    {
-      "name": "Alan Rangel",
-      "date": "2026-07-25",
-      "pitcher_team": "PHI",
-      "opponent_team": "NYY",
-      "home_away": "home",
-      "game_time_pt": "3:05 PM PT",
-      "availability": "na_free_agent",
-      "stats": {
-        "wins": 0,
-        "losses": 3,
-        "era": "5.40",
-        "whip": "1.59",
-        "innings_pitched": "23.1",
-        "strikeouts": 26,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Ryan Weathers",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/12286/gamelog/",
-      "opponent_highlight": "warn"
-    },
     {
       "name": "Kohl Drake",
       "date": "2026-07-26",
@@ -604,8 +529,33 @@
       "opposing_pitcher_name": "Spencer Arrighetti",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11277/gamelog/",
       "opponent_highlight": null
+    },
+    {
+      "name": "Noah Cameron",
+      "date": "2026-07-30",
+      "pitcher_team": "KC",
+      "opponent_team": "MIN",
+      "home_away": "away",
+      "game_time_pt": "10:40 AM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 5,
+        "losses": 8,
+        "era": "4.93",
+        "whip": "1.41",
+        "innings_pitched": "107.2",
+        "strikeouts": 100,
+        "highlights": {
+          "era": null,
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Taj Bradley",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
+      "opponent_highlight": "warn"
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-24T21:53:52-07:00"
+  "cached_at": "2026-07-25T00:08:09-07:00"
 }
