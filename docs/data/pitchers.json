@@ -106,31 +106,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Jeffrey Springs",
-      "date": "2026-07-26",
-      "pitcher_team": "ATH",
-      "opponent_team": "MIN",
-      "home_away": "away",
-      "game_time_pt": "11:10 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 9,
-        "era": "5.96",
-        "whip": "1.42",
-        "innings_pitched": "102.2",
-        "strikeouts": 86,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Joe Ryan",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11121/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Kyle Freeland",
       "date": "2026-07-26",
       "pitcher_team": "COL",
@@ -554,8 +529,33 @@
       "opposing_pitcher_name": "Taj Bradley",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
       "opponent_highlight": "warn"
+    },
+    {
+      "name": "German Marquez",
+      "date": "2026-07-30",
+      "pitcher_team": "SD",
+      "opponent_team": "SF",
+      "home_away": "home",
+      "game_time_pt": "6:40 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 4,
+        "losses": 2,
+        "era": "5.17",
+        "whip": "1.53",
+        "innings_pitched": "47.0",
+        "strikeouts": 34,
+        "highlights": {
+          "era": "warn",
+          "whip": "warn",
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Robbie Ray",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10402/gamelog/",
+      "opponent_highlight": null
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-25T04:00:09-07:00"
+  "cached_at": "2026-07-25T05:02:24-07:00"
 }
