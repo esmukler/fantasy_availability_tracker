@@ -491,10 +491,10 @@
       "stats": {
         "wins": 0,
         "losses": 2,
-        "era": "4.32",
-        "whip": "1.29",
-        "innings_pitched": "33.1",
-        "strikeouts": 30,
+        "era": "4.50",
+        "whip": "1.32",
+        "innings_pitched": "34.0",
+        "strikeouts": 31,
         "highlights": {
           "era": null,
           "whip": null,
@@ -516,10 +516,10 @@
       "stats": {
         "wins": 7,
         "losses": 7,
-        "era": "5.20",
-        "whip": "1.35",
-        "innings_pitched": "98.2",
-        "strikeouts": 63,
+        "era": "5.17",
+        "whip": "1.34",
+        "innings_pitched": "101.0",
+        "strikeouts": 66,
         "highlights": {
           "era": "warn",
           "whip": null,
@@ -541,13 +541,13 @@
       "stats": {
         "wins": 4,
         "losses": 4,
-        "era": "6.64",
-        "whip": "1.73",
-        "innings_pitched": "59.2",
-        "strikeouts": 49,
+        "era": "6.22",
+        "whip": "1.68",
+        "innings_pitched": "63.2",
+        "strikeouts": 53,
         "highlights": {
           "era": "bad",
-          "whip": "bad",
+          "whip": "warn",
           "k_per_9": null
         }
       },
@@ -607,5 +607,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-24T16:53:14-07:00"
+  "cached_at": "2026-07-24T18:22:25-07:00"
 }
