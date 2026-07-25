@@ -31,31 +31,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Walker Buehler",
-      "date": "2026-07-26",
-      "pitcher_team": "SD",
-      "opponent_team": "MIA",
-      "home_away": "away",
-      "game_time_pt": "10:40 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 5,
-        "era": "5.23",
-        "whip": "1.43",
-        "innings_pitched": "94.2",
-        "strikeouts": 84,
-        "highlights": {
-          "era": "warn",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Janson Junk",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10509/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Miles Mikolas",
       "date": "2026-07-26",
       "pitcher_team": "WSH",
@@ -532,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-25T09:42:56-07:00"
+  "cached_at": "2026-07-25T10:46:59-07:00"
 }
