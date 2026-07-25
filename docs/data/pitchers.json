@@ -287,7 +287,7 @@
       "opponent_team": "TB",
       "home_away": "away",
       "game_time_pt": "3:40 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 3,
         "losses": 3,
@@ -557,5 +557,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-25T00:08:09-07:00"
+  "cached_at": "2026-07-25T02:25:31-07:00"
 }
