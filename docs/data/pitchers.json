@@ -131,31 +131,6 @@
       "opponent_highlight": "bad"
     },
     {
-      "name": "Kendry Rojas",
-      "date": "2026-07-28",
-      "pitcher_team": "MIN",
-      "opponent_team": "KC",
-      "home_away": "home",
-      "game_time_pt": "4:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 1,
-        "losses": 1,
-        "era": "2.81",
-        "whip": "1.40",
-        "innings_pitched": "25.2",
-        "strikeouts": 29,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_per_9": "good"
-        }
-      },
-      "opposing_pitcher_name": "Seth Lugo",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63639/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Cal Quantrill",
       "date": "2026-07-28",
       "pitcher_team": "TEX",
@@ -226,7 +201,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Bailey Ober",
+      "opposing_pitcher_name": "Taj Bradley",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11629/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -287,7 +262,7 @@
       "opponent_team": "TOR",
       "home_away": "home",
       "game_time_pt": "10:05 AM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 7,
         "losses": 8,
@@ -312,7 +287,7 @@
       "opponent_team": "CLE",
       "home_away": "home",
       "game_time_pt": "4:10 PM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 3,
         "losses": 7,
@@ -437,7 +412,7 @@
       "opponent_team": "MIN",
       "home_away": "away",
       "game_time_pt": "10:40 AM PT",
-      "availability": "waivers",
+      "availability": "free_agent",
       "stats": {
         "wins": 5,
         "losses": 8,
@@ -451,7 +426,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Taj Bradley",
+      "opposing_pitcher_name": null,
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -582,5 +557,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-26T01:03:28-07:00"
+  "cached_at": "2026-07-26T03:27:06-07:00"
 }
