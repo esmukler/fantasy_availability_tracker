@@ -151,7 +151,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Taj Bradley",
+      "opposing_pitcher_name": "Joe Ryan",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/11629/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -376,7 +376,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": "Joe Ryan",
+      "opposing_pitcher_name": "Bailey Ober",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-26T14:45:55-07:00"
+  "cached_at": "2026-07-26T15:46:25-07:00"
 }
