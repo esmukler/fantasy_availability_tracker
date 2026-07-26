@@ -56,31 +56,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "David Peterson",
-      "date": "2026-07-27",
-      "pitcher_team": "CHC",
-      "opponent_team": "STL",
-      "home_away": "away",
-      "game_time_pt": "4:45 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 7,
-        "era": "5.97",
-        "whip": "1.56",
-        "innings_pitched": "89.0",
-        "strikeouts": 74,
-        "highlights": {
-          "era": "warn",
-          "whip": "warn",
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Matthew Liberatore",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/10921/gamelog/",
-      "opponent_highlight": null
-    },
-    {
       "name": "Noah Schultz",
       "date": "2026-07-27",
       "pitcher_team": "CWS",
@@ -426,7 +401,7 @@
           "k_per_9": null
         }
       },
-      "opposing_pitcher_name": null,
+      "opposing_pitcher_name": "Joe Ryan",
       "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
       "opponent_highlight": "warn"
     },
@@ -557,5 +532,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-26T05:52:23-07:00"
+  "cached_at": "2026-07-26T07:22:17-07:00"
 }
