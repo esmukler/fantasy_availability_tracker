@@ -6,31 +6,6 @@
   "cached": false,
   "pitchers": [
     {
-      "name": "Martin Perez",
-      "date": "2026-07-27",
-      "pitcher_team": "ATL",
-      "opponent_team": "NYM",
-      "home_away": "away",
-      "game_time_pt": "4:10 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 6,
-        "losses": 6,
-        "era": "3.38",
-        "whip": "1.20",
-        "innings_pitched": "85.1",
-        "strikeouts": 65,
-        "highlights": {
-          "era": "good",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Zach Thornton",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/8652/gamelog/",
-      "opponent_highlight": "good"
-    },
-    {
       "name": "Brandon Sproat",
       "date": "2026-07-27",
       "pitcher_team": "MIL",
@@ -491,10 +466,10 @@
       "stats": {
         "wins": 3,
         "losses": 7,
-        "era": "5.60",
+        "era": "5.64",
         "whip": "1.34",
-        "innings_pitched": "98.0",
-        "strikeouts": 51,
+        "innings_pitched": "99.0",
+        "strikeouts": 52,
         "highlights": {
           "era": "warn",
           "whip": null,
@@ -532,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-26T09:44:21-07:00"
+  "cached_at": "2026-07-26T10:51:41-07:00"
 }
