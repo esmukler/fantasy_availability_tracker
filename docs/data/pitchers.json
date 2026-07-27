@@ -31,31 +31,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Noah Schultz",
-      "date": "2026-07-27",
-      "pitcher_team": "CWS",
-      "opponent_team": "NYY",
-      "home_away": "home",
-      "game_time_pt": "4:40 PM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 3,
-        "losses": 7,
-        "era": "6.04",
-        "whip": "1.46",
-        "innings_pitched": "56.2",
-        "strikeouts": 49,
-        "highlights": {
-          "era": "bad",
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Max Fried",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60156/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "Max Scherzer",
       "date": "2026-07-27",
       "pitcher_team": "TOR",
@@ -456,6 +431,31 @@
       "opponent_highlight": null
     },
     {
+      "name": "Zebby Matthews",
+      "date": "2026-07-31",
+      "pitcher_team": "MIN",
+      "opponent_team": "SEA",
+      "home_away": "away",
+      "game_time_pt": "7:10 PM PT",
+      "availability": "waivers",
+      "stats": {
+        "wins": 4,
+        "losses": 8,
+        "era": "5.21",
+        "whip": "1.32",
+        "innings_pitched": "76.0",
+        "strikeouts": 59,
+        "highlights": {
+          "era": "warn",
+          "whip": null,
+          "k_per_9": null
+        }
+      },
+      "opposing_pitcher_name": "Bryan Woo",
+      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/63601/gamelog/",
+      "opponent_highlight": "good"
+    },
+    {
       "name": "Miles Mikolas",
       "date": "2026-07-31",
       "pitcher_team": "WSH",
@@ -507,5 +507,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-26T18:30:32-07:00"
+  "cached_at": "2026-07-26T22:36:26-07:00"
 }
