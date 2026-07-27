@@ -256,31 +256,6 @@
       "opponent_highlight": null
     },
     {
-      "name": "Noah Cameron",
-      "date": "2026-07-30",
-      "pitcher_team": "KC",
-      "opponent_team": "MIN",
-      "home_away": "away",
-      "game_time_pt": "10:40 AM PT",
-      "availability": "free_agent",
-      "stats": {
-        "wins": 5,
-        "losses": 8,
-        "era": "4.93",
-        "whip": "1.41",
-        "innings_pitched": "107.2",
-        "strikeouts": 100,
-        "highlights": {
-          "era": null,
-          "whip": null,
-          "k_per_9": null
-        }
-      },
-      "opposing_pitcher_name": "Bailey Ober",
-      "yahoo_gamelog_url": "https://sports.yahoo.com/mlb/players/60211/gamelog/",
-      "opponent_highlight": "warn"
-    },
-    {
       "name": "German Marquez",
       "date": "2026-07-30",
       "pitcher_team": "SD",
@@ -507,5 +482,5 @@
     }
   ],
   "warnings": [],
-  "cached_at": "2026-07-27T02:22:58-07:00"
+  "cached_at": "2026-07-27T05:48:39-07:00"
 }
