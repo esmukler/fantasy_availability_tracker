@@ -1,8 +1,8 @@
 name: Refresh pitcher data
 
 on:
-  schedule:
-    - cron: "0 * * * *"
+  # Hourly schedule disabled while Yahoo Fantasy API access is pending approval.
+  # Re-enable with: schedule: [{ cron: "0 * * * *" }]
   workflow_dispatch:
 
 permissions:
